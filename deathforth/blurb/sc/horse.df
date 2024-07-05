@@ -1,8 +1,8 @@
-	: HORSE-oneline1 "*NEIIIIGGGGGHHHH*" ;
+	: HORSE-oneline1 "*UUUUUUUUUUUUUUU*" ;
 	: HORSE-oneline2 "BRRRBRRRRBRRRRRTH" ;
 	: HORSE-oneline3 "*hennit*" ;
-	: HORSE-oneline4 "NEEIIIIGH!" ;
-	: HORSE-oneline5 "HENNISSEMENT !" ;
+	: HORSE-oneline4 "HUHUUUUUUUUUUUU!" ;
+	: HORSE-oneline5 "UUU !" ;
 
 	deck-new
 		card: HORSE-oneline1
@@ -14,10 +14,10 @@
 	HORSE-ONELINERS var horse-oneliners
 	HORSE-ONELINERS shuffles to horse-oneliners
 
-	: HORSE-emote1 "  hennit." ;
-	: HORSE-emote2 "  hennit." ;
-	: HORSE-emote3 "  regarde fixement." ;
-	: HORSE-emote4 "  se met a cheval." ;
+	: HORSE-emote1 " hennit." ;
+	: HORSE-emote2 " hennit." ;
+	: HORSE-emote3 " regarde fixement." ;
+	: HORSE-emote4 " se met a cheval." ;
 
 	deck-new
 		card: HORSE-emote1
@@ -26,8 +26,8 @@
 		card: HORSE-emote4
 	constant HORSE-EMOTES
 	HORSE-EMOTES var horse-emotes
-	HORSE-EMOTES shuffles to horse-emotes	
-	
+	HORSE-EMOTES shuffles to horse-emotes
+
 : horse-oneliner
 	horse-oneliners depths 0= if HORSE-ONELINERS shuffles to horse-oneliners then
 	blurbslot 0= if

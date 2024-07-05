@@ -1,11 +1,11 @@
 : make-it
 	2nd-char choosechar
-	blurbslot 0= if 
-		"'Nous n'allons jamais y arriver tout a fait jusqu'au Canada !" blurbsay
+	blurbslot 0= if
+		"Nous n'arriverons jamais a aller jusqu'au Canada !" blurbsay
 	else
 		cattitude+ if
-			blurbslot 2 < if 
-				($ "'Nous pouvons le faire. C'est bien possible, " .. 1st-char .name@ .. "." $) blurbsay
+			blurbslot 2 < if
+				($ "Nous pouvons le faire. C'est bien possible, " .. 1st-char .name@ .. "." $) blurbsay
 			then
 		else
 			STAT_MORALE me .stat--
@@ -16,20 +16,20 @@
 : negative-tude
 2nd-char choosechar
 	blurbslot 0= if
-		"'Pourquoi le Canada ? Il n'y a aucune chance qu'il soit meilleur plus au nord." blurbsay
+		"Pourquoi le Canada ? Aucune chance que les choses se passent mieux plus au nord." blurbsay
 	else
 		blurbslot 2 < if
 			cattitude- not if
-				($ "'Tu t'embetes de ton attitude negative, " .. 1st-char .name@ .. "." $) blurbsay
-				"Tais toi ou va ten !" blurbsay
+				($ "Je commence a en avoir assez de ton attitude negative, " .. 1st-char .name@ .. "." $) blurbsay
+				"Tais-toi ou va-t'en !" blurbsay
 				STAT_MORALE 1st-char .stat--
 			else
-				"'Peut etre que tu as raison, mais cela pourrait etre notre meilleure option." blurbsay
+				"Peut-etre que tu as raison, mais cela pourrait etre notre meilleure option." blurbsay
 				STAT_MORALE 1st-char .stat++
-			then 
+			then
 		then
 	then
-;		
+;
 
 : pessimist-somebullcrap
 	blurbslot 0= if // Conversation starter, then everyone in party responds
@@ -49,19 +49,19 @@
 	2 of "sont sales" endof
 	3 of "le temps" endof
 	4 of "insectes" endof
-	5 of "chaque personne est un cancre" endof
+	5 of "comment les gens sont cons" endof
 	6 of ($ me .name@ .. "'pere" $) endof
-	7 of "Lundis" endof
-	8 of "les armes de la gente" endof
+	7 of "Lundi" endof
+	8 of "leurs armes" endof
 	9 of "comment les gens sentent" endof
-	10 of "avoir a utiliser les toilettes" endof
+	10 of "avoir besoin d'utiliser les toilettes" endof
 	11 of "combien de temps dure le trajet" endof
 	12 of "devoir manger des conserves" endof
 	endcase ;
 
 : pessimist-whiner // Picks two other people, lowers their morale
 	blurbslot 0= if
-		qmsg ($ me .name@ .. " gemisse incessamment a propos de " .. pessimist-whinetopic .. "." $) txt
+		qmsg ($ me .name@ .. " se plaint sans cesse a propos de " .. pessimist-whinetopic .. "." $) txt
 	else
 		blurbslot 3 < if
 			STAT_MORALE me .stat--
@@ -71,37 +71,37 @@
 
 : pessimist-brooding
 	blurbslot 0= if
-		qmsg ($ me .name@ .. " broods about a tragic past....." $) txt
+		qmsg ($ me .name@ .. " rumine un passe tragique....." $) txt
 	else
 		blurbslot 2 < if
 			rnd5050 if
-			qmsg ($ me .name@ .. " fait des roulements dyeux serieux." $) txt then
+			qmsg ($ me .name@ .. " roule ses yeux de facon serieuse." $) txt then
 		then
 	then
 ;
 
 	: pessimist-oneline1 "Je deteste les lundis." ;
-	: pessimist-oneline2 "Meme dans lapocalypse, je deteste les lundis." ;
-	: pessimist-oneline3 "'Je n'arrive pas a arreter de penser aux lundis et a quel point je les deteste." ;
-	: pessimist-oneline4 "UG! LUNDIS!" ;
-	: pessimist-oneline5 "Hope I don't run into any more Mondays..." ;
+	: pessimist-oneline2 "Meme dans l'apocalypse, je deteste les lundis." ;
+	: pessimist-oneline3 "Je n'arrive pas a arreter de penser aux lundis et a quel point je les deteste." ;
+	: pessimist-oneline4 "POUAH! LES LUNDIS!" ;
+	: pessimist-oneline5 "J'espere que je ne rencontrerai pas d'autres lundis..." ;
 // VVVVVVVV JONZ BLURBZ VVVVVVVVV
-	: pessimist-oneline6 "Si ca a lair trop beau pour etre vrai, cest probablement le cas." ;
-	: pessimist-oneline7 "Jai le sentiment qualler au Canada est une perte de temps." ;
+	: pessimist-oneline6 "Si ca a l'air trop beau pour etre vrai, c'est probablement le cas." ;
+	: pessimist-oneline7 "J'ai le sentiment qu'aller au Canada est une perte de temps." ;
 	: pessimist-oneline8 "Ayez toujours une arme de secours, vous ne savez jamais quand la votre peut se casser." ;
-	: pessimist-oneline9 "'J'attends juste que cette voiture tombe en panne." ;
+	: pessimist-oneline9 "J'attends juste que cette voiture tombe en panne." ;
 	: pessimist-oneline10 "Cette voiture est une bombe a retardement." ;
-	: pessimist-oneline11 "Nous serons probablement a court dessence avant darriver au Canada." ;
+	: pessimist-oneline11 "Nous serons probablement a court d'essence avant darriver au Canada." ;
 	: pessimist-oneline12 "Je doute que ces pneus tiennent encore longtemps." ;
-	: pessimist-oneline13 "Je doute que le Canada sera meilleur quici." ;
-	: pessimist-oneline14 "'On est perdus, n'est ce pas ?" ;
-	: pessimist-oneline15 "'Il n'y a aucun espoir pour nous !" ;
-	: pessimist-oneline16 "'On ne devrait plus s'arreter, on devrait continuer a rouler." ;
-	: pessimist-oneline17 "'On cherche les ennuis si on continue a s'arreter dans les villes." ;
-	: pessimist-oneline18 "Je parie quil va faire trop froid pour tout le monde au Canada." ;
-	: pessimist-oneline19 "'Bien sur, il n'y aura pas autant de moustiques au Canada, mais qu'en est il des grizzlis ?" ;
+	: pessimist-oneline13 "Ca m'etonnerait que le Canada soit un meilleur endroit qu'ici." ;
+	: pessimist-oneline14 "On est perdus, n'est-ce pas ?" ;
+	: pessimist-oneline15 "Il n'y a aucun espoir pour nous !" ;
+	: pessimist-oneline16 "On ne devrait plus s'arreter, on devrait continuer a rouler." ;
+	: pessimist-oneline17 "On cherche les ennuis si on continue a s'arreter dans les villes." ;
+	: pessimist-oneline18 "Je parie qu'il va faire trop froid pour tout le monde au Canada." ;
+	: pessimist-oneline19 "Bien sur, il n'y aura pas autant de moustiques au Canada, mais qu'en est-il des grizzlis ?" ;
 	: pessimist-oneline20 "On doit avoir un plan au cas ou la voiture tombe en panne." ;
-	
+
 	deck-new
 		card: pessimist-oneline1
 		card: pessimist-oneline2
@@ -123,7 +123,7 @@
 		card: pessimist-oneline18
 		card: pessimist-oneline19
 		card: pessimist-oneline20
-		
+
 	constant PESSIMIST-ONELINERS
 	PESSIMIST-ONELINERS var pessimist-oneliners
 

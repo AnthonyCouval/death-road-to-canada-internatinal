@@ -53,7 +53,7 @@ cyoa: challenge-statue1
 		($ "Apres avoir battu 6 modes de jeu differents, vous avez gagne une serie de 9 nouvelles casquettes pour le Createur de Personnages Personnalises ! Cela comprend des casquettes tres recherchees telles que :		," .. "TOILETTE A urine AVEC COUVERCLE		Tete DE Cheval		CROWN DOREE" rbold .. "eT PLUS !		" fbold $) text!
 		extrahatcheck
 	then
-	choice( "RETROUVEZ" )choice
+	choice( "RETOUR" )choice
 ;
 
 cyoa: challenge-statue2
@@ -74,7 +74,7 @@ cyoa: challenge-statue2
 		($ "Apres avoir battu 10 modes de jeu differents, vous avez gagne un lot de 6 nouveaux chapeaux et 8 nouvelles lunettes de soleil pour le createur de personnage personnalise! Cela comprend des accessoires tres recherches tels que:		" .. "CHAPEAU DE PRINCESSE" rbold .. "eT PLUS !		" fbold $) text!
 		extrahatcheck extraglassescheck
 	then
-	choice( "RETROUVEZ" )choice
+	choice( "RETOUR" )choice
 ;
 
 cyoa: challenge-statue3
@@ -95,7 +95,7 @@ cyoa: challenge-statue3
 		($ "Apres avoir battu 14 modes de jeu differents, vous avez gagne un lot de 12 nouveaux chapeaux pour le createur de personnage personnalise! Cela comprend des chapeaux tres recherches tels que:		" .. "'GROS POISSON		BERET ECOSSAIS		BOTTE DE TETE		CASQUETTE DE CUISINIER" rbold .. "eT PLUS !		" fbold $) text!
 		extrahatcheck
 	then
-	choice( "RETROUVEZ" )choice
+	choice( "RETOUR" )choice
 ;
 
 cyoa: challenge-statue4
@@ -117,7 +117,7 @@ cyoa: challenge-statue4
 		($ "Apres avoir enchaine 5 modes de jeu differents, vous avez gagne un lot de 18 nouveaux chapeaux pour le Createur de Personnages! Cela inclut des chapeaux tres recherches tels que:" .. "GNOME Y CAP		TIN FOIL HAT		CARDBOARD MASK		CHAPAU DE SORCIER" rbold .. "eT PLUS !		" fbold $) text!
 		extrahatcheck
 	then
-	choice( "RETROUVEZ" )choice
+	choice( "RETOUR" )choice
 ;
 
 cyoa: jerk-dingus
@@ -134,7 +134,7 @@ cyoa: roaming-capyrun
 
 cyoa: ugnome-note
 	"Du bureau dUnomey" cyoa-title!
-	($ "La note se lit comme suit :" $) cyoa-text! 
+	($ "La note se lit comme suit :" $) cyoa-text!
 	"SORS DE MA MAISON, NERD !" pbold +crtext
 ;
 
@@ -145,7 +145,7 @@ cyoa: tutorial
 	"Tutoriel" $upper cyoa-title!
 	someicon
 	($ "Vous pouvez repeter le tutoriel ici ! Cest pratique si vous avez manque des informations sur des choses comme le largage darmes ou le lancer de meubles. Cette option vous ramenera a lecran titre, appuyez simplement sur START pour revenir au tutoriel." $) cyoa-text! basic-tone
-	
+
 		choice( "SORTIE" )choice
 		choice( "Repeter le tutoriel" )choice: tutorial-repeat
 ;
@@ -187,25 +187,25 @@ cyoa: deletedata
 	choice( "Personnages personnalises" )choice: deletedata-custchars-confirm
 	choice( "Statistiques et avantages" )choice: deletedata-gstats-confirm
 	choice( "Effacer les deux" )choice: deletedata-both-confirm
-; 
+;
 
 cyoa-blank: freeZP-give-go
 	iicon
 	"Points ZOMBO augmentes a 99!" rainbold text!
 	goodfx gstats{ 99 to zombo-point save }
-	
+
 ;
 
 cyoa: freeZP-give
 	"Concours Zombo Point !" cyoa-title! iicon
 	"BIEN C'EST LA BRANCHE DE TESTS ALORS JE PEUX TE DONNER DES POINTS ZOMBO" bbold text!
-	gstats{ zombo-point } 99 < if 
+	gstats{ zombo-point } 99 < if
 		choice( "Donnez moi ces points Zombo" )choice: freeZP-give-go
 	else
 		"REVIENS QUAND TU AURAS MOINS DE 99 ZP!" bbold
 	then +crtext
 	choice( "Partir pour linstant" )choice
-	
+
 ;
 
 } } }
@@ -240,7 +240,7 @@ map{ regiondef{
 
 	// <- me .loot@ dup 0= if drop 1 GREEN "$" .. else looticon then
 	// <- me GREEN "11" .. looticon - a ?
-	
+
 	<- perk 1 < if
 		<- me "?" pbold
 	else
@@ -281,35 +281,35 @@ gstat: twitter-twitsleft pe: twitter-twitsleft-event
 ;
 
 : perk-dingus unlocker-shared
-		
+
 	57 lt .character@ .specialtype!
 	' perk1-stockleft-event lt .events!
 	' perk-dingus lt .cyoa!
 ;
 
 : perk1-dingus unlocker-shared
-		
+
 	12 lt .character@ .specialtype!
 	' perk1-stockleft-event lt .events!
 	' perk1-dingus lt .cyoa!
 ;
 
 : perk2-dingus unlocker-shared
-		
+
 	25 lt .character@ .specialtype!
 	' perk2-stockleft-event lt .events!
 	' perk2-dingus lt .cyoa!
 ;
 
 : perk3-dingus unlocker-shared
-		
+
 	46 lt .character@ .specialtype!
 	' perk3-stockleft-event lt .events!
 	' perk3-dingus lt .cyoa!
 ;
 
 : trait1-dingus unlocker-shared
-		
+
 	24 lt .character@ .specialtype!
 	' trait1-stockleft-event lt .events!
 	' trait1-dingus lt .cyoa!
@@ -319,14 +319,14 @@ gstat: twitter-twitsleft pe: twitter-twitsleft-event
 	// new-camper
 	nomove-npc
 	21 lt .character@ .specialtype!
-	
+
 	' trader-event lt .events!
 	1 lt .timer!
 
 	' jerk-dingus lt .cyoa!
 ;
 
-: challenge-statue1 
+: challenge-statue1
 	spawn special_objects48_base_id 0x 24 + 2 + lt .spriteid! bbox immovable
 	' challenge-statue1 lt .cyoa!
 ;
@@ -354,7 +354,7 @@ gstat: twitter-twitsleft pe: twitter-twitsleft-event
 : unlockgnome unlocker-shared
 	lt .character@ .gnomify2
 	' gnome-stockleft-event lt .events!
-	' unlockgnome lt .cyoa!	
+	' unlockgnome lt .cyoa!
 ;
 
 : ugnome-note wrotenote cyoa{ ' ugnome-note cyoa! } ;
@@ -364,7 +364,7 @@ gstat: twitter-twitsleft pe: twitter-twitsleft-event
 	<- me ($ "*GNORT*" rbold $) <- me
 	.sprayit
 	// statmod{ .report } clear-cyoa
-	sfx{ sing 500 fx .d! 2.25 fx .pitch! 0.9 fx .q! <- me .adjust-vol } 
+	sfx{ sing 500 fx .d! 2.25 fx .pitch! 0.9 fx .q! <- me .adjust-vol }
 ;
 
 : capy-chat args( me )
@@ -373,7 +373,7 @@ gstat: twitter-twitsleft pe: twitter-twitsleft-event
 	else
 		cyoa{ roaming-capyrun }
 	then
-	; 
+	;
 
 : roaming-capybara
 	new-camper lt .character@ .gerbilfy
@@ -387,9 +387,9 @@ gstat: twitter-twitsleft pe: twitter-twitsleft-event
 ;
 
 : freeZP-dingus
-	nomove-npc 
+	nomove-npc
 	40 lt .character@ .specialtype!
-	
+
 	' trader-event lt .events!
 	1 lt .timer!
 	' freeZP-give lt .cyoa!
@@ -423,8 +423,8 @@ cyoa: sycamore-dingus
 
 cyoa: modguard-dingus
 	"Hutte dans une hutte" cyoa-title!
-	"Je suis le gardien de la hutte des contributeurs !	Passez moi les createurs qui ont apporte du nouveau contenu a la route de la mort ! Ce sont des createurs de mods Death Road to Canada, de notre Discord ! " text! "#mod showcase" pbold +text "  et " +text "#deathroad modding" pbold +text 
-	
+	"Je suis le gardien de la hutte des contributeurs !	Passez moi les createurs qui ont apporte du nouveau contenu a la route de la mort ! Ce sont des createurs de mods Death Road to Canada, de notre Discord ! " text! "#mod showcase" pbold +text "  et " +text "#deathroad modding" pbold +text
+
 	"Entrez pour lire leurs paroles dinspiration et decouvrez ce quils ont ajoute dans chaque mise a jour !	Cest une hutte dans la plus grande hutte dinformation !" +crtext
 	choice( "'Allons voir cette cabane" )choice
 ;

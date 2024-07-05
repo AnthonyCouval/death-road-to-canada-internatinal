@@ -2,7 +2,7 @@
 cyoa{
 
 // Unused
-: npc-panda-go 
+: npc-panda-go
 	($ cname .. "  commence a suivre " .. pname .. "  pour un moment !" $) +crtext ccharget
 ;
 
@@ -16,27 +16,27 @@ cyoa{
 ;
 
 : npc-panda-attack
-	($ "Le panda " .. "sort des cils!" rbold $) +crtext pchar .ouch-- bitefx
+	($ "Le panda " .. "se dechaine!" rbold $) +crtext pchar .ouch-- bitefx
 ;
 
 cyoa-bridge: npc-panda-food
 	($ pname .. "  propose de la nourriture au panda." $) text!
-	50 %chance if 
+	50 %chance if
 		npc-panda-recruit
 	else
-		($ "Le panda mache la nourriture puis la recrache. Les pandas sont des mangeurs difficiles, mais vous pouvez continuer a essayer avec plus de nourriture." $) +crtext badfx
-	then	
+		($ "Le panda mache la nourriture puis la recrache. Les pandas sont difficiles, mais vous pouvez continuer a essayer avec d'autre sorte de nourriture." $) +crtext badfx
+	then
 	-1 add-food
 ;
 
 cyoa-bridge: npc-panda-pull
-	($ pname .. "  tire le panda vers " .. phim .. " ' dans l'espoir que l'animal suive. Cela semble valoir le coup." $) text!
-	50 %chance if 
+	($ pname .. "  tire le panda vers " .. phim .. " ' dans l'espoir que l'animal le suive. Cela semble valoir le coup." $) text!
+	50 %chance if
 		npc-panda-recruit
 	else
 		npc-panda-attack
-	then	
-	
+	then
+
 ;
 
 cyoa-bridge: npc-panda-charm
@@ -44,7 +44,7 @@ cyoa-bridge: npc-panda-charm
 		($ pname .. " utilise " .. phis .. "  PSYCHOLOGIE DU CHIEN sur le panda, qui est un type de chien." $) text!
 		npc-panda-recruit
 	else
-		pchar charming? if 
+		pchar charming? if
 			($ pname .. " utilise " .. phis .. "  charme naturel pour convaincre le panda de suivre." $) text!
 			npc-panda-recruit
 		else
@@ -66,7 +66,7 @@ cyoa: npc-panda
 		LOOT_FOOD pchar .lootamt@ 0 > if
 			choice( "Attirez le avec de la nourriture" )choice: npc-panda-food
 		then
-		choice( "Persuadez le avec charme" )choice: npc-panda-charm	
+		choice( "Persuadez le avec charme" )choice: npc-panda-charm
 ;
 
 }
@@ -86,19 +86,19 @@ cyoa: npc-panda
 ;
 
 locdef{
-		
+
 location
 		tags: panda
 		max-rooms: 2
 		entry-tags: trashed
 		script: set-theme-house
 		pre-script: set-theme-house
-		
+
 		room-choice: trashed
 			room-weight: 10
 			room-count: 2
 			room-script: nad
 			room-post-script: still-npc .panda
 			filter-only
-			
+
 }

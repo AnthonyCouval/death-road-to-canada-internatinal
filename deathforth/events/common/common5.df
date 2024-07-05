@@ -1,7 +1,7 @@
 
 // EYEBALL Update events
 
-cyoa{ road{ 
+cyoa{ road{
 
 // Future Toilet, based on a true story
 
@@ -52,29 +52,29 @@ cyoa: common5-toilet-rare
 	8 12 rnd trunk-food+ 4 6 rnd trunk-medical+ goodfx ;
 
 cyoa-choice: common5-line-pick
-	
+
 	cdog? if
 		($ cname .. "  fonce vers la ligne et la depasse completement.		Des heures plus tard, " .. cname .. "  revient avec un baton dans " .. chis .. "  la bouche." $) text!
 		1 WEAPON_TREEBRANCH trunk.weapon+
 		morale2+ cchar morale--all-except goodfx
 		common5-line-camp
 	then;
-	
+
 	ccat? if
 		($ cname .. "  se precipite dans la boutique, evitant la file dattente. " .. cHe .. "  sort en portant un rongeur mort, peut etre une gerbille?" $) text!
 		2 trunk-food+ morale2+ goodfx
 	then;
-	
+
 	cpet? if
 		($ cname .. "  sallonge pour une petite pause. En tant quanimal, " .. che .. " ' ne comprend pas le concept de ligne ou fait semblant de ne pas le comprendre." $) text!
 		morale++ goodfx
 	then;
-	
+
 	cchar oblivious? if
 		($ cname .. "  saute completement la ligne. " .. cHe .. " ' n'a pas remarque qu'il y avait une file d'attente, ni des zombies." $) text!
 		witsREV attitudeREV common5-line-shop
 	then;
-	
+
 	ctemper- if
 		cloyalty- if
 			($ cname .. "  passe devant tout le monde et saute completement la file dattente. " .. cHe .. "  ne joue PAS selon les regles!" $) text!
@@ -87,28 +87,28 @@ cyoa-choice: common5-line-pick
 			rageREV fitness++ fitnessREV morale++ goodfx
 		then;
 		($ cHe .. " attaque le zombie devant " .. chim .. ". Les autres zombies remarquent finalement et commencent a attaquer. " .. cname .. " est contraint de senfuir!" $) +crtext
-		sting-- bitefx temperREV 
+		sting-- bitefx temperREV
 	then;
-	
+
 	ctemper+ if
 		($ cname .. " attend patientement dans la longue file. Elle avance lentement, mais " .. che .. " attends tranquillement." $) text!
-		temperREV 
+		temperREV
 		common5-line-shop common5-line-camp
 	then;
-	
+
 	($ cname .. " attend dans la file. Elle avance lentement vers " .. cname .. "'grand irritation de sa part." $) text!
-	attitude+roll if 
+	attitude+roll if
 		($ cname .. " tente de penser positivement a cela. " .. cHe .. " reussit a supporter et a entrer dans le magasin!" $) +crtext
 		attitudeREV morale-- common5-line-shop
 	else
 		($ "Apres des heures de cela, les zombies se tournent vers " .. cname .. "  a cause de " .. chis .. "  des gemissements constants. " .. cHe .. "  est force de fuir !" $) +crtext
-		morale2- sting-- bitefx 
+		morale2- sting-- bitefx
 	then temperREV common5-line-camp
 ;
 
 cyoa-bridge: common5-line-pick4
 	"Choisissez qui doit attendre dans la file de zombies:" text!
-	' common5-line-pick cyoa-team-choice 
+	' common5-line-pick cyoa-team-choice
 ;
 
 cyoa-blank: common5-line
@@ -125,7 +125,7 @@ cyoa-blank: common5-line
 		choice( "Choisissez quelquun dautre" )choice: common5-line-pick4
 	else
 		' common5-line-pick 3 #cyoa-team-choice
-	then	
+	then
 ;
 
 // Rock throwing
@@ -193,7 +193,7 @@ cyoa-choice: common5-drag-ignore
 		then;
 		($ "Le conducteur heurte " .. thegroup .. "'s voiture, la faisant tourner en rond.," $) +crtext
 		-1 car-chassis+
-		car-chassis 0 > if 
+		car-chassis 0 > if
 			($ "La voiture subit des dommages mineurs et " .. thegroup .. " se blesse." $) +crtext sting--all bitefx
 		else
 			($ "La voiture endommagee ne peut plus supporter cette tension. Elle s'arrete de fonctionner." $) +crtext badfx
@@ -215,7 +215,7 @@ cyoa-choice: common5-drag-ram
 			"'Les deux voitures subissent des degats, mais le vehicule de l'adversaire en subit beaucoup plus. Vous gagnez la course!" +crtext
 		else
 			"Les deux voitures sont suffisamment endommagees pour ne plus pouvoir rouler. Cela fait une egalite dans la course!" +crtext
-		then 
+		then
 	then
 	($ "Le conducteur ennuyeux senfuit en criant " .. "TRICHEUR! " rbold .. Thegroup .. "  siphonner de lessence de son epave." $) +crtext
 	morale++all 30 40 rnd trunk-gas+ goodfx
@@ -263,26 +263,26 @@ cyoa-choice: common5-radiodj-pick
 		($ cname .. " dit quelque chose du genre  " .. "ABOYER !" rbold .. " ou peut etre  " .. "BORK?" rbold .. "esperons qu'il a trompe beaucoup de gens qui ecoutaient leur radio." $) text!
 		morale++ goodfx
 	then;
-	
+
 	cpet? if
 		($ cname .. "  attaque le microphone !		Le microphone est detruit !		" .. cname .. "  est tres content de se debarrasser de cette menace." $) text! bitefx morale2+ strengthREV fitnessREV
 	then;
-	
+
 	cchar oblivious? if
 		($ cname .. "  allume accidentellement le microphone, puis laisse echapper beaucoup de faits personnels embarrassants.		Cela inclut des informations utiles pour les bandits, telles que lemplacement et la quantite actuelle de fournitures." $) text!
 		witsattREV cchar morale2-all-except
 	then;
-	
+
 	cchar grating? if
 		($ cname .. "  hurle a plusieurs reprises " .. "COOL IT!" fbold .. "  dans le microphone.		Apres onze de ces cris, lequipement radio tombe en panne et les lumieres du generateur sallument." $) text! witsattREV morale++ cchar morale2-all-except 11 to cool-it
 	then;
-	
+
 	cchar paranoid? if
-		($ cname .. "  diffuse une longue tirade presque essoufflee sur la facon dont lapocalypse zombie a ete creee par le gouvernement.		Le projet etait nomme " .. "PROJET : DINGUS" bbold .. "  et le but recherche etait de servir de camouflage pour rendre les jorts" .. 
+		($ cname .. "  diffuse une longue tirade presque essoufflee sur la facon dont lapocalypse zombie a ete creee par le gouvernement.		Le projet etait nomme " .. "PROJET : DINGUS" bbold .. "  et le but recherche etait de servir de camouflage pour rendre les jorts" ..
 		"*" rbold .. "  illegaux.		FINALEMENT, la verite a ete revelee !" $) text! witsattREV morale3+ cchar morale--all-except
 		"'* Remarque : Jorts signifie shorts en jean." rbold +crtext
 	then;
-	
+
 	cloyalty- if
 		($ cname .. "  diffuse un message utile :" $) text!
 		cchar ahole? if
@@ -300,7 +300,7 @@ cyoa-choice: common5-radiodj-pick
 	then;
 
 	cchar .hiskill-stack depths 0= if 0 else shuffles pops then to DJ-PICK drop
-	
+
 	DJ-PICK STAT_MEDICAL = if
 		cchar .medical 3 > if
 			($ cname .. " sait que " .. chis .. " possible  " .. che .. " can in a short time.
@@ -315,7 +315,7 @@ cyoa-choice: common5-radiodj-pick
 			cchar ' .medical-- foreach-team-char-except
 		then; medicalREV
 	then
-	
+
 	DJ-PICK STAT_MECHANICAL = if
 		cchar .mechanical 3 > if
 			($ cname .. " broadcasts a short impromptu talk show that is a crash course in car repair. It's informative and entertaining.
@@ -330,7 +330,7 @@ cyoa-choice: common5-radiodj-pick
 			cchar ' .mechanic-- foreach-team-char-except
 		then; mechanicREV
 	then
-	
+
 	DJ-PICK STAT_FITNESS = if
 		cfitness+ if
 			($ cname .. " creates an intense radio calisthenics show. Whoever is listening joins in with the exercises.
@@ -339,14 +339,14 @@ cyoa-choice: common5-radiodj-pick
 			' .fitness++ foreach-team-char
 		then;
 	then
-	
+
 	DJ-PICK STAT_SHOOTING = if
 		cshooting+ if
 			($ cname .. " broadcasts some very effective tips and theories on zombie shooting.
 			During the show, " .. cHe .. " meme vient avec quelques nouveaux coups de feu de truc." $) text!
 			shootingREV morale++
-			' .shooting++ foreach-team-char		
-		then;	
+			' .shooting++ foreach-team-char
+		then;
 	then
 
 	DJ-PICK STAT_STRENGTH = if
@@ -354,14 +354,14 @@ cyoa-choice: common5-radiodj-pick
 			($ cname .. " lit un poeme qui " .. che .. "  a ecrit sur combien " .. che .. " loves being strong.
 			The Four Spirits of Swoleness hear this sweet poem, and they confer their blessing!" $) text!
 			strengthREV morale++
-			' .strength++ foreach-team-char		
-		then;	
+			' .strength++ foreach-team-char
+		then;
 	then
-	
+
 	cchar charming? if
 		($ cname .. " ' ne peut rien trouver d'autre, alors " .. che .. " ' chante une chanson. C'est une excellente performance, qui deviendra surement un nouveau single a succes post zombocalypique!" $) text! witsattREV morale2+all
 	then;
-		
+
 	($ cname .. " ' ne peut penser a rien dire, et reste silencieux meme lorsque le courant est coupe." $) text! badfx morale--
 ;
 
@@ -383,7 +383,7 @@ cyoa: common5-radiodj
 		choice( "Choisissez quelquun dautre" )choice: common5-radiodj-pick4
 	else
 		' common5-radiodj-pick 3 #cyoa-team-choice
-	then	
+	then
 ;
 
 // Mysterious Radio Signal
@@ -418,9 +418,9 @@ cyoa-blank: common5-signal-drive
 	car-mpg 0 = if
 		"Drole de coincidence, cette voiture ne prend pas dessence." +crtext
 		goodfx
-	else		
+	else
 		trunk-gas 70 car-mpg * >= if
-			-55 -70 rnd car-mpg * car-gas+ 
+			-55 -70 rnd car-mpg * car-gas+
 		else
 			bandit-gas
 		then
@@ -505,7 +505,7 @@ common5-healthfood-line-base shuffles var common5-healthfood-line
 
 : common5-healthfood-stat args( @ )
 	<- @ .cattitude+ if
-		($ <- @ .colourname .. " " .. common5-healthfood-say $) +crtext 
+		($ <- @ .colourname .. " " .. common5-healthfood-say $) +crtext
 	else
 		<- @ .cattitude- if
 			<- @ .morale2-
@@ -513,7 +513,7 @@ common5-healthfood-line-base shuffles var common5-healthfood-line
 			<- @ .morale--
 		then
 	then <- @ .attitudeREV <- @ .health++
-	
+
 ;
 
 cyoa-blank: common5-healthfood-go
@@ -588,7 +588,7 @@ cyoa: common5-swoloflex
 // Gnome Challenge Conduct Rare
 
 defer common5-gnomerepeat
-: common5-gnome-back choice( "RETROUVEZ" )choice: common5-gnomerepeat ;
+: common5-gnome-back choice( "RETOUR" )choice: common5-gnomerepeat ;
 
 cyoa-choice: common5-gnome-no
 	"Tous les defis semblent horribles." text! ricon
@@ -616,7 +616,7 @@ common5-gnome-line-base shuffles var common5-gnome-line
 ;
 
 cyoa-blank: common5-gnome-morale-go
-	"PEUX TU SURVIVRE A LA TRISTESSSE?" rbold text! goodfx
+	"PEUX TU SURVIVRE A LA TRISTESSE?" rbold text! goodfx
 	' common5-gnome-morale-stat foreach-team-char
 ;
 
@@ -747,7 +747,7 @@ cyoa-choice: common5-chest-book
 	solohuman if
 		choosehuman ($ cname .. " " .. "Dingusnomicon!" rbold $) text!
 	else
-		($ "Chacun lit a tour de role le texte " .. "Dingusnomicon!" rbold $) text!	
+		($ "Chacun lit a tour de role le texte " .. "Dingusnomicon!" rbold $) text!
 	then
 	($ "C'est un livre malefique et ancien couvert d'yeux et de bouches. Il fait des petites morsures et crie aussi " .. "''nerd'" fbold .. " dans plus de neuf cent mille langues oubliees." $) +crtext
 	morale--all sting--all bitefx
@@ -788,7 +788,7 @@ cyoa-choice: common5-chest-loot
 	morale--all sting--all bitefx
 	($ gThey .. " emportent quelques armes utiles, y compris un " .. common5-lootweapon-name .. "!" $) +crtext
 	common5-lootweapon-pick
-	1 30 %chance if WEAPON_WOODCLUB else 50 %chance if WEAPON_GAUNTLET else WEAPON_DAGGER then then trunk.weapon+ 1 WEAPON_DAGGER trunk.weapon+ 
+	1 30 %chance if WEAPON_WOODCLUB else 50 %chance if WEAPON_GAUNTLET else WEAPON_DAGGER then then trunk.weapon+ 1 WEAPON_DAGGER trunk.weapon+
 ;
 
 cyoa-choice: common5-chest-basket
@@ -858,7 +858,7 @@ cyoa: common5-hand-rare
 	($ Thegroup .. "  trouve une salle doperation de fortune. Dans un coin se trouve un squelette avec un fusil a double canon et une main de tronconneuse prothetique, tous deux vides. 	Une main de tronconneuse? Cela semble etre une bonne idee!" $) text!
 		choice( "Piller les fournitures a la place" )choice: common5-hand-loot
 	solohuman if
-		choosehuman cchar charchoice( ": Remplacer la main" )choice: common5-hand-pick 
+		choosehuman cchar charchoice( ": Remplacer la main" )choice: common5-hand-pick
 		"Les tronconneuses sont meilleures que les mains." +crtext then;
 	"'Remplacer la main de quelqu'un par une tronconneuse:" +crtext
 	numhums 3 > if

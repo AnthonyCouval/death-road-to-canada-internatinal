@@ -4,16 +4,16 @@
 	else
 		blurbslot 2 < if
 			50 %chance if
-				($ "FERMEZ LA !" $)
+				($ "FERMEZ-LA !" $)
 			else
-				($ "QUEST CE QUI NE VA PAS CHEZ VOUS ?" $) 
+				($ "MAIS QU'EST-CE QUI VA PAS CHEZ TOI ?" $)
 			then
 			blurbsay STAT_MORALE me .stat--
 		then
 	then
 ;
 
-: lnk-annoy2 
+: lnk-annoy2
 	blurbslot 0= if
 		"KYAAAAAAA! KYAAAAAAAAAAA! KYAAAAAAAAAAAAA!" blurbsay
 		"KYYAAAAAAAAAAAAAAAAAAAAAAAAAUUUUGH!" blurbsay
@@ -30,7 +30,7 @@
 	: LNK-oneline4 "KYAAAAAAAAAAA!" ;
 	: LNK-oneline5 "HYWAAA!" ;
 	: LNK-oneline6 "HAAUUUGH!" ;
-	: LNK-oneline7 "WAUHG ?" ;
+	: LNK-oneline7 "WAUHG?" ;
 
 	deck-new
 		card: LNK-oneline1

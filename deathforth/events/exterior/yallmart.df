@@ -2,8 +2,8 @@
 cyoa{ road{
 
 cyoa: yallmart-easy
-	"Yall Mart" cyoa-title!
-	($ Thegroup .. " ' repere un Y'all Mart abandonne au loin. On dirait qu'il a ete pille, mais peut etre qu'il y a du butin intact a l'interieur." $) cyoa-text! basic-tone
+	"Yall-Mart" cyoa-title!
+	($ Thegroup .. " repere un Y'all Mart abandonne au loin. On dirait qu'il a ete pille, mais peut etre qu'il reste des choses a l'interieur." $) cyoa-text! basic-tone
 	1 8 14 frnd 0 zforecast
 	"events/exterior/region/yallmart.df" $load-region
 		choice( "Allez faire des affaires" )choice: premission
@@ -12,7 +12,7 @@ cyoa: yallmart-easy
 
 cyoa: grocery1
 	"Magasin alimentaire" cyoa-title!
-	($ Thegroup .. "  trouve une epicerie. Les zombies errent a linterieur, comme sils gardaient la nourriture restante." $) cyoa-text! basic-tone
+	($ Thegroup .. " trouve une epicerie. Les zombies errent a l'interieur, comme s'ils gardaient la nourriture restante." $) cyoa-text! basic-tone
 	1.1 1.3 frnd 8 14 frnd 0 2 rnd zforecast
 	"events/exterior/region/grocery.df" $load-region
 		choice( "Faire du shopping" )choice: premission

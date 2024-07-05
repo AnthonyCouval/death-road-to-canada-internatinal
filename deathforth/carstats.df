@@ -527,7 +527,7 @@ CAR_STARTER value starting-car
 	CAR_SUV 		' get-car-suv 		cartype
 	CAR_HYBRID2 	' get-car-hybrid2 	cartype
 	CAR_MUSCLE2 	' get-car-muscle2 	cartype
-	
+
 	CAR_VAN			' get-car-van 		cartype
 	CAR_PUTTPUTT	' get-car-putt 		cartype
 	CAR_STATIONWAGON ' get-car-wagon 	cartype
@@ -546,7 +546,7 @@ CAR_STARTER value starting-car
 	CAR_WIENER		' get-car-wiener	cartype
 	CAR_RUSTY_TRUCK	' get-car-rusty		cartype
 	CAR_SNOWPLOW	' get-car-rusty		cartype
-	
+
 	CAR_BUS			' get-car-rusty		cartype
 
 ; car-list-init
@@ -585,8 +585,8 @@ DOT1 value DOT
 : +repairstatus +purple "chassis" +text +white ;
 : +wearstatus +purple "moteur" +text +white ;
 : +armourstatus +purple "blindage" +text +white ;
-: +carspeed 
-	car-speed 2 < if 
+: +carspeed
+	car-speed 2 < if
 		+red "Lentement"
 	else
 		car-speed 2 = if
@@ -594,7 +594,7 @@ DOT1 value DOT
 		else
 		+green "Rapide"
 		then
-	then +text +white 
+	then +text +white
 ;
 
 // TODO: Days left to CANADA
@@ -604,7 +604,7 @@ DOT1 value DOT
 
 : vehicle-tab-text
 
-	"Mode de jeu : " pbold +text 
+	"Mode de jeu : " pbold +text
 
 	"MODE DE JEU NULLE" // Default case
 	gamedef{ ' defaultmode gamemode? } if drop "Death Road Normal" then
@@ -627,12 +627,12 @@ DOT1 value DOT
 
 	+text +cr
 
-	zombop-cr +cr	
+	zombop-cr +cr
 
 	road_theme@ 4 = if
 		"YOU MADE IT TO CANADA!!!" fbold +text
 	then;
-	
+
 	road{ nearcanada-day 1 + road-trip-days - } 0= if
 		"YOU ARE ABOUT TO CROSS INTO CANADA!!!" rainbold +text
 	then;
@@ -644,42 +644,42 @@ DOT1 value DOT
 			+repairstatus +cr
 		DOT3 to STAR
 		0x 1b +chr " " +text car-engine car-max-engine +%starbar 3 +gaps
-			+wearstatus +cr 
+			+wearstatus +cr
 
 		car-armor if
 			0x 1a +chr " "  +text car-armor +dots 5 car-armor - +gaps 3 +gaps
 			+armourstatus +cr
 		then
-		
+
 		+purple 2 +gaps "Vitesse de la voiture:" +text 2 +gaps +carspeed +cr
-		
+
 		gamedef{ ' endlessmode gamemode? } if
-		
-			road{ road-trip-days } 2 < if 
+
+			road{ road-trip-days } 2 < if
 				+cr "Viens de commencer le voyage sans fin!" +text +cr
 			then;
-			
-			road{ road-trip-days } 3 < if 
+
+			road{ road-trip-days } 3 < if
 				+cr "Survecu au premier jour du mode sans fin!" +text +cr
 			then;
-		
+
 			+cr "Encore en vie apres " +text +red road{ road-trip-days } 1 - +text +white " days on the road!!!" +text +cr
-				
+
 		then;
-		
-		+cr "Seulement " +text +canadadays " driving days until CANADA!!!" +text +cr
-		
+
+		+cr "Plus que " +text +canadadays " de conduite avant d'arriver au CANADA!!!" +text +cr
+
 	then;
 
 	road{ road-trip-days nearcanada-day < } if
-	
-	"Seulement " +text +canadadays " driving days until CANADA..." +text +cr
-	+cr "...IF WE HAD A CAR " +text DX +text +cr
-	
+
+	"Plus que " +text +canadadays " de conduite avant d'arriver au CANADA..." +text +cr
+	+cr "...SI NOUS AVIONS UNE VOITURE " +text DX +text +cr
+
 	then;
-	
-	"Seulement " +text +canadadays " days until CANADA!!!" +text +cr	
-	
+
+	"Plus que " +text +canadadays " de conduite avant d'arriver au CANADA!!!" +text +cr
+
 ;
 
 }

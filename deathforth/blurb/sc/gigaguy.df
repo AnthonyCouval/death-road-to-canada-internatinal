@@ -1,19 +1,19 @@
-	: GIGAGUY-oneline1 "pew pew pew pew pew" ;
-	: GIGAGUY-oneline2 "Jadore porter des collants!" ;
-	: GIGAGUY-oneline3 "'Ce n'est pas un jeu costume! C'est une affaire costumee!" ;
-	: GIGAGUY-oneline4 "Si je pouvais trouver des robots malefiques a combattre, je pourrais voler leurs pouvoirs." ;
-	: GIGAGUY-oneline5 "voopvoopvoopvoopvoop BOUM" ;
-	: GIGAGUY-oneline6 "Jai une confession: je fais tous les bruits de blaster avec ma bouche." ;
-	: GIGAGUY-oneline7 "Jai perdu mon chien robot." ;
-	: GIGAGUY-oneline8 "Attention aux trous de pieux qui tuent instantanement." ;
-	: GIGAGUY-oneline9 "Je ne peux rien porter parce que mon collant n'a pas de poches." ;
-	: GIGAGUY-oneline10 "'Si c'etait une apocalypse de robots, je serais roi maintenant." ;
-	: GIGAGUY-oneline11 "No more conventions to videogame cosplay at..." ;
-	: GIGAGUY-oneline12 "Jai fait ce Giga Guster moi meme avec du feutre et du plastique." ;
-	: GIGAGUY-oneline13 "'Je ne veux pas tacher ce costume plus qu'il ne l'est deja." ;
-	: GIGAGUY-oneline14 "'Trouvons DR DWIGHT pour que je puisse enfin ameliorer mon tableau de bord." ;
-	: GIGAGUY-oneline15 "Ou diable est le bouton de saut?" ;
-	: GIGAGUY-oneline16 "'Je me sentirais plus a l'aise si je pouvais trouver une vie supplementaire." ;
+	: GIGAGUY-oneline1 "pan pan pan pan pan" ;
+	: GIGAGUY-oneline2 "J'adore porter des collants !" ;
+	: GIGAGUY-oneline3 "Ce n'est pas un jeu costume ! C'est du business costume !" ;
+	: GIGAGUY-oneline4 "Si je pouvais trouver des robots malefiques a combattre, je pourrais leur voler leurs pouvoirs." ;
+	: GIGAGUY-oneline5 "voopvoopvoopvoopvoop BOOM" ;
+	: GIGAGUY-oneline6 "J'ai une confession a faire : je fais juste tous les bruits de blaster avec ma bouche." ;
+	: GIGAGUY-oneline7 "J'ai egare mon chien robot." ;
+	: GIGAGUY-oneline8 "Attention aux fosses a pointes qui tuent instantanement." ;
+	: GIGAGUY-oneline9 "Je ne peux rien transporter parce que mes collants n'ont pas de poches." ;
+	: GIGAGUY-oneline10 "Si c'etait une apocalypse robotique, je serais roi a l'heure actuelle." ;
+	: GIGAGUY-oneline11 "Termine les conventions de jeux video et le cosplay..." ;
+	: GIGAGUY-oneline12 "J'ai fabrique ce Giga Blaster moi-meme avec des feutres et du plastique." ;
+	: GIGAGUY-oneline13 "Je ne veux pas tacher ce costume davantage qu'il ne l'est deja." ;
+	: GIGAGUY-oneline14 "Trouvons le Dr Dwight pour que je puisse enfin ameliorer mon dash." ;
+	: GIGAGUY-oneline15 "Ou diable est le bouton de saut ?" ;
+	: GIGAGUY-oneline16 "Je me sentirais plus a l'aise si je pouvais trouver une vie supplementaire." ;
 
 	deck-new
 		card: GIGAGUY-oneline1

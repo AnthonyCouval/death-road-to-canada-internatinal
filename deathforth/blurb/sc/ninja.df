@@ -1,5 +1,5 @@
-	: NINJA-oneline1 "' Si seul notre ennemi n'etait pas si facile a couper en deux.'" ;
-	: NINJA-oneline2 "' C'est non pas l'arme, c'est celui qui la manie.'," ;
+	: NINJA-oneline1 "Si seulement notre ennemi n'était pas si facile a couper en deux." ;
+	: NINJA-oneline2 "Ce n'est pas la lame qui compte, c'est la personne qui la manie." ;
 	: NINJA-oneline3 "Hmmm......." ;
 
 	deck-new
@@ -10,16 +10,16 @@
 	NINJA-ONELINERS var ninja-oneliners
 	NINJA-ONELINERS shuffles to ninja-oneliners
 
-	: NINJA-emote1 "  glisse son epee hors de la fenetre et decapite un zombie." ;
-	: NINJA-emote2 "  degaine legerement son epee puis la remet doucement dans sa gaines.," ;
-	: NINJA-emote3 "  repare silencieusement sa bandelette de tete." ;
-	: NINJA-emote4 "  se voit avoir son bandeau de tete bloque dans le siege." ;
-	: NINJA-emote5 "  claque de la langue a elle meme." ;
-	: NINJA-emote6 "  regarde fixement vers lhorizon lointain." ;
-	: NINJA-emote7 "  deboucle et boucle sa ceinture de securite sans faire de bruit." ;
-	: NINJA-emote8 "  reste silencieusement." ;
-	: NINJA-emote9 "  refuse de chanter pendant le chant a voix haute." ;
-	: NINJA-emote10 "  ajuste silencieusement son epee." ;
+	: NINJA-emote1 " fait passer sa lame par la fenetre et decapite un zombie." ;
+	: NINJA-emote2 " sort legerement son katana de son fourreau puis le remet tout doucement." ;
+	: NINJA-emote3 " lui remet silencieusement son bandeau fantaisie." ;
+	: NINJA-emote4 " coince son bandeau dans le siège." ;
+	: NINJA-emote5 " fait claquer sa langue sur son palais." ;
+	: NINJA-emote6 " fixe l'horizon au loin." ;
+	: NINJA-emote7 " deboucle et boucle sa ceinture de securite sans un bruit." ;
+	: NINJA-emote8 " s'assoit en silence." ;
+	: NINJA-emote9 " refuse de chanter pendant la chanson." ;
+	: NINJA-emote10 " aiguise silencieusement son katana." ;
 
 	deck-new
 		card: NINJA-emote1
@@ -34,8 +34,8 @@
 		card: NINJA-emote10
 	constant NINJA-EMOTES
 	NINJA-EMOTES var ninja-emotes
-	NINJA-EMOTES shuffles to ninja-emotes	
-	
+	NINJA-EMOTES shuffles to ninja-emotes
+
 : ninja-oneliner
 	ninja-oneliners depths 0= if NINJA-ONELINERS shuffles to ninja-oneliners then
 	blurbslot 0= if

@@ -1,9 +1,9 @@
 // TO-DO: Play Don't Shit Your Pants for ideas
 
-	: DSYP-emote1 " pets de nonne" ;
-	: DSYP-emote2 " pet" ;
-	: DSYP-emote3 " pet" ;
-	: DSYP-emote4 " pet" ;
+	: DSYP-emote1 " pete." ;
+	: DSYP-emote2 " prout" ;
+	: DSYP-emote3 " prout" ;
+	: DSYP-emote4 " prout" ;
 
 	deck-new
 		card: DSYP-emote1
@@ -11,9 +11,9 @@
 		card: DSYP-emote3
 		card: DSYP-emote4 *)
 	constant DSYP-EMOTES
-	DSYP-EMOTES var dsyp-emotes	
+	DSYP-EMOTES var dsyp-emotes
 	DSYP-EMOTES shuffles to dsyp-emotes
-	
+
 : dsyp-emote
 	dsyp-emotes depths 0= if DSYP-EMOTES shuffles to dsyp-emotes then
 	blurbslot 0= if
@@ -22,8 +22,8 @@
 ;
 
 : dsyp-fart
-	blurbslot 0= if 
-		"*pet*" blurbsay
+	blurbslot 0= if
+		"*prout*" blurbsay
 	then
 ;
 

@@ -1,19 +1,19 @@
 	: MOODY-oneline1 "La base lunaire me manque, cet endroit sent mauvais." ;
-	: MOODY-oneline2 "'Au moins je combats des zombies et non des demons." ;
-	: MOODY-oneline3 "'Je suis de mauvaise humeur." ;
-	: MOODY-oneline4 "Personne ne dit a Moody ce quil doit faire!" ;
-	: MOODY-oneline5 "Dechirer et lacerer!" ;
-	: MOODY-oneline6 "AAAUGH! No wait, false alarm I'm fine." ;
-	: MOODY-oneline7 "Ooomp... no, no secret doors in this car." ;
-	: MOODY-oneline8 "Jai envie dessayer douvrir tous les murs pour trouver des portes secretes." ;
-	: MOODY-oneline9 "Needs more radioactive barrels..." ;
-	: MOODY-oneline10 "Cette limite de trois armes est nulle." ;
-	: MOODY-oneline11 "A lepoque je pouvais porter neuf armes a la fois!" ;
-	: MOODY-oneline12 "Jobtiens plus de munitions pour plasmas en bourrant des piles et des emballages de chewing gum dans mon arme." ;
-	: MOODY-oneline13 "Jai une tonne de ces tronconneuses, jen jette une apres chaque utilisation." ;
-	: MOODY-oneline14 "Jai opte pour des tronconneuses spatiales jetables ecologiques. Pas dessence!" ;
-	: MOODY-oneline15 "Je m'excuse d'avance pour m'etre accidentellement fait exploser." ;
-	: MOODY-oneline16 "Je veux toutes les munitions!" ;
+	: MOODY-oneline2 "Au moins je me bats contre des zombies et non contre des demons." ;
+	: MOODY-oneline3 "Je suis Moody." ;
+	: MOODY-oneline4 "Personne ne dit a Moody ce qu'il doit faire!" ;
+	: MOODY-oneline5 "Dechire et lacere !" ;
+	: MOODY-oneline6 "AAARGHHH! Non en fait c'est une fausse alerte, je vais bien." ;
+	: MOODY-oneline7 "Ooomp... non, pas de portes secretes dans cette voiture." ;
+	: MOODY-oneline8 "J'ai envie d'essayer d'ouvrir tous les murs pour y trouver des portes secretes." ;
+	: MOODY-oneline9 "Il nous faut plus de barils radioactifs..." ;
+	: MOODY-oneline10 "Cette limite de trois fusils, c'est nul." ;
+	: MOODY-oneline11 "A l'epoque, je pouvais porter neuf armes a la fois !" ;
+	: MOODY-oneline12 "Je recupere plus de munitions de plasma en fourrant des piles et des emballages de chewing-gum dans mon arme." ;
+	: MOODY-oneline13 "J'ai une tonne de ces tronconneuses la, j'en jette une apras chaque utilisation." ;
+	: MOODY-oneline14 "Je suis passe aux tronconneuses spatiales ecologiques jetables. Pas d'essence avec ca !" ;
+	: MOODY-oneline15 "Je vais m'excuser a l'avance de me faire exploser accidentellement." ;
+	: MOODY-oneline16 "Je veux toutes les munitions." ;
 
 	deck-new
 		card: MOODY-oneline1

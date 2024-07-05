@@ -107,13 +107,13 @@
 	: one-line1 "Tout ira bien si je peux me rendre au Canada." ;
 	: one-line2 "Les zombies ne sont pas un probleme. Enfin, peut etre un petit probleme." ;
 	: one-line3 "Rooaaaad triiiiip." ;
-	: one-line4 "Tout sent tres different quavant que le savon devienne rare." ;
-	: one-line5 "Hope I don't run into any more bandits..." ;
+	: one-line4 "Tout a une odeur differente de celle qu'on connaissait avant que le savon ne devienne rare." ;
+	: one-line5 "J'espere ne pas tomber sur d'autres bandits..." ;
 	: one-line6 ($ "Avec la civilisation disparue, ce qui me manque le plus, cest " .. civnoun .. "." $) ;
-	: one-line7 "If only we knew about throwing chairs when the zombies first showed up..." ;
-	: one-line8 "I wonder if I could get strong enough to just throw the car at zombies..." ;
+	: one-line7 "Si seulement nous avions su qu'il fallait jeter des chaises lorsque les zombies sont apparus pour la premiere fois..." ;
+	: one-line8 "Je me demande si je pourrais devenir assez fort pour jeter la voiture sur les zombies..." ;
 	: one-line9 "On y est presque?" ;
-	: one-line10 "Let's hope the car doesn't break down..." ;
+	: one-line10 "Esperons que la voiture ne tombe pas en panne..." ;
 
 	deck-new
 		card: one-line1
@@ -142,7 +142,7 @@
 		card: legend-bodybuild
 		card: whiner
 		card: brooding
-		card: smalltalk 
+		card: smalltalk
 		10 cards: one-liner
 
 	constant BLURB-DECK

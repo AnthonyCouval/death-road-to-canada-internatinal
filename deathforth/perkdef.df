@@ -14,26 +14,26 @@ perkdef{
 // Traits
 
 : paranoidtrait args( chara )
-	"PARANOIA APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"PARANOIA APPLIQUE AU PERSO " type <- chara .name@ print
 	6 <- chara .wits! 0 <- chara .attitude!
 	<- chara .witsREV <- chara .attitudeREV
 ;
 
 : oblivtrait args( chara )
-	"OBLIVIEUX APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"INCONSCIENT APPLIQUE AU PERSO " type <- chara .name@ print
 	0 <- chara .wits! 6 <- chara .attitude!
 	<- chara .witsREV <- chara .attitudeREV
 ;
 
 : bandittrait args( chara )
-	"BANDIT APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"BANDIT APPLIQUE AU PERSO " type <- chara .name@ print
 	0 <- chara .composure! 0 <- chara .loyalty!
 	boring <- chara .wits! boring <- chara .attitude!
 	<- chara .temperREV <- chara .loyaltyREV
 ;
 
 : charmtrait args( chara )
-	"CHARMANT APPLIQUE SUR CHAR " type <- chara .name@ print
+	"CHARMEUR APPLIQUE AU PERSO " type <- chara .name@ print
 	6 <- chara .wits! 6 <- chara .attitude!
 	<- chara .witsREV <- chara .attitudeREV
 ;
@@ -41,14 +41,14 @@ perkdef{
 : tmgrating-main-events ( teid ) args( chara eventid )
 	<- chara .party@ 0= if then;
 	<- eventid MAIN_EVENT_DRIVING_START = if
-		WEAPON_SPORTSHORN <- chara .weapona@ = if 
+		WEAPON_SPORTSHORN <- chara .weapona@ = if
 			20 <- chara .stackeda!
 		then;
 	then;
 ;
 
 : gratingtrait args( chara )
-	"APPLICATION DE RAISINAGE SUR LE PERSONNAGE " type <- chara .name@ print
+	"IRRITANT APPLIQUE AU PERSO " type <- chara .name@ print
 	0 <- chara .wits! 0 <- chara .attitude!
 	<- chara .witsREV <- chara .attitudeREV
 	WEAPON_SPORTSHORN <- chara .trademarkwep
@@ -58,14 +58,14 @@ perkdef{
 ;
 
 : fiercetrait args( chara )
-	"TEMPS FROID ET DUR APPLIQUE SUR LE PERSONNAGE " type <- chara .name@ print
+	"CARACTERE IMPULSIF APPLIQUE AU PERSO " type <- chara .name@ print
 	0 <- chara .composure!
 	1 STAT_STRENGTH <- chara .stat+
 	<- chara .temperREV <- chara .strengthREV
 ;
 
 : calmtrait args( chara )
-	"CALME AUX AGRESSIONS APPLIQUEE SUR LE PERSONNAGE " type <- chara .name@ print
+	"SANG-FROID APPLIQUEE AU PERSO " type <- chara .name@ print
 	6 <- chara .composure!
 	1 STAT_SHOOTING <- chara .stat+
 	<- chara .temperREV <- chara .shootingREV
@@ -73,7 +73,7 @@ perkdef{
 ;
 
 : nurturetrait args( chara )
-	"SOINS APPLIQUES SUR LE PERSONNAGE " type <- chara .name@ print
+	"BIENVEILLANT APPLIQUE AU PERSO " type <- chara .name@ print
 	boring <- chara .wits! 6 <- chara .attitude!
 	1 STAT_MEDICAL <- chara .bonus+
 	1 STAT_MEDICAL <- chara .stat+
@@ -84,14 +84,14 @@ perkdef{
 : tminvent-main-events ( teid ) args( chara eventid )
 	<- chara .party@ 0= if then;
 	<- eventid MAIN_EVENT_DRIVING_START = if
-		WEAPON_EBLOWER <- chara .weapona@ = if 
+		WEAPON_EBLOWER <- chara .weapona@ = if
 			25 <- chara .stackeda!
 		then;
 	then;
 ;
 
 : inventtrait args( chara )
-	"INVENTIF APPLIQUE SUR LE PERSONNAGE " type <- chara .name@ print
+	"INVENTIF APPLIQUE AU PERSONNAGE " type <- chara .name@ print
 	6 <- chara .wits! boring <- chara .attitude!
 	1 STAT_MECHANICAL <- chara .bonus+
 	1 STAT_MECHANICAL <- chara .stat+
@@ -103,23 +103,23 @@ perkdef{
 ;
 
 : frantictrait args( chara )
-	"GROGNARD INCONTROLABLE APPLIQUE SUR LE PERSONNAGE " type <- chara .name@ print
+	"PLEURNICHARD APPLIQUE AU PERSO " type <- chara .name@ print
 	boring <- chara .wits! 0 <- chara .attitude!
-	1 STAT_DEXTERITY <- chara .stat+ 
+	1 STAT_DEXTERITY <- chara .stat+
 	-1 STAT_VITALITY <- chara .stat+ <- chara .health--
 	<- chara .attitudeREV
 	WEAPON_NIGHTSTICK <- chara .trademarkwep
 ;
 
 : toughtrait args( chara )
-	"TYPE RESISTANT APPLIQUE SUR LE PERSONNAGE " type <- chara .name@ print
+	"RESILIENT APPLIQUE AU PERSO " type <- chara .name@ print
 	boring <- chara .attitude! 0 <- chara .wits!
 	1 STAT_VITALITY <- chara .stat+ <- chara .health++nostat
 	<- chara .witsREV
 ;
 
 : berserktrait args( chara )
-	"FOLLE DE RAGE! APPLIQUEE SUR LE PERSONNAGE " type <- chara .name@ print
+	"FURIE! APPLIQUEE SUR LE PERSO " type <- chara .name@ print
 	0 <- chara .wits! 0 <- chara .attitude! 0 <- chara .composure! 0 <- chara .loyalty!
 	1 STAT_STRENGTH <- chara .bonus+
 	1 STAT_FITNESS <- chara .bonus+
@@ -128,52 +128,52 @@ perkdef{
 	3 STAT_FITNESS <- chara .stat+
 	3 STAT_SHOOTING <- chara .stat+
 	-2 STAT_VITALITY <- chara .stat+ <- chara .health-- <- chara .health--
-	<- chara .witsREV <- chara .attitudeREV <- chara .temperREV <- chara .loyaltyREV 
+	<- chara .witsREV <- chara .attitudeREV <- chara .temperREV <- chara .loyaltyREV
 	<- chara .shootingREV <- chara .strengthREV <- chara .fitnessREV
 ;
 
 : civiltrait args( chara )
-	"CIVILISE! APPLIQUE SUR LE PERSONNAGE " type <- chara .name@ print
+	"CIVILISE! APPLIQUE AU PERSO " type <- chara .name@ print
 	6 <- chara .wits! 6 <- chara .attitude! 6 <- chara .composure! 6 <- chara .loyalty!
 	1 STAT_MEDICAL <- chara .stat+ 1 STAT_MECHANICAL <- chara .stat+
 	-3 STAT_MORALE <- chara .bonus+ 4 <- chara .morale!
-	<- chara .witsREV <- chara .attitudeREV <- chara .temperREV <- chara .loyaltyREV 
+	<- chara .witsREV <- chara .attitudeREV <- chara .temperREV <- chara .loyaltyREV
 	<- chara .mechanicREV <- chara .medicalREV
 	WEAPON_GUITAR <- chara .trademarkwep
 ;
 
 : mysterytrait args( chara )
-	"Mysterieux APPLIQUE SUR LE PERSONNAGE " type <- chara .name@ print
+	"MYSTERIEUX APPLIQUE AU PERSO " type <- chara .name@ print
 	hilow <- chara .wits! hilow <- chara .attitude! hilow <- chara .composure!
-	<- chara .perk@ "Artiste Martial" $= if
+	<- chara .perk@ "Expert des arts martiaux" $= if
 		3 for 50 %chance if 1 STAT_STRENGTH <- chara .stat+ else 1 STAT_FITNESS <- chara .stat+ then next
 	else
 		50 %chance if 1 STAT_STRENGTH <- chara .stat+ else 1 STAT_SHOOTING <- chara .stat+ then
-		50 %chance if 1 STAT_STRENGTH <- chara .stat+ else 1 STAT_FITNESS <- chara .stat+ then  
+		50 %chance if 1 STAT_STRENGTH <- chara .stat+ else 1 STAT_FITNESS <- chara .stat+ then
 		50 %chance if 1 STAT_FITNESS <- chara .stat+ else 1 STAT_SHOOTING <- chara .stat+ then
 	then
 ;
 
 : practicaltrait args( chara )
-	"PRATIQUE APPLIQUEE SUR LE PERSONNAGE " type <- chara .name@ print
+	"PRAGMATIQUE APPLIQUE AU PERSO " type <- chara .name@ print
 	boring <- chara .wits! boring <- chara .attitude! boring <- chara .composure!
 	// <- chara .witsREV <- chara .attitudeREV <- chara .temperREV
 	50 %chance if 1 STAT_STRENGTH <- chara .stat+ else 1 STAT_SHOOTING <- chara .stat+ then
-	50 %chance if 1 STAT_STRENGTH <- chara .stat+ else 1 STAT_FITNESS <- chara .stat+ then  
+	50 %chance if 1 STAT_STRENGTH <- chara .stat+ else 1 STAT_FITNESS <- chara .stat+ then
 	50 %chance if 1 STAT_FITNESS <- chara .stat+ else 1 STAT_SHOOTING <- chara .stat+ then
 	50 %chance if 1 STAT_MEDICAL <- chara .stat+ else 1 STAT_MECHANICAL <- chara .stat+ then
-	1 STAT_MEDICAL <- chara .stat+ 1 STAT_MECHANICAL <- chara .stat+	
+	1 STAT_MEDICAL <- chara .stat+ 1 STAT_MECHANICAL <- chara .stat+
 ;
 
 : warriortrait args( chara )
-	"Mysterieux APPLIQUE SUR LE PERSONNAGE " type <- chara .name@ print
+	"GUERRIER APPLIQUE AU PERSO " type <- chara .name@ print
 	2 STAT_STRENGTH <- chara .stat+ 2 STAT_FITNESS <- chara .stat+
 	boring <- chara .wits! boring <- chara .attitude! boring <- chara .composure!
 	<- chara .strengthREV <- chara .fitnessREV
 ;
 
 : spectrait args( chara )
-	"SPECIALIST APPLIED ON CHARACTER " type <- chara .name@ print
+	"SPECIALISTE APPLIQUE AU PERSONNAGE " type <- chara .name@ print
 	// boring <- chara .wits! boring <- chara .attitude! boring <- chara .composure!
 	1 STAT_STRENGTH <- chara .bonus+
 	1 STAT_FITNESS <- chara .bonus+
@@ -189,7 +189,7 @@ perkdef{
 		0 <- chara .weaponb!
 		60 <- chara .stackeda!
 	then
-	<- chara .perk@ "Collectionneur darmes" $= if
+	<- chara .perk@ "Collectionneur d'armes" $= if
 		gstats{ perk-guncrazy } 3 >= if 1 WEAPON_SHOTGUN trunk.weapon+ then
 		gstats{ perk-guncrazy } 2 >= if 1 WEAPON_RIFLE trunk.weapon+ then
 		gstats{ perk-guncrazy } 3 < if 1 WEAPON_PISTOL trunk.weapon+ then
@@ -206,8 +206,8 @@ perkdef{
 ;
 
 : travellighttrait args( chara )
-	"TRAVELLIGHT APPLIQUE SUR CHAR " type <- chara .name@ print
-	1 STAT_DEXTERITY <- chara .stat+ 
+	"VOYAGE LEGER APPLIQUE AU PERSO " type <- chara .name@ print
+	1 STAT_DEXTERITY <- chara .stat+
 	1 STAT_FITNESS <- chara .stat+
 	2 <- chara .carrying.slot_count!
 	<- chara .perk@ "Collectionneur darmes" $= if
@@ -218,9 +218,9 @@ perkdef{
 ;
 
 : grapplertrait args( chara )
-	"GRAPPLER APPLIQUE SUR CHAR " type <- chara .name@ print
+	"LUTTEUR APPLIQUE AU PERSO " type <- chara .name@ print
 	boring <- chara .wits! boring <- chara .attitude! boring <- chara .composure!
-	
+
 	<- chara .perk@ "Ex lutteur" $= if
 		// 2 STAT_STRENGTH <- chara .stat+ 2 STAT_FITNESS <- chara .stat+
 		8 <- chara .specialbody!
@@ -229,28 +229,28 @@ perkdef{
 	else
 		<- chara statmod{ .zombielifter }
 	then
-	
+
 	WEAPON_NIGHTSTICK <- chara .trademarkwep
 ;
 
 : herotypetrait args( chara )
-	"HEROTYPE APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"ALTRUISTE APPLIQUE AU PERSO " type <- chara .name@ print
 	6 <- chara .loyalty! <- chara .loyaltyREV
 ;
 
 : soundsleeptrait args( chara )
-	"SOMMEIL PROFOND APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"SOMMEIL LOURD APPLIQUE AU PERSO " type <- chara .name@ print
 	<- chara statmod{ .soundsleep }
 ;
 
 : gourmandtrait args( chara )
-	"GOURMAND APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"GOURMET APPLIQUE AU PERSO " type <- chara .name@ print
 	1 STAT_VITALITY <- chara .stat+	<- chara .health++nostat
 	WEAPON_SCLEAVER <- chara .trademarkwep
 ;
 
 : cityseektrait args( chara )
-	"CHERCHEUR DE VILLE APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"EXPLORATEUR URBAIN APPLIQUE AU PERSO " type <- chara .name@ print
 ;
 
 : tinyeattrait args( chara )
@@ -260,7 +260,7 @@ perkdef{
 ;
 
 : animefantrait args( chara )
-	"FAN DANIME APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"FAN D'ANIMES APPLIQUE SUR LE CHAR " type <- chara .name@ print
 	4 <- chara .morale!
 	WEAPON_TRUEKATANA <- chara .weapona!
 	1 <- chara .weapon_nodropa!
@@ -283,13 +283,13 @@ perkdef{
 ;
 
 : fastlearntrait args( chara )
-	"APPRENTISSAGE RAPIDE APPLIQUE SUR LE CHAR " type <- chara .name@ print
+	"APPRENTISSAGE RAPIDE APPLIQUE AU PERSO " type <- chara .name@ print
 ;
-	
+
 // Perks
 
 : healthcareperk args( chara )
-	"SOINS DE SANTE APPLIQUES SUR LE CHAR " type <- chara .name@ print
+	"SOUCIEUX DE LA SANTE APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-healthcare } 3 >= if
 		7 trunk-medical+
 		2 STAT_MEDICAL <- chara .stat+
@@ -303,7 +303,7 @@ perkdef{
 		then
 	then crap-weapon <- chara .weapona!
 ;
-	
+
 : mechanicperk args( chara )
 	"MECANICIEN APPLIQUE SUR LE CHAR " type <- chara .name@ print
 	gstats{ perk-mechanic } 3 >= if
@@ -313,9 +313,9 @@ perkdef{
 			2 STAT_MECHANICAL <- chara .stat+ 1 STAT_FITNESS <- chara .stat+
 		else
 			1 STAT_MECHANICAL <- chara .stat+ 1 STAT_FITNESS <- chara .stat+
-		then	
+		then
 	then WEAPON_WRENCH <- chara .weapona!
-	
+
 ;
 
 : athleteperk args( chara )
@@ -327,12 +327,12 @@ perkdef{
 			2 STAT_FITNESS <- chara .stat+ 1 STAT_STRENGTH <- chara .stat+
 		else
 			1 STAT_FITNESS <- chara .stat+ 1 STAT_STRENGTH <- chara .stat+
-		then	
+		then
 	then sports-weapon <- chara .weapona!
 ;
 
 : fighterperk args( chara )
-	"X " type <- chara .name@ print
+	"COMBATTANT APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-fighter } 3 >= if
 		2 STAT_STRENGTH <- chara .stat+ 2 STAT_SHOOTING <- chara .stat+
 	else
@@ -340,13 +340,13 @@ perkdef{
 			2 STAT_STRENGTH <- chara .stat+ 1 STAT_SHOOTING <- chara .stat+
 		else
 			1 STAT_STRENGTH <- chara .stat+ 1 STAT_SHOOTING <- chara .stat+
-		then	
+		then
 	then WEAPON_HATCHET <- chara .weapona!
 
 ;
 
 : surgeonperk args( chara )
-	"CHIRURGIEN APPLIQUE SUR CHAR " type <- chara .name@ print
+	"CHIRURGIEN APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-surgeon } 3 >= if
 		2 STAT_MEDICAL <- chara .stat+ 2 STAT_SHOOTING <- chara .stat+
 	else
@@ -354,12 +354,12 @@ perkdef{
 			2 STAT_MEDICAL <- chara .stat+ 1 STAT_SHOOTING <- chara .stat+
 		else
 			1 STAT_MEDICAL <- chara .stat+ 1 STAT_SHOOTING <- chara .stat+
-		then	
+		then
 	then WEAPON_SCALPEL <- chara .weapona!
 ;
 
 : gungineerperk args( chara )
-	"GUNGINEER APPLIQUE SUR CHAR " type <- chara .name@ print
+	"EXPERT EN ARMES APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-gungineer } 3 >= if
 		2 STAT_MECHANICAL <- chara .stat+ 2 STAT_SHOOTING <- chara .stat+
 	else
@@ -367,7 +367,7 @@ perkdef{
 			1 STAT_MECHANICAL <- chara .stat+ 2 STAT_SHOOTING <- chara .stat+
 		else
 			1 STAT_MECHANICAL <- chara .stat+ 1 STAT_SHOOTING <- chara .stat+
-		then	
+		then
 	then WEAPON_CROWBAR <- chara .weapona!
 ;
 
@@ -375,31 +375,31 @@ perkdef{
 // I set them to have no level in the new system for legacy support
 
 : pistolperk args( chara )
-	"PISTOLET APPLIQUE SUR CHAR " type <- chara .name@ print
-	3 STAT_SHOOTING <- chara .stat+	
+	"PISTOLET APPLIQUE AU PERSO " type <- chara .name@ print
+	3 STAT_SHOOTING <- chara .stat+
 	30 trunk-bullet+
 	crap-weapon <- chara .weapona!
 	WEAPON_PISTOL <- chara .weaponb!
 ;
 
 : shotgunperk args( chara )
-	"SHOTGUN APPLIED ON CHAR " type <- chara .name@ print
-	3 STAT_SHOOTING <- chara .stat+	
+	"FUSIL A POMPE APPLIED AU PERSO " type <- chara .name@ print
+	3 STAT_SHOOTING <- chara .stat+
 	crap-weapon <- chara .weapona!
 	15 trunk-shotgun-shell+
-	WEAPON_SHOTGUN <- chara .weaponb!	
+	WEAPON_SHOTGUN <- chara .weaponb!
 ;
 
 : rifleperk args( chara )
-	"RIFLE APPLIQUE SUR CHAR " type <- chara .name@ print
+	"FUSIL APPLIQUE AU PERSO " type <- chara .name@ print
 	3 STAT_SHOOTING <- chara .stat+
 	crap-weapon <- chara .weapona!
 	24 trunk-rifle-shell+
-	WEAPON_RIFLE <- chara .weaponb!	
+	WEAPON_RIFLE <- chara .weaponb!
 ;
 
 : guncrazyperk args( chara )
-	"FOU DE FUSIL APPLIQUE SUR CHAR " type <- chara .name@ print
+	"FOU DES FLINGUES APPLIQUE AU PERSO " type <- chara .name@ print
 	crap-weapon <- chara .weapona!
 	gstats{ perk-guncrazy } 3 >= if
 		3 STAT_SHOOTING <- chara .stat+
@@ -427,10 +427,10 @@ perkdef{
 	shuffles pops nip
 ;
 
-: carnut? args( chara ) <- chara .perk@ "Car Nut" $= ;
+: carnut? args( chara ) <- chara .perk@ "Fana de voiture" $= ;
 
 : carnutperk args( chara )
-	"CAR NUT APPLIQUE SUR CHAR " type <- chara .name@ print
+	"FAN D'AUTO APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-carnut } 3 >= if
 		3 STAT_MECHANICAL <- chara .stat+
 	else
@@ -438,7 +438,7 @@ perkdef{
 			2 STAT_MECHANICAL <- chara .stat+
 		else
 			1 STAT_MECHANICAL <- chara .stat+
-		then	
+		then
 	then crap-weapon <- chara .weapona!
 // Commented out to fix the "des visages familiers donnent une voiture contre leur gre" problem
 //	carnut-picker to starting-car
@@ -446,20 +446,20 @@ perkdef{
 ;
 
 : megabuffperk args( chara )
-	"MEGABUFF APPLIQUE SUR CHAR " type <- chara .name@ print
+	"HYPER COSTAUD APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-megabuff } 3 >= if
 		4 STAT_STRENGTH <- chara .stat+
 	else
 		gstats{ perk-megabuff } 2 >= if
-			3 STAT_STRENGTH <- chara .stat+	
+			3 STAT_STRENGTH <- chara .stat+
 		else
-			2 STAT_STRENGTH <- chara .stat+	
-		then	
+			2 STAT_STRENGTH <- chara .stat+
+		then
 	then WEAPON_METAL <- chara .weapona!
 ;
 
 : ultrafitperk args( chara )
-	"ULTRAFIT APPLIQUE SUR CHAR " type <- chara .name@ print
+	"TRES EN FORME APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-ultrafit } 3 >= if
 		4 STAT_FITNESS <- chara .stat+
 	else
@@ -467,27 +467,27 @@ perkdef{
 			3 STAT_FITNESS <- chara .stat+
 		else
 			2 STAT_FITNESS <- chara .stat+
-		then	
+		then
 	then crap-weapon <- chara .weapona! 2 trunk-food+
 ;
 
 : bruiserperk args( chara )
-	"BRUISER APPLIQUE SUR CHAR " type <- chara .name@ print
+	"BAGARREUR APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-bruiser } 3 >= if
 		3 STAT_STRENGTH <- chara .stat+
 	else
 		gstats{ perk-bruiser } 2 >= if
-			2 STAT_STRENGTH <- chara .stat+	
+			2 STAT_STRENGTH <- chara .stat+
 		else
-			1 STAT_STRENGTH <- chara .stat+	
-		then	
-	then WEAPON_BOXING <- chara .weapon_default! 
+			1 STAT_STRENGTH <- chara .stat+
+		then
+	then WEAPON_BOXING <- chara .weapon_default!
 	1 STAT_VITALITY <- chara .stat+	<- chara .health++nostat
 	-1 STAT_DEXTERITY <- chara .bonus+
 ;
 
 : martialartistperk args( chara )
-	"MARTIAL ARTIST APPLIQUE SUR CHAR " type <- chara .name@ print
+	"EXPERT DES ARTS MARTIAUX APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-martialartist } 3 >= if
 		2 STAT_FITNESS <- chara .stat+ 1 STAT_FITNESS <- chara .bonus+
 	else
@@ -495,26 +495,26 @@ perkdef{
 			2 STAT_FITNESS <- chara .stat+
 		else
 			1 STAT_FITNESS <- chara .stat+
-		then	
+		then
 	then 1 STAT_STRENGTH <- chara .stat+
 	WEAPON_KUNG <- chara .weapon_default! <- chara .nocanshoot
 	-10 STAT_SHOOTING <- chara .bonus+
 ;
 
 : dogfriendperk args( chara )
-	"AMI DU CHIEN APPLIQUE SUR CHAR " type <- chara .name@ print
+	"AMI DES CHIENS APPLIQUE AU PERSO " type <- chara .name@ print
 	crap-weapon <- chara .weapona!
 	<- chara statmod{ .dogpal }
 ;
 
 : explorerperk args( chara )
-	"EXPLORATEUR APPLIQUE SUR CHAR " type <- chara .name@ print
+	"EXPLORATEUR APPLIQUE AU PERSO " type <- chara .name@ print
 	crap-weapon <- chara .weapona!
 	<- chara statmod{ .explorer }
 ;
 
 : exwrestlerperk args( chara )
-	"EX LUTTEUR APPLIQUE SUR CHAR " type <- chara .name@ print
+	"EX LUTTEUR APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-exwrestler } 3 >= if
 		2 STAT_FITNESS <- chara .stat+ 1 STAT_STRENGTH <- chara .stat+
 	else
@@ -522,14 +522,14 @@ perkdef{
 			1 STAT_FITNESS <- chara .stat+ 1 STAT_STRENGTH <- chara .stat+
 		else
 			1 STAT_FITNESS <- chara .stat+
-		then 
+		then
 	then <- chara statmod{ .zombielifter }
 		-3 STAT_SHOOTING <- chara .bonus+
-		0 <- chara .loyalty! <- chara .loyaltyREV 
+		0 <- chara .loyalty! <- chara .loyaltyREV
 ;
 
 : hiddenpotentialperk args( chara )
-	"HIDDENPOT APPLIQUE SUR CHAR " type <- chara .name@ print
+	"POTENTIEL CACHE APPLIQUE AU PERSO " type <- chara .name@ print
 	50 %chance if
 		1 STAT_FITNESS <- chara .bonus+
 		gstats{ perk-hiddenpotential } 2 >= if 1 STAT_STRENGTH <- chara .stat+ then
@@ -547,61 +547,61 @@ perkdef{
 ;
 
 : hagglerperk args( chara )
-	"HAGGLER APPLIQUE SUR CHAR " type <- chara .name@ print
+	"NEGOCIATEUR APPLIQUE AU PERSO " type <- chara .name@ print
 	crap-weapon <- chara .weapona!
 	<- chara statmod{ .haggler }
 ;
 
 : pathfinderperk args( chara )
-	"CHEMINFINDER APPLIQUE SUR CHAR " type <- chara .name@ print
+	"PIONNIER APPLIQUE AU PERSO " type <- chara .name@ print
 	crap-weapon <- chara .weapona!
 	<- chara statmod{ .pathfinder }
 ;
 
 : trademarkperk args( chara )
-	"MARQUE DEPOSEE APPLIQUEE SUR CHAR " type <- chara .name@ print
+	"MARQUE DE FABRIQUE APPLIQUEE AU PERSO " type <- chara .name@ print
 	gstats{ perk-trademark } 3 >= if
 		WEAPON_MACHETE2
 	else
 		gstats{ perk-trademark } 2 >= if
 			50 %chance if WEAPON_ALUMINUM else WEAPON_MACHETE2 then
 		else
-			WEAPON_ALUMINUM 
-		then	
+			WEAPON_ALUMINUM
+		then
 	then <- chara .trademarkwep
 ;
 
 : naturalshotperk args( chara )
-	"NATURALSHOT APPLIQUE SUR CHAR " type <- chara .name@ print
+	"TIR NATUREL APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-naturalshot } 3 >= if
-		2 STAT_SHOOTING <- chara .bonus+ 
+		2 STAT_SHOOTING <- chara .bonus+
 	else
 		gstats{ perk-naturalshot } 2 >= if
-			1 STAT_SHOOTING <- chara .bonus+ 
+			1 STAT_SHOOTING <- chara .bonus+
 			1 STAT_SHOOTING <- chara .stat+
 		else
-			1 STAT_SHOOTING <- chara .bonus+ 
-		then 
+			1 STAT_SHOOTING <- chara .bonus+
+		then
 	then
 	crap-weapon <- chara .weapona!
 ;
 
 : tstcperk args( chara )
-	"T*S*T*C APPLIQUE SUR CHAR " type <- chara .name@ print
+	"TROP MUSCLE POUR ETRE CONTROLE APPLIQUE AU PERSO " type <- chara .name@ print
 	gstats{ perk-tstc } 3 >= if
-		-4 STAT_FITNESS <- chara .bonus+ 
+		-4 STAT_FITNESS <- chara .bonus+
 	else
 		gstats{ perk-tstc } 2 >= if
-			-5 STAT_FITNESS <- chara .bonus+ 
+			-5 STAT_FITNESS <- chara .bonus+
 		else
-			-6 STAT_FITNESS <- chara .bonus+ 
-		then 
-	then 6 STAT_FITNESS <- chara .stat+ 
+			-6 STAT_FITNESS <- chara .bonus+
+		then
+	then 6 STAT_FITNESS <- chara .stat+
 	6 STAT_STRENGTH <- chara .bonus+
 ;
 
 : shieldofhopeperk args( chara )
-	"SHIELDOFHOPE APPLIQUE SUR CHAR " type <- chara .name@ print
+	"PROTECTEUR APPLIQUE AU PERSO " type <- chara .name@ print
 	crap-weapon <- chara .weapona!
 ;
 
@@ -616,11 +616,11 @@ perkdef{
 : archer-main-events ( teid ) args( chara eventid )
 	<- chara .party@ 0= if then;
 	<- eventid MAIN_EVENT_DRIVING_START = if
-		WEAPON_BOW <- chara .weapona@ = if 
+		WEAPON_BOW <- chara .weapona@ = if
 			<- chara .stackeda@ <- chara archer-formula <- chara .stackeda!
 			<- chara .stackeda@ <- chara archer-max > if <- chara archer-max <- chara .stackeda! then
 		then;
-		WEAPON_BOW <- chara .weaponb@ = if 
+		WEAPON_BOW <- chara .weaponb@ = if
 			<- chara .stackedb@ <- chara archer-formula <- chara .stackedb!
 			<- chara .stackedb@ <- chara archer-max > if <- chara archer-max <- chara .stackedb! then
 		then;
@@ -628,7 +628,7 @@ perkdef{
 ;
 
 : archerperk args( chara )
-	"ARC ET FLECHES APPLIQUES SUR CHAR " type <- chara .name@ print
+	"ARCHER APPLIQUES AU PERSO " type <- chara .name@ print
 	2 STAT_STRENGTH <- chara .stat+
 	crap-weapon <- chara .weapona!
 	WEAPON_BOW <- chara .weaponb!
@@ -652,11 +652,11 @@ perkdef{
 : pyro-main-events ( teid ) args( chara eventid )
 	<- chara .party@ 0= if then;
 	<- eventid MAIN_EVENT_DRIVING_START = if
-		<- chara pyro-weapon <- chara .weapona@ = if 
+		<- chara pyro-weapon <- chara .weapona@ = if
 			<- chara .stackeda@ <- chara pyro-formula <- chara .stackeda!
 			<- chara .stackeda@ <- chara pyro-max > if <- chara pyro-max <- chara .stackeda! then
 		then;
-		<- chara pyro-weapon <- chara .weaponb@ = if 
+		<- chara pyro-weapon <- chara .weaponb@ = if
 			<- chara .stackedb@ <- chara pyro-formula <- chara .stackedb!
 			<- chara .stackedb@ <- chara pyro-max > if <- chara pyro-max <- chara .stackedb! then
 		then;
@@ -664,7 +664,7 @@ perkdef{
 ;
 
 : pyroperk args( chara )
-	"PYROMANE CHAR " type <- chara .name@ print
+	"PERSO PYROMANE " type <- chara .name@ print
 	<- chara statmod{ .fireproof }
 	crap-weapon <- chara .weapona!
 	WEAPON_BLOWTORCH <- chara .weaponb!
@@ -674,28 +674,28 @@ perkdef{
 ;
 
 : NEXT_LEVEL cr$ .. cr$ .. RED .. "NIVEAU SUIVANT : " ;
-: LOCKED cr$ .. cr$ .. RED .. 
+: LOCKED cr$ .. cr$ .. RED ..
 	game.location 0 > if "VERROUILLE ! " else "VERROUILLE : Deverrouillez a la hutte des avantages et des traits a Zombo Town" then
-	
+
 ;
 // Formerly : cr$ .. "NIVEAU SUIVANT : " rbold
 
-: mechaniclevel 
+: mechaniclevel
 	gstats{ perk-mechanic } 3 >= if
 		($ "+ Gagnez 2 points en mecanique !		+ Gagnez 2 points en forme physique !" $) 2 lvl
 	then;
 	gstats{ perk-mechanic } 2 >= if
 		($ "+ Gagnez 2 points en mecanique !		+ Gagnez 1 point en forme physique" .. NEXT_LEVEL .. "2 points en forme physique !" $) 1 lvl
 	then;
-		($ "+ Gagnez 1 point en mecanique		+ Gagnez 1 point en forme physique" .. 
-		gstats{ perk-mechanic } 1 < if 
+		($ "+ Gagnez 1 point en mecanique		+ Gagnez 1 point en forme physique" ..
+		gstats{ perk-mechanic } 1 < if
 			($ LOCKED $) 1 lock
 		else
 			NEXT_LEVEL .. "2 points en mecanique !"
 		then $)
 ;
 
-: athletelevel 
+: athletelevel
 	gstats{ perk-athlete } 3 >= if
 		($ "+ A gagne 2 points dans la fitness !		+ A gagne 2 points dans la force !" $) 2 lvl
 	then;
@@ -705,7 +705,7 @@ perkdef{
 		($ "+ A gagne 1 point dans la fitness		+ A gagne 1 point dans la force" .. NEXT_LEVEL .. "2 points en forme physique !" $)
 ;
 
-: fighterlevel 
+: fighterlevel
 	gstats{ perk-fighter } 3 >= if
 		($ "+ A gagne 2 points dans la force !		+ A gagne 2 points dans le tir!" $) 2 lvl
 	then;
@@ -715,7 +715,7 @@ perkdef{
 		($ "+ A gagne 1 point dans la force		+ A gagne 1 point dans le tir" .. NEXT_LEVEL .. "2 points dans la force !" $)
 ;
 
-: surgeonlevel 
+: surgeonlevel
 	gstats{ perk-surgeon } 3 >= if
 		($ "+ A gagne 2 points dans la medecine !		+ A gagne 2 points dans le tir!" $) 2 lvl
 	then;
@@ -725,7 +725,7 @@ perkdef{
 		($ "+ A gagne 1 point dans la medecine		+ A gagne 1 point dans le tir" .. NEXT_LEVEL .. "2 points dans la medecine !" $)
 ;
 
-: gungineerlevel 
+: gungineerlevel
 	gstats{ perk-gungineer } 3 >= if
 		($ "+ Gagnez 2 points en tir!		+ Gagnez 2 points en mecanique!" $) 2 lvl
 	then;
@@ -735,7 +735,7 @@ perkdef{
 		($ "points in mechanical" .. NEXT_LEVEL .. "2 points dans le tir!" $)
 ;
 
-: healthcarelevel 
+: healthcarelevel
 	gstats{ perk-healthcare } 3 >= if
 		($ "medical supplies" $) 2 lvl
 	then;
@@ -751,7 +751,7 @@ perkdef{
 : shotgunlevel ($ "+ Gagner 3 points en tir !" $) 2 lvl ;
 : riflelevel ($ "+ Gagner 3 points en tir !" $) 2 lvl ;
 
-: guncrazylevel 
+: guncrazylevel
 	gstats{ perk-guncrazy } 3 >= if
 		($ "+ Gain 3 points in shooting!
 			+ Start with a shotgun, rifle, pistol, and ammo!!" $) 2 lvl
@@ -764,7 +764,7 @@ perkdef{
 			+ Start with a pistol and bullets!" .. NEXT_LEVEL .. "2 en tir, et un fusil !" $)
 ;
 
-: carnutlevel 
+: carnutlevel
 	gstats{ perk-carnut } 3 >= if
 		($ "+ Gagner 3 points en mecanique !" $) 2 lvl
 	then;
@@ -774,7 +774,7 @@ perkdef{
 		($ "+ Gagner 1 point en mecanique" .. NEXT_LEVEL .. "2 points en mecanique" $)
 ;
 
-: megabufflevel 
+: megabufflevel
 	gstats{ perk-megabuff } 3 >= if
 		($ "+ Gagner 4 points en force !" $) 2 lvl
 	then;
@@ -784,7 +784,7 @@ perkdef{
 		($ "+ Gagner 2 points en force" .. NEXT_LEVEL .. "3 points en force" $)
 ;
 
-: ultrafitlevel 
+: ultrafitlevel
 	gstats{ perk-ultrafit } 3 >= if
 		($ "gagner 4 points en forme!" $) 2 lvl
 	then;
@@ -794,7 +794,7 @@ perkdef{
 		($ "+ Gagnez 2 points de fitness" .. NEXT_LEVEL .. "3 points de fitness" $)
 ;
 
-: martialartistlevel 
+: martialartistlevel
 	gstats{ perk-martialartist } 3 >= if
 		($ "+ Gain 3 points in fitness, 1 in strength!
 			+ Fitness can go 1 point over the usual maximum!" $) 2 lvl
@@ -805,7 +805,7 @@ perkdef{
 		($ "+ Gagnez 1 points de fitness, 1 de force" .. NEXT_LEVEL .. "2 points de fitness" $)
 ;
 
-: bruiserlevel 
+: bruiserlevel
 	gstats{ perk-bruiser } 3 >= if
 		($ "+ Gagnez 3 points de force!" $) 2 lvl
 	then;
@@ -815,7 +815,7 @@ perkdef{
 		($ "+ Gagnez 1 points de force" .. NEXT_LEVEL .. "2 points de force" $)
 ;
 
-: doglevel 
+: doglevel
 	gstats{ perk-dogfriend } 3 >= if
 		($ "+ 70% de chances supplementaires pour une recrue aleatoire detre un chien" $) 2 lvl
 	then;
@@ -825,7 +825,7 @@ perkdef{
 		($ NEXT_LEVEL .. "35% de chance pour les recrutes detre un chien" $)
 ;
 
-: explorerlevel 
+: explorerlevel
 	gstats{ perk-explorer } 3 >= if
 		($ "+ Les couts de reinitialisation des ABL consomment beaucoup moins de gaz!" $) 2 lvl
 	then;
@@ -835,64 +835,64 @@ perkdef{
 		($ NEXT_LEVEL .. "Moins de gaz pour les reinitialisations des ABL" $)
 ;
 
-: exwrestlerlevel 
+: exwrestlerlevel
 	gstats{ perk-exwrestler } 3 >= if
 		($ "+ Vous gagnez 2 points dans la force !		+ Vous gagnez 1 point dans lendurance!" $) 2 lvl
 	then;
 	gstats{ perk-exwrestler } 2 >= if
 		($ "+ Vous gagnez 1 point dans la force		+ Vous gagnez 1 point dans lendurance!" .. NEXT_LEVEL .. "2 points en forme physique !" $) 1 lvl
 	then;
-		($ "+ Vous gagnez 1 point dans lendurance" .. 
-		gstats{ perk-exwrestler } 1 < if 
+		($ "+ Vous gagnez 1 point dans lendurance" ..
+		gstats{ perk-exwrestler } 1 < if
 			LOCKED 1 lock
 		else
 			NEXT_LEVEL .. "1 point de force !"
 		then $)
 ;
 
-: hiddenpotentiallevel 
+: hiddenpotentiallevel
 	gstats{ perk-hiddenpotential } 3 >= if
 		($ "+ Vous gagnez 1 point dans la competence non choisie		+ Vous gagnez 1 point final dans la force ou lendurance, au hasard!" $) 2 lvl
 	then;
 	gstats{ perk-hiddenpotential } 2 >= if
 		($ "+ Vous gagnez 1 point dans lautre competence" .. NEXT_LEVEL .. "Point aleatoire en fitness ou en force !" $) 1 lvl
 	then;
-		gstats{ perk-hiddenpotential } 1 < if 
+		gstats{ perk-hiddenpotential } 1 < if
 			($ LOCKED $) 1 lock
 		else
 			($ NEXT_LEVEL .. "1 point dans lautre competence" $)
 		then
 ;
 
-: hagglerlevel 
+: hagglerlevel
 	gstats{ perk-haggler } 3 >= if
 		($ "+ Les peages des bandits sont moins chers !" $) 2 lvl
 	then;
 	gstats{ perk-haggler } 2 >= if
 		($ "+ Les peages des bandits sont moins chers" .. NEXT_LEVEL .. "Peages encore plus bas !" $) 1 lvl
 	then;
-		gstats{ perk-haggler } 1 < if 
+		gstats{ perk-haggler } 1 < if
 			($ LOCKED $) 1 lock
 		else
 			($ NEXT_LEVEL .. "Les peages des bandits sont moins chers" $)
 		then
 ;
 
-: pathfinderlevel 
+: pathfinderlevel
 	gstats{ perk-pathfinder } 3 >= if
 		($ "+ 75 % de chances deviter les penalites pour la 2e journee de marche !" $) 2 lvl
 	then;
 	gstats{ perk-pathfinder } 2 >= if
 		($ "+ 60 % de chances deviter les penalites pour la 2e journee de marche" .. NEXT_LEVEL .. "75 % de chances !" $) 1 lvl
 	then;
-		gstats{ perk-pathfinder } 1 < if 
+		gstats{ perk-pathfinder } 1 < if
 			($ LOCKED $) 1 lock
 		else
 			($ NEXT_LEVEL .. "60 % de chances deviter les penalites pour la 2e journee de marche" $)
 		then
 ;
 
-: trademarklevel 
+: trademarklevel
 	gstats{ perk-trademark } 3 >= if
 		($ "+ Larme par defaut est une machette robuste !!" $) 2 lvl
 	then;
@@ -900,29 +900,29 @@ perkdef{
 		($ "+ Arme par defaut : 50 % de chances de batte en aluminium, 50 % de machette" .. NEXT_LEVEL .. "100 % de chance davoir une machette solide !" $) 1 lvl
 	then;
 		($ "+ Larme par defaut est une batte en aluminium !" ..
-		gstats{ perk-trademark } 1 < if 
+		gstats{ perk-trademark } 1 < if
 			($ LOCKED $) 1 lock
 		else
 			($ NEXT_LEVEL .. "50 % de chance davoir une machette solide !" $)
 		then $)
 ;
 
-: naturalshotlevel 
+: naturalshotlevel
 	gstats{ perk-naturalshot } 3 >= if
 		($ "+ Gagnez 2 points en tir !		+ Le tir peut depasser de 2 points le maximum habituel !" $) 2 lvl
 	then;
 	gstats{ perk-naturalshot } 2 >= if
 		($ "+ Gagnez 2 points en tir !		+ Le tir peut depasser de 1 point le maximum habituel" .. NEXT_LEVEL .. "2 de plus que le maximum !" $) 1 lvl
 	then;
-		($ "+ Gagnez 1 point en tir		+ Le tir peut depasser de 1 point le maximum habituel" .. 
-		gstats{ perk-naturalshot } 1 < if 
+		($ "+ Gagnez 1 point en tir		+ Le tir peut depasser de 1 point le maximum habituel" ..
+		gstats{ perk-naturalshot } 1 < if
 			LOCKED 1 lock
 		else
 			NEXT_LEVEL .. "2 points dans le tir!"
 		then $)
 ;
 
-: tstclevel 
+: tstclevel
 		($ "- Can't raise fitness!!! " $) ..
 	gstats{ perk-tstc } 3 >= if
 		($ "La condition physique commence a 2 !" $) 2 lvl
@@ -930,14 +930,14 @@ perkdef{
 	gstats{ perk-tstc } 2 >= if
 		($ "La condition physique commence a 1" .. NEXT_LEVEL .. "La condition physique monte a 2 !" $) 1 lvl
 	then;
-		gstats{ perk-tstc } 1 < if 
+		gstats{ perk-tstc } 1 < if
 			($ LOCKED $) 1 lock
 		else
 			($ NEXT_LEVEL .. "La condition physique monte a 1" $)
 		then
 ;
 
-: shieldofhopelevel 
+: shieldofhopelevel
 	gstats{ perk-shieldofhope } 3 >= if
 		($ "  vous perdez 2 moral a chaque fois que vous echappez a la mort !" $) 2 lvl
 	then;
@@ -945,7 +945,7 @@ perkdef{
 		($ "  vous perdez 3 moral a chaque fois que vous echappez a la mort" .. NEXT_LEVEL .. "Seulement 2 moral !" $) 1 lvl
 	then;
 		($ "4 morale" ..
-		gstats{ perk-shieldofhope } 1 < if 
+		gstats{ perk-shieldofhope } 1 < if
 			LOCKED 1 lock
 		else
 			NEXT_LEVEL .. "morale gained"
@@ -961,7 +961,7 @@ perkdef{
 		($ "jusqua 7" .. NEXT_LEVEL .. "Creez 10 fleches!" $) 1 lvl
 	then;
 		($ "jusqua 4" ..
-		gstats{ perk-archer } 1 < if 
+		gstats{ perk-archer } 1 < if
 			LOCKED 1 lock
 		else
 			NEXT_LEVEL .. "7 days of the week"
@@ -977,7 +977,7 @@ perkdef{
 		($ "a peu pres 6 charges" .. NEXT_LEVEL .. "Trouvez 8 charges!" $) 1 lvl
 	then;
 		($ "a peu pres 4 charges" ..
-		gstats{ perk-pyro } 1 < if 
+		gstats{ perk-pyro } 1 < if
 			LOCKED 1 lock
 		else
 			NEXT_LEVEL .. "Trouvez 6 charges"
@@ -1017,110 +1017,110 @@ perkdef{
 	"Mecanicien" $perk
 		($ "La voiture est la vie ! Note : Ce nest pas necessairement un mecanicien competent.		+ Commencez avec une cle de soude		" .. mechaniclevel $) $desc
 		' mechanicperk applyword
-		
+
 	"Athlete" $perk
 		($ "Un passe athletique sadapte bien a la survie aux zombies.		+ Demarrez avec une arme sportive aleatoire		" .. athletelevel $) $desc
 		' athleteperk applyword
-		
+
 	"Combattant" $perk
 		($ "Cette personne a toujours ete un vrai combattant.		+ Commencez avec une hache" .. fighterlevel $) $desc
 		' fighterperk applyword
-		
+
 	"Chirurgien" $perk
 		($ "A une bonne intuition de lanatomie et une main vraiment ferme.		+ Commencez avec un scalpel		" .. surgeonlevel $) $desc
 		' surgeonperk applyword
-		
+
 	"Gun  Engineer" $perk
 		($ "Bon avec tout ce qui est mecanique, et les armes sont mecaniques.		+ Commencez avec un pied de biche		" .. gungineerlevel $) $desc
 		' gungineerperk applyword
-		
+
 (*	"Pistolero" $perk
 		($ "Ces pistolets visent vite et la munition est abondante !		+ Commencez par une pistolet et 30 cartouches		" .. pistollevel $) $desc
 		' pistolperk applyword
-		
+
 	"Tireur au fusil" $perk
 		($ "Un tir de fusil peut percer une ligne de zombies, entre les bonnes mains !		+ Commencer avec un fusil et 24 munitions		" .. riflelevel $) $desc
 		' rifleperk applyword
-		
+
 	"Fusilier" $perk
 		($ "Tout le monde sait que les fusils a pompe sont la veritable arme anti zombie !		+ Commencer avec un fusil a pompe et 15 cartouches		" .. shotgunlevel $) $desc
 		' shotgunperk applyword *)
 
-	"Artiste Martial" $perk
-		($ "Pas darmes ? Aucun probleme !		+ Commencer avec une puissante attaque a mains nues en deux coups !!		  Refuse dutiliser des armes a feu, des tronconneuses et quelques autres !!		" .. martialartistlevel $) $desc
-		' martialartistperk applyword		
-		
+	"Expert des arts martiaux" $perk
+		($ "Pas d'armes ? Aucun probleme !		+ Commencer avec une puissante attaque a mains nues !!		  Refuse dutiliser des armes a feu, des tronconneuses et quelques autres !!		" .. martialartistlevel $) $desc
+		' martialartistperk applyword
+
 	"Gros costaud" $perk
 		($ "Se deplace lentement, frappe tres fort, encaisse les coups !		+ Commencer avec une meilleure attaque a mains nues ! Prendre un coup de plus que la normale !		  Vitesse de marche plus lente !		" .. bruiserlevel $) $desc
 		' bruiserperk applyword
-	
+
 	"Collectionneur darmes" $perk
 		($ "Vous saviez que thesauriser toutes ces armes serait utile ! Finalement. Vous le saviez !		" .. guncrazylevel $) $desc
 		' guncrazyperk applyword
-	
-	"Soins de sante" $perk
+
+	"Soucieux de la sante" $perk
 		($ "Les abrutis se font mordre par les zombies tout le temps. Mieux vaut etre prepare ! 		" .. healthcarelevel $) $desc
-		' healthcareperk applyword	
-		
-	"Car Nut" $perk
+		' healthcareperk applyword
+
+	"Fana de voiture" $perk
 		($ "Etre un passionne de voitures est pratiquement un super pouvoir maintenant !		+ Commencer avec une meilleure voiture		" .. carnutlevel $) $desc
 		' carnutperk applyword
-				
+
 	"Mega costaud" $perk
 		($ "Peut etre trop gonfle pour etre controle. Pratique pour ramasser et lancer des meubles lourds !		+ Commencer avec un tuyau metallique		" .. megabufflevel $) $desc
 		' megabuffperk applyword
-		
-	"Ultra en forme" $perk
-		($ "Tout ce yoga a vraiment paye !		+ Commencer avec quelques barres de cereales		" .. ultrafitlevel $) $desc 
+
+	"Au sommet de sa forme" $perk
+		($ "Tout ce yoga a vraiment paye !		+ Commencer avec quelques barres de cereales		" .. ultrafitlevel $) $desc
 		' ultrafitperk applyword
-				
-	"Ami du Chien" $perk
+
+	"Ami des Chiens" $perk
 		($ "Cette personne adore les chiens et a tendance a les rencontrer!		+ Les chiens en colere peuvent devenir amicaux		" .. doglevel $) $desc
 		' dogfriendperk applyword
 
 	"Explorateur" $perk
 		($ "Certaines personnes ont tout simplement un tres bon sens de lorientation lorsquelles conduisent!		+ Obtenez un choix demplacement supplementaire pendant les evenements Always Be Looting!		" .. explorerlevel $) $desc
 		' explorerperk applyword
-		
+
 	"Ex lutteur" $perk
 		($ "Etait le meilleur avant un tragique accident sur le ring!		+ Ramassez les zombies abattus, puis lancez les ou claquez les!		  Penalite importante sur la competence de tir maximale.		" .. exwrestlerlevel $) $desc
 		' exwrestlerperk applyword
-		
+
 	"Potentiel cache" $perk
 		($ "Semble sans pretention, mais peut depasser les autres avec de lentrainement!		+ Gagnez un point de force ou de forme physique au hasard. Il peut alors depasser le maximum!		" .. hiddenpotentiallevel $) $desc
 		' hiddenpotentialperk applyword
-	
+
 	"Meilleur vendeur" $perk
 		($ "Le bon sens commercial a encore sa propre niche!		+ Obtient 1 a 8 aliments supplementaires lors de la vente a un acheteur darmes, en fonction du prix dorigine.		+ Aucune penalite de moral lors du paiement des peages des bandits avec de la nourriture!		" .. hagglerlevel $) $desc
 		' hagglerperk applyword
-	
+
 	"Eclaireur" $perk
 		($ "Lexperience de la randonnee permet deviter les terreurs de la foret!		+ Supprime un evenement de penalite du 1er jour de marche, chaque fois que vous perdez la voiture!		" .. pathfinderlevel $) $desc
 		' pathfinderperk applyword
-	
+
 	"Arme de marque" $perk
 		($ "Se demarque de la foule, avec une arme signature!		+ Commence avec une arme speciale, selon le trait!		  Ne peut pas lacher cette arme, meme dans la mort.		" .. trademarklevel $) $desc
 		' trademarkperk applyword
-		
-	"Coup naturel" $perk
-		($ "Un tireur ne! Il a juste besoin de plus dentrainement et peut etre meme dune arme et de munitions!" .. naturalshotlevel $) $desc
+
+	"Precision naturelle" $perk
+		($ "Un tireur ne! Il a juste besoin de plus d'entrainement et peut etre meme d'une arme et de munitions!" .. naturalshotlevel $) $desc
 		' naturalshotperk applyword
-	
-	"Tous Sauf Toi Cest Chiant" $perk
+
+	"Force de la nature incontrolable" $perk
 		($ "Definitely too swole! REFUSES to do cardio!
 		+ Starts at full strength!
 		+ May train strength 6 times over the maximum!!!
 		" .. tstclevel $) $desc
 		' tstcperk applyword
-		
+
 	"Bouclier despoir" $perk
 		($ "Can be used to tank hits that would" .. shieldofhopelevel $) $desc
 		' shieldofhopeperk applyword
-		
+
 	"Arc et Fleches" $perk
 		($ "Le tir a larc sest avere etre un passe temps utile !		+ Commencer avec un arc silencieux, 30 fleches, 2 points en force !		  Impossible de lacher cet arc, meme dans la mort.		" .. archerlevel $) $desc
 		' archerperk applyword
-		
+
 	"Pyromane" $perk
 		($ "Zombies sont extremement inflammables !		+ Commencez avec un torchon a souffle, et une protection contre l'incendie !		  Ne pouvez pas le deposer, meme dans la mort.		," .. pyrolevel $) $desc
 		' pyroperk applyword
@@ -1135,11 +1135,11 @@ perkdef{
 		' archerperk applyword
 	next
 *)
-		
+
 	// "Barbare"
 	// "Champion de Home Run"
 	// "Feroce"
-			
+
 	// Traits
 	"Paranoiaque" $trait
 		"Une combinaison de grande perception et dextreme pessimisme permet a quelquun de se preparer au pire !		+ Peut identifier des traits dans de nouveaux recrutes		+ Toujours a la recherche de danger		  Pouvait etre un vrai grouchus" $desc
@@ -1172,7 +1172,7 @@ perkdef{
 	"Colerique" $trait
 		"'Quelqu'un a un mauvais caractere ! L'agression peut etre utile. + 1 point supplementaire en force   Mauvais caractere du a un faible sang froid + Le temperament peut parfois etre bon" $desc
 		' fiercetrait applyword
-	"Calme sous le feu" $trait
+	"Sang-froid" $trait
 		"Calme et serein. Utile pour tirer sur une horde ! + Tres calme grace a un sang froid eleve + 1 point supplementaire en tir" $desc
 		' calmtrait applyword
 	"Nourrissant" $trait
@@ -1181,7 +1181,7 @@ perkdef{
 	"Inventif" $trait
 		"A laise avec les machines, comme les voitures. + 2 points de plus en mecanique ! Excellentes verifications desprit ! + Peut aller au dela du maximum pour la competence mecanique !!   Peut avoir besoin de plus de pratique pour reparer la voiture" $desc
 		' inventtrait applyword
-	"Pleurnichard frenetique" $trait
+	"Pleurnichard" $trait
 		"Une sorte de fragile. Mais vraiment doue pour fuir ! + Bonus de vitesse de course !   Prend un coup de moins que la normale   Mauvaise attitude" $desc
 		' frantictrait applyword
 	"Type resilient" $trait
@@ -1202,25 +1202,25 @@ perkdef{
 	"Gourmand" $trait
 		($ "'Apprecie vraiment les vieilles conserves !		+ Manger un repas complet restaure 1 point de moral de ce personnage, jusqu'a ce qu'il soit plein ! Obtient un point de sante maximum supplementaire !		  Mange un peu plus, 3 aliments au lieu de 2. Le manque de nourriture diminue le moral plus rapidement !" .. gourmand-lock $) $desc
 		' gourmandtrait applyword
-	"Chercheur de ville" $trait
+	"Explorateur urbain" $trait
 		($ "Benie dune vie interessante !		+ Beaucoup plus de chances de trouver un batiment ou un personnage etrange dans les evenements de pillage de la ville ! Chance normale : 10 %  Avec trait : 50 %		+ Double les chances de trouver des camps de commercants rares !" .. cityseek-lock $) $desc
 		' cityseektrait applyword
 	"Voyage leger" $trait
 		($ "Portez moins pour pouvoir courir un peu plus vite !		+ Bonus de vitesse de course !		+ 1 point de plus en fitness !		  Ne peut transporter que deux armes a la fois !" .. travellight-lock $) $desc
 		' travellighttrait applyword
-	"Type de heros" $trait
+	"Altruiste" $trait
 		($ "'Je serai toujours ton garde du corps. Eh bien, une fois.		+ Sauve un coequipier de la mort dans un evenement textuel !		  Ne le fait qu'une seule fois par partie !		+ Commence avec une loyaute maximale !" .. herotype-lock $) $desc
 		' herotypetrait applyword
-	"Minuscule mangeur" $trait
+	"Petit mangeur" $trait
 		($ "Mange beaucoup moins que la normale ! Prend de minuscules bouchees !		+ Un repas complet ne necessite que 1 aliment !!		  Obtient une penalite de 2 points sur la force maximale !		  Obtient une penalite de 1 point sur la forme physique maximale." .. tinyeat-lock $) $desc
-		' tinyeattrait applyword	
+		' tinyeattrait applyword
 	"Fan danime" $trait
 		($ "'C'est comme ca dans mes animes de zombies !		+ L'arme est remplacee par un puissant Katana fort.		  Le Katana ne peut pas etre lache, meme a la mort.		  AVERTISSEMENT : Evitez d'avoir le moral plein ! MEFIEZ VOUS DE L'ANIME !" .. animefan-lock $) $desc
-		' animefantrait applyword	
+		' animefantrait applyword
 	"Specialiste" $trait
 		($ "Un peu trop focalise sur une methode declaboussure de zombies.		+ 2 points de force, de forme physique et de tir		+ Peut depasser le maximum pour les statistiques ci dessus !!		  Ne peut transporter quUNE SEULE ARME a la fois !!" .. specialist-lock $) $desc
 		' spectrait applyword
-	"Grappleur" $trait
+	"Lutteur" $trait
 		($ "Si un zombie tombe, vous pouvez le ramasser !		+ Jeter ou lancer des zombies portes !		  Personnalite ennuyeuse" .. grappler-lock $) $desc
 		' grapplertrait applyword
 	"Phenix" $trait
@@ -1232,13 +1232,13 @@ perkdef{
 	"Apprenant rapide" $trait
 		($ "Commence bas, mais apprend rapidement des nouvelles competences !		+ Obtient double la quantite de competence dans le tir, mecanique et medical !		  Chaque bonus de croissance sarrete apres que sa competence atteigne 4 points" .. fastlearn-lock $) $desc
 		' fastlearntrait applyword
-	
-		
+
+
 	// "Sommeil profond"
 	// "Gourmand"
 	// "Chercheur de ville"
 	// "Voyage leger"
-	
+
 	// "Minuscule mangeur"
 	// "Fan danime"
 	// "Specialiste"

@@ -6,7 +6,7 @@
 // uses carstats.df
 
 
-road{ 
+road{
 
 // : TAG DEBUG_BUILD if print else drop then ;
 
@@ -34,7 +34,7 @@ root{ : to-road }
 	walk-day-pick
 ;
 
-0 value anime-countdown 
+0 value anime-countdown
 0 value kills-this-game
 
 : readyanimefan? args( chara ) <- chara .trait@ "Fan danime" $= <- chara .morale@ 5 > and ;
@@ -53,10 +53,10 @@ root{ : to-road }
 			sfx{ noise 1 pitch!
 				1000 freq!
 				50 freq2!
-				50 a! 
-				50 d! 
+				50 a!
+				50 d!
 				0.25 s!
-				550 r! 
+				550 r!
 				0.5 q!
 				1000 filt!
 				0.75 1 frnd pitch!
@@ -113,7 +113,7 @@ cyoa: lynn-oneuse
 	trunk-food 29 > if
 		choice( "Gold" .. " 33% de reduction!" fbold )choice: trade-rare-coldsteel-buy
 	then
-	
+
 ;
 
 : anime-timeup
@@ -157,12 +157,12 @@ cyoa: lynn-oneuse
 ;
 
 : mission-summary-cyoa
-	ZOMBOTOWN if 
+	ZOMBOTOWN if
 		// 0 to ZOMBOTOWN - Game resets this anyway when loading a save/making new game
-		quit-to-title 
+		quit-to-title
 	then;
-	skipsummary 0 > if 
-		0 to skipsummary to-road 
+	skipsummary 0 > if
+		0 to skipsummary to-road
 	else
 		' resting-check foreach-team-char
 		cyoa-new
@@ -173,17 +173,17 @@ cyoa: lynn-oneuse
 				cyoa-loot-text cyoa-text-cr
 			then
 			mission-kills cyoa-text-append
-			" zombies detruits." cyoa-text-append
+			" zombies tues." cyoa-text-append
 			cyoa-text-cr
 
 			killtally
-	
+
 			absentees if
-				"LAISSE POUR COMPTE : " swap $cat cyoa-text-append
+				"LAISSE SUR PLACE : " swap $cat cyoa-text-append
 			else drop then
-	
+
 			mission>road-car-chassis
-	
+
 			cyoa-add-choice
 			DEMO if
 				"FIN DE LA DEMO" cyoa-choice-text!
@@ -197,21 +197,21 @@ cyoa: lynn-oneuse
 		post-mission-cyoa stack-road-action
 		0 to post-mission-cyoa
 	then
-	
+
 	// Anime girl mutation cascade
-	// 65 stpick-mission if drop road{ anime-timeup } then	
-	64 stpick-mission if drop anime-timeup then	
+	// 65 stpick-mission if drop road{ anime-timeup } then
+	64 stpick-mission if drop anime-timeup then
 	63 stpick-mission if drop anime-timeup then
-	62 stpick-mission if drop anime-timeup then 
+	62 stpick-mission if drop anime-timeup then
 
 	// Knight leaving after one use
-	
+
 	53 stpick-mission if drop ' knight-oneuse stack-road-action then
-	
+
 	// Cold Steel CEO leaving after one demo
-	
+
 	79 stpick-mission if drop ' lynn-oneuse stack-road-action then
-	
+
 ;
 
 last to main-event-mission-end

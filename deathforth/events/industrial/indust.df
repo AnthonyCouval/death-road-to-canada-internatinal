@@ -18,12 +18,12 @@
 
 : indwalls
 	indwallstuff -10 movey 1 movex indwallstuff -10 movey -1 movex
-	
+
 ;
 
 : 3indwalls
 	indwallstuff -10 movey 2 movex indwallstuff -10 movey -2 movex indwallstuff -10 movey
-	
+
 ;
 
 : indshelf
@@ -38,13 +38,13 @@
 
 : indbarrel
 	spawn special_objects32_base_id 0x 30 0 3 rnd + + lt .spriteid!
-	rndflip bbox 
+	rndflip bbox
 
 ;
 : indcrate
 	spawn special_objects32_base_id 0x 34 90 %chance if 0 2 rnd else 3 then + + lt .spriteid!
 	rndflip bbox as-wood dropswood
-	
+
 ;
 
 : industsmall 50 %chance if indbarrel else indcrate then ;
@@ -107,7 +107,7 @@
 		1 of indrndtank endof
 		2 of indrndlargecover endof
 		3 of indrndcover endof
-	endcase	
+	endcase
 ;
 
 : factoryfloorloot
@@ -138,7 +138,7 @@
 cyoa{ road{
 
 cyoa: indust-test
-	
+
 	"Complexe Industriel" cyoa-title!
 	someicon
 	($ Thegroup .. "  est submerge par une horde et senfuit vers une usine voisine. Il doit y avoir une autre issue a linterieur." $) cyoa-text! basic-tone
@@ -149,18 +149,18 @@ cyoa: indust-test
 ;
 
 cyoa: indust-safe
-	
+
 	"Usine Reussie" cyoa-title!
 	someicon
 	($ Thegroup .. " ' voit une grande usine qui semblait occupee avant l'apocalypse. Elle est moins delabree que la plupart des autres usines, du moins de l'exterieur." $) cyoa-text! basic-tone
 	1 1.3 frnd 8 15 frnd 0 2 rnd zforecast
 	"events/industrial/region/industrysafe.df" $load-region
-		choice( "Explorer lUsine" )choice: premission
+		choice( "Explorer l'usine" )choice: premission
 		gas-draw
 ;
 
 cyoa: rescueindust
-	
+
 	"Secours dusine" cyoa-title!
 	someicon
 	($ Thegroup .. "  conduit dans un quartier industriel calme. Ils rencontrent une horde distraite par la poursuite de quelquun." $) cyoa-text! basic-tone
@@ -171,13 +171,13 @@ cyoa: rescueindust
 ;
 
 cyoa: indust-easy
-	
+
 	"Usine calme" cyoa-title!
 	someicon
 	($ Thegroup .. " ' trouve une usine delabree, comme la plupart des usines que l'on peut voir de nos jours. Parfois, les gens essaient d'installer une cachette sure dans un placard lateral de l'usine, mais cela ne se termine generalement pas bien." $) cyoa-text! basic-tone
 	0.7 0.9 frnd 7 14 frnd 0 2 rnd zforecast
 	"events/industrial/region/industryeasy.df" $load-region
-		choice( "Explorer lUsine" )choice: premission
+		choice( "Explorer l'usine" )choice: premission
 		gas-draw
 ;
 

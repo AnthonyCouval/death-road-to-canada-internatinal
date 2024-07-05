@@ -38,7 +38,7 @@ cyoa: trait1--buy
 cyoa-blank: trait1-specialist
 	"Specialiste" _COST ' trait1--buy ' trait1back trait-confirm! ;
 *)
-	
+
 cyoa: trait1-specialist-buy
 	"OPERATIONS SPECIALES PLUS COMME DES PLOPS SPECIAUX" cyoa-title!
 	"Specialiste" "specialiste trait" trait-buy! ;
@@ -50,13 +50,13 @@ cyoa: trait1-travellight-buy
 	"Voyage leger" "trait voyager leger" trait-buy! ;
 cyoa-blank: trait1-travellight
 	"Voyage leger" TRAVELLIGHT_COST ' trait1-travellight-buy ' trait1back trait-confirm! ;
-	
+
 cyoa: trait1-herotype-buy
 	"TENUE DE GARDE DU CORPS NON INCLUSE" cyoa-title!
 	"Type de heros" "trait herottype" trait-buy! ;
 cyoa-blank: trait1-herotype
 	"Type de heros" HEROTYPE_COST ' trait1-herotype-buy ' trait1back trait-confirm! ;
-	
+
 cyoa: trait1-grappler-buy
 	"'LANCER DES ZOMBIES COMME S'ILS ETAIENT DES CHAISES" cyoa-title!
 	"Grappleur" "trait lutteur" trait-buy! ;
@@ -68,37 +68,37 @@ cyoa: trait1-animefan-buy
 	"Fan danime" "trait fan danime" trait-buy! ;
 cyoa-blank: trait1-animefan
 	"Fan danime" ANIMEFAN_COST ' trait1-animefan-buy ' trait1back trait-confirm! ;
-	
+
 cyoa: trait1-soundsleep-buy
 	"DORMIR PENDANT LAPOCALYPSE" cyoa-title!
 	"Sommeil profond" "trait sommeil profond" trait-buy! ;
 cyoa-blank: trait1-soundsleep
 	"Sommeil profond" SOUNDSLEEP_COST ' trait1-soundsleep-buy ' trait1back trait-confirm! ;
-	
+
 cyoa: trait1-gourmand-buy
 	"UN GOUT POUR LES CHOSES PLUS FINES" cyoa-title!
 	"Gourmand" "trait gourmand" trait-buy! ;
 cyoa-blank: trait1-gourmand
 	"Gourmand" GOURMAND_COST ' trait1-gourmand-buy ' trait1back trait-confirm! ;
-	
+
 cyoa: trait1-cityseek-buy
 	"DONNEZ MOI CES RARES RENCONTRES" cyoa-title!
-	"Chercheur de ville" "trait cityseek" trait-buy! ;
+	"Explorateur urbain" "trait cityseek" trait-buy! ;
 cyoa-blank: trait1-cityseek
-	"Chercheur de ville" CITYSEEK_COST ' trait1-cityseek-buy ' trait1back trait-confirm! ;
-	
+	"Explorateur urbain" CITYSEEK_COST ' trait1-cityseek-buy ' trait1back trait-confirm! ;
+
 cyoa: trait1-tinyeat-buy
 	"PETITS MORCEAUX" cyoa-title!
 	"Minuscule mangeur" "trait tinyeat" trait-buy! ;
 cyoa-blank: trait1-tinyeat
 	"Minuscule mangeur" TINYEATER_COST ' trait1-tinyeat-buy ' trait1back trait-confirm! ;
-	
+
 cyoa: trait1-phoenix-buy
 	"LE PHENIX EST RESSUSCITE *voix nasale*" cyoa-title!
 	"Phenix" "trait phoenix" trait-buy! ;
 cyoa-blank: trait1-phoenix
 	"Phenix" PHOENIX_COST ' trait1-phoenix-buy ' trait1back trait-confirm! ;
-	
+
 cyoa: trait1-fireproof-buy
 	"LE DINGUS ULTIME" cyoa-title!
 	"Dingus Savant" "trait fireproof" trait-buy! ;
@@ -110,83 +110,83 @@ cyoa: trait1-fastlearn-buy
 	"Apprenant rapide" "trait fastlearn" trait-buy! ;
 cyoa-blank: trait1-fastlearn
 	"Apprenant rapide" PHOENIX_COST ' trait1-fastlearn-buy ' trait1back trait-confirm! ;
-	
+
 cyoa: trait1-dingus gstats{
 	"Deverrouillage de trait" cyoa-title!
-		
+
 	($ "I'm developing an amazing new product
 	I call them... unlocks. Or 'uncks' for short
 	Witness the magic of 'cheevos'!
 	Wait, I meant to say 'unlocks'." pbold $) text!
-	
+
 	trait1-stockleft 9 < if
-	
+
 		($ "'Je n'ai plus le droit de les appeler Uncks. Les gnomes ont ete tres contraries que je leur vole leur bit.		Appelons les Trait Unlocks. Ou Trunlocks." pbold $) text!
-	
+
 	then
-	
+
 	trait1-stockleft 5 < if
-	
+
 		($ "Experimentez avec differents traits et avantages.		Vous pourriez trouver une nouvelle combinaison preferee !" pbold $) text!
-	
+
 	then
-	
+
 	trait1-stockleft 1 < if
-	
+
 		($ "I'm out of Trunlocks!
 		Use these precious gifts wisely.
 		Believe... in the Trunlocks." pbold $) text!
-	
-	
+
+
 	then
-	
+
 	+cr zptally trait1-remaining
-	
+
 	choice( "Partir pour linstant" )choice
-	
-	trait-soundsleep 1 < if 
+
+	trait-soundsleep 1 < if
 		"Sommeil profond" SOUNDSLEEP_COST ' trait1-soundsleep perk-view!
 	then
-	trait-gourmand 1 < if 
+	trait-gourmand 1 < if
 		"Gourmand" GOURMAND_COST ' trait1-gourmand perk-view!
 	then
-	trait-cityseek 1 < if 
-		"Chercheur de ville" CITYSEEK_COST ' trait1-cityseek perk-view!
+	trait-cityseek 1 < if
+		"Explorateur urbain" CITYSEEK_COST ' trait1-cityseek perk-view!
 	then
-	trait-travellight 1 < if 
+	trait-travellight 1 < if
 		"Voyage leger" TRAVELLIGHT_COST ' trait1-travellight perk-view!
 	then
-	trait-herotype 1 < if 
+	trait-herotype 1 < if
 		"Type de heros" HEROTYPE_COST ' trait1-herotype perk-view!
 	then
-	trait-tinyeat 1 < if 
+	trait-tinyeat 1 < if
 		"Minuscule mangeur" TINYEATER_COST ' trait1-tinyeat perk-view!
 	then
-	trait-animefan 1 < if 
+	trait-animefan 1 < if
 		"Fan danime" ANIMEFAN_COST ' trait1-animefan perk-view!
 	then
-	trait-specialist 1 < if 
+	trait-specialist 1 < if
 		"Specialiste" SPECIALIST_COST ' trait1-specialist perk-view!
-	then	
-	trait-grappler 1 < if 
+	then
+	trait-grappler 1 < if
 		"Grappleur" GRAPPLER_COST ' trait1-grappler perk-view!
 	then
-	trait-phoenix 1 < if 
+	trait-phoenix 1 < if
 		"Phenix" PHOENIX_COST ' trait1-phoenix perk-view!
 	then
-	trait-fireproof 1 < if 
+	trait-fireproof 1 < if
 		"Dingus Savant" PHOENIX_COST ' trait1-fireproof perk-view!
-	then		
-	trait-fastlearn 1 < if 
+	then
+	trait-fastlearn 1 < if
 		"Apprenant rapide" PHOENIX_COST ' trait1-fastlearn perk-view!
-	then	
+	then
 	(*
-		
-	trait- 3 < if 
+
+	trait- 3 < if
 		"" _COST ' trait1- perk-view!
-	then	
+	then
 	*)
-	
+
 } ;
 
 ' trait1-dingus to trait1back

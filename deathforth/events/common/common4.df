@@ -6,12 +6,12 @@
 	- Different if solo
 		- AM I PRETTY? [yes] Morale Boost
 		- WHERE'S THE LOOT? Shows hidden supplies nearby
-		- 
+		-
 
-	
+
 *)
 
-cyoa{ road{ 
+cyoa{ road{
 
 // Not a Ouija Board
 
@@ -22,7 +22,7 @@ cyoa{ road{
 	($ Thegroup .. "  se sent maintenant incroyablement malchanceux. Mefiez vous du " .. "Malediction de Weegee!" rbold $) +crtext
 	"CHANCE MASSIVEMENT DIMINUEE!" fbold +crtext
 	"Quelque part au loin, un gobelin rit." pbold +crtext goblin-laugh
-	
+
 ;
 
 cyoa-choice: common4-weegee-pretty
@@ -57,7 +57,7 @@ cyoa-choice: common4-weegee-check
 cyoa-choice: common4-weegee-canada
 	($ "Le " weegeetm "  pointe le mot " .. "NON" pbold .. "  avec une vitesse incroyable. Puis il pointe vers " .. "NON" fbold .. "  a nouveau, en sembrasant quelque part.," $) text!
 	($ "Quoi quil en coute ! Ces choses sont toujours erronees, nimporte quoi ! " .. cname .. " jette la flamme " weegeetm " dans la piece. Cela fait aussi prendre feu " .. chim .. " egalement." $) +crtext
-	cchar isfireproof? if 
+	cchar isfireproof? if
 		($ cname .. " il aime etre incendiaire !" $) +crtext
 		morale++ goodfx
 	else
@@ -68,7 +68,7 @@ cyoa-choice: common4-weegee-canada
 	else
 		($ "'ne touchez pas a la " .. "Malediction de Weegee!" rbold $) +crtext goblin-laugh
 	then
-	
+
 ;
 
 cyoa: common4-weegee
@@ -132,7 +132,7 @@ cyoa-choice: common4-dogpoo-pick
 			($ cname .. ":" pbold .. "  PENALTE PERMANENTE DE MORALE!" fbold $)
 			-1 STAT_MORALE cchar .bonus+ sfx{ creepy }
 		then +crtext morale2- 16 trunk-food+
-	
+
 ;
 
 cyoa-bridge: common4-dogpoo-stick
@@ -280,7 +280,7 @@ cyoa: common4-gamebro
 	sting--
 	($ "Les ordures se repandent sur " .. cname .. "! Ca en valait la peine ! Tout ca pour les haricots !" $) +crtext
 	morale2- 3 trunk-food+ badfx
-	
+
 ;
 
 cyoa-choice: common4-beans-eat
@@ -339,12 +339,12 @@ cyoa: common4-beans
 ;
 
 : sumo-vhs args( char )
-	<- char ispet? if 
+	<- char ispet? if
 		<- char dog? if
 			($ <- char .name@ .. "  apprend le sumo, bien quil soit un chien." $) +crtext
 			WEAPON_SUMO <- char .weapon_default!
 		then
-	then;	
+	then;
 	<- char .weapon_default@ WEAPON_SUMO = if
 		($ <- char .name@ .. "  apprend des techniques de sumo superieures!" $) +crtext
 		WEAPON_SUPERSUMO <- char .weapon_default!
@@ -359,13 +359,13 @@ cyoa-blank: common4-vhs-sumo
 
 cyoa-blank: common4-vhs-shoot
 	($ "La cassette video est une adaptation cinematographique du jeu darcade " .. "DEATHSPLOSIONAL!" fbold .. " ' C'est mieux que pas de film du tout." $) text!
-	
+
 	' .shooting++ foreach-team-char common4-vhs-end
 ;
 
 cyoa-blank: common4-vhs-fit
 	($ Thegroup .. " ' suit le professeur de fitness sur la cassette video. Tout le monde porte des bandeaux de sudation fluo." $) text!
-	
+
 	' .fitness++ foreach-team-char common4-vhs-end
 ;
 
@@ -456,40 +456,41 @@ cyoa: common4-spider
 cyoa-choice: common4-vending-go
 	"Il faut une eternite pour alimenter les billets dun dollar. Le distributeur automatique les recrache constamment." text!
 	cattitude+ if morale-- attitudeREV else morale2- then goodfx
-	common4-vending-num case 
-	1 of 
+	common4-vending-num case
+	1 of
 		"Un fusil de chasse entierement charge sort du distributeur automatique !" +crtext
 		1 WEAPON_SHOTGUN trunk.weapon+ 6 trunk-shotgun-shell+
 	endof
-	2 of 
+	2 of
 		"Un fusil de cowboy charge sort du distributeur automatique !" +crtext
 		1 WEAPON_RIFLE trunk.weapon+ 10 trunk-rifle-shell+
 	endof
-	3 of 
+	3 of
 		"Un revolver Dolt charge sort du distributeur automatique !" +crtext
 		1 WEAPON_DOLT trunk.weapon+ 6 trunk-bullet+
 	endof
-	4 of 
-		"'Un sac de chips tombe ! Pas la taille habituelle du distributeur automatique, c'est la taille familiale enorme." +crtext 4 trunk-food+
+	4 of
+		"Un paquet de chips tombe ! Il n'est de taille habituelle, mais c'est un paquet de taille familiale enorme." +crtext 4 trunk-food+
 	endof
-	5 of 
-		"Un jerrycan dessence sort du distributeur automatique !" +crtext 30 trunk-gas+
+	5 of
+		"Un jerrycan d'essence sort du distributeur automatique !" +crtext 30 trunk-gas+
 	endof
-	6 of 
-		"Une grande boite de bandages medicamenteux sort du distributeur automatique !" +crtext 3 trunk-medical+
-	endof 
-	7 of 
-		($ "The vending machine's shape changes! It transforms into an electric car!
-			" .. Thegroup .. "  monte dans." $) +crtext CAR_HYBRID2 get-car 30 trunk-gas+
+	6 of
+		"Une grosse boite de bandages sort du distributeur automatique !" +crtext 3 trunk-medical+
 	endof
-	8 of 
-		"'Un baton tombe du distributeur automatique ! Je ne suis pas sur de ce que tu attendais, c'est un baton." +crtext
+	7 of
+		($ "La forme de la machine change! Elle se transforme en voiture electrique!
+			" .. Thegroup .. "  monte dedans." $) +crtext CAR_HYBRID2 get-car 30 trunk-gas+
+	endof
+	8 of
+		"Un baton tombe du distributeur automatique ! Je ne suis pas sur de ce que tu attendais, c'est un baton." +crtext
 		1 WEAPON_TREEBRANCH trunk.weapon+
 	endof
-	9 of 
-		($ "Un chapeau sort du distributeur automatique !" .. cname .. "  le met." $) +crtext
+	9 of
+		($ "Un chapeau sort du distributeur !
+		" .. cname .. " le met." $) +crtext
 		1 27 rnd cchar .hattype! morale++
-	endof 
+	endof
 	endcase
 ;
 
@@ -500,10 +501,10 @@ cyoa-bridge: common4-vending-pick
 		cchar charchoice( ": Inserer des billets" )choice: common4-vending-go
 		choice( "Laisse le tranquille" )choice
 	then;
-	($ "Qui devrait inserer les billets dun dollar pourris dans la machine ?" $) cyoa-text!
-	"ATTENTION : Ce sera un processus tres ennuyeux" rbold +crtext
+	($ "Qui devrait inserer les billets pourris d'un dollar dans la machine ?" $) cyoa-text!
+	"ATTENTION : ça risque d'etre un moment long et ennuyant" rbold +crtext
 	' common4-vending-go cyoa-human-choice
-	choice( "Laissez le tranquille apres tout" )choice
+	choice( "Laissez-la tranquille finalement" )choice
 ;
 
 : common4-vending-1 1 to common4-vending-num common4-vending-pick ;
@@ -517,39 +518,40 @@ cyoa-bridge: common4-vending-pick
 : common4-vending-9 9 to common4-vending-num common4-vending-pick ;
 
 cyoa: common4-vending
-	"Etrange distributeur automatique" cyoa-title! someicon
-	($ Thegroup .. "  tombe sur un distributeur automatique tres deplace. On dirait que quelquun la fabrique a partir de morceaux de ferraille. Ses lumieres sont toujours allumees. Tout dans la machine coute 20 $, et " .. thegroup .. "  a environ autant en billets froisses et effiloches." $) text!
-		choice( "Laisse le tranquille" )choice
-		
+	"Etrange Distributeur Automatique" cyoa-title! someicon
+	($ Thegroup .. " tombe sur un distributeur automatique. On dirait que quelqu'un l'a fabriquee a partir de morceaux de ferraille.Ses boutons sont toujours allumes.
+	Tout ce qu'il y a dans la machine coute $20, et " .. thegroup .. " a a peu pres cette somme en billets froisses et dechires." $) text!
+		choice( "Laissez-la tranquille." )choice
+
 		33 %chance if
 			choice( "SHOTGUN FUN PACK" )choice: common4-vending-1
 		else
 			50 %chance if
-				choice( "ROOTIN TOOTIN RIFLE" )choice: common4-vending-2
+				choice( "FUSIL PETARADANT" )choice: common4-vending-2
 			else
-				choice( "SET REEL DE REVOLVER" )choice: common4-vending-3
+				choice( "ENSEMBLE DE VRAIS REVOLVERS" )choice: common4-vending-3
 			then
 		then
-		
+
 		33 %chance if
-			choice( "SACHET DE CHIPS" )choice: common4-vending-4
+			choice( "PAQUET DE CHIPS" )choice: common4-vending-4
 		else
 			50 %chance if
-				choice( "Boite a essence" )choice: common4-vending-5
+				choice( "BIDON D'ESSENCE" )choice: common4-vending-5
 			else
-				choice( "Boite d'adhesifs" )choice: common4-vending-6
+				choice( "BOITE DE PANSEMENTS" )choice: common4-vending-6
 			then
 		then
-		
+
 		10 %chance if
-			choice( "Voiture neuve" )choice: common4-vending-7
+			choice( "UNE TOUTE NOUVELLE VOITURE" )choice: common4-vending-7
 		else
 			50 %chance if
-				choice( "Baton" )choice: common4-vending-8
+				choice( "UN BATON" )choice: common4-vending-8
 			else
-				choice( "Chapeau neuf" )choice: common4-vending-9
+				choice( "UN CHAPEAU NEUF" )choice: common4-vending-9
 			then
-		then		
+		then
 ;
 
 } }

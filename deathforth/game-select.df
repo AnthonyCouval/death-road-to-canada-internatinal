@@ -1,7 +1,7 @@
 uses cyoa.df
 
 cyoa{
-	
+
 	: make-it-snappy 1 cyoa-fade! 1 cyoa-clickspeed! ;
 
 	: load-slotinfo
@@ -17,7 +17,7 @@ cyoa{
 
 	: start-the-actual-game-here
 		"NOUVELLE SAUVEGARDE" slot-info-name $swrite
-		"skull skull skull skull skull" slot-data-name $swrite
+		"(crane crane crane crane crane) print" slot-data-name $swrite
 		gogo
 		MAIN_EVENT_NEW main-post-event
 	;
@@ -35,8 +35,8 @@ cyoa{
 	cyoa-choice: cont-saveslot
 		choicenum saveslot!
 		cyoa-start
-		"  cONTINUER LA PARTIE " cyoa-title!
-		"THE HORROR CONTINUES..." cyoa-text!
+		"- CONTINUER LA PARTIE -" cyoa-title!
+		"L'HORREUR CONTINUE..." cyoa-text!
 		choice( "AIE" )choice: continue-the-saved-game-here
 	;
 
@@ -54,8 +54,8 @@ cyoa{
 	cyoa-choice: new-delete-game
 		choicenum saveslot!
 		cyoa-start make-it-snappy
-		"  sUPPRIMER LA PARTIE " cyoa-title!
-		($ "Supprimer l'ancienne partie sauvegardee" .. slotinfo saveslot peek nip .. "'?" $) cyoa-text!
+		"- SUPPRIMER LA PARTIE -" cyoa-title!
+		($ "SUPPRIMER la vieille partie sauvegardee '" .. slotinfo saveslot peek nip .. "'?" $) cyoa-text!
 		choice( "NON" )choice: select-new thumbdownicon
 		choice( "OUI" )choice: delete-slot thumbupicon
 	;
@@ -91,19 +91,19 @@ cyoa{
 	defer select-start // forward reference
 
 	cyoa: select-new-game make-it-snappy
-		"  nOUVELLE PARTIE " cyoa-title!
-		"Choisissez la place de jeu:" cyoa-text!
+		"- NOUVELLE PARTIE -" cyoa-title!
+		"Choisissez un emplacement:" cyoa-text!
 		slotchoices-new
-		choice( "RETROUVEZ" )choice: select-start backicon cyoa-choice-esc-default
+		choice( "RETOUR" )choice: select-start backicon cyoa-choice-esc-default
 	;
 
 	last to select-new
 
 	cyoa: select-cont-game make-it-snappy
-		"  cONTINUER LA PARTIE " cyoa-title!
-		"Choisissez la place de jeu:" cyoa-text!
+		"- CONTINUER LA PARTIE -" cyoa-title!
+		"Choisissez un emplacement:" cyoa-text!
 		slotchoices-cont
-		choice( "RETROUVEZ" )choice: select-start backicon cyoa-choice-esc-default
+		choice( "RETOUR" )choice: select-start backicon cyoa-choice-esc-default
 	;
 
 	cyoa-choice: select-create-char
@@ -121,8 +121,8 @@ cyoa{
 		// Make sure we can delete the game after zombotown or tutorial. Shouldn't really be done like this...
 		filesave{ ' delete-game } to delete-the-game
 
-		"  sElectionner " cyoa-title!
-		"Choisissez loption du jeu:" cyoa-text!
+		"- Selectionner -" cyoa-title!
+		"Choisissez une option de jeu:" cyoa-text!
 		slotcount if
 			choice( "Continuer la partie" )choice: select-cont-game
 		then
@@ -132,15 +132,15 @@ cyoa{
 		choice( "Personnages personnalises" )choice: do-char-maker
 		// choice( "Personnages personnalises" )choice: select-create-char
 
-		choice( "RETROUVEZ" )choice backicon cyoa-choice-esc-default
+		choice( "RETOUR" )choice backicon cyoa-choice-esc-default
 	;
 
 	// TEMP: FOR QUICK GAME START
 (*
 	cyoa: quick-start-game
-		"  nOUVELLE PARTIE " cyoa-title!
-		"THE HORROR BEGINS..." cyoa-text!
-		choice( "DANG, CA FAIT" )choice: start-the-actual-game-here
+		"  NOUVELLE PARTIE " cyoa-title!
+		"L'HORREUR COMMENCE..." cyoa-text!
+		choice( "OH, DANG" )choice: start-the-actual-game-here
 	;
 *)
 	: select-boot

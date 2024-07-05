@@ -1,19 +1,19 @@
-	: CAVEMAN-oneline1 "Je ne comprends pas vos fauteuils a relais futurs. Je comprens tout le reste.'  I don't understand your reclining chairs from the future. I get everything else." ;
-	: CAVEMAN-oneline2 "Nous n'avions pas de zombies la ou j'venais de. Qu'est ce que vous avez fait pour en avoir ?'  We didn't have zombies where I came from. What did you do to get them?" ;
-	: CAVEMAN-oneline3 "PEUT ETRE je dormais dans cette glace a dessein ! PEUT ETRE jaime la glace.  MAYBE I was sleeping in that ice on purpose! Maybe I like ice." ;
-	: CAVEMAN-oneline4 "Ces zombies sont lents, mais la glace aussi et elle peut prendre par surprise.,  These zombies are slow, but so is ice and it can sneak up on you." ;
-	: CAVEMAN-oneline5 "Je dois avoir une arme plus grosse.  I need a bigger weapon." ;
-	: CAVEMAN-oneline6 "Parlez vous encore de dinosaures parlants ?  Are talking dinosaurs still around?" ;
-	: CAVEMAN-oneline7 "J'ai appris votre langue parce que j'ai fait du voyage dans le temps une fois, deux fois dans l'ice.',  I speak your language because I have done time travel once, and twice in ice sleep." ;
-	: CAVEMAN-oneline8 "Ceci est de routine pour moi la voyager dans le temps.'  This is routine for me traveling through time." ;
-	: CAVEMAN-oneline9 "Je suis sur qu'il y a un portail temporel quelque part, au Canada.',  I'm sure there's a time portal somewhere, in Canada." ;
-	: CAVEMAN-oneline10 "Peut etre ne devrais je pas retourner dans le passe. Je me contenterai de dormir dans la glace a nouveau.'  Maybe I shouldn't go back to the past. I'll just fall asleep in the ice again." ;
-	: CAVEMAN-oneline11 "'Pour les monstres, les zombies sont vraiment lents. Je vais devenir paresseux en les combattant." ;
-	: CAVEMAN-oneline12 "Les dinosaures etaient tous couverts de plumes. Ils avaient lair ridicules." ;
-	: CAVEMAN-oneline13 "'Au moins je n'ai pas voyage dans un avenir tres lointain cette fois." ;
-	: CAVEMAN-oneline14 "Je me demande combien dautres sont geles dans la glace. Moi, tout le temps." ;
-	: CAVEMAN-oneline15 "Courir cest mieux que detre mange. Pas aussi bien que de frapper." ;
-	: CAVEMAN-oneline16 "'Je ne peux pas m'habituer a votre mode de fusils. Donnez moi un tronc d'arbre, n'importe quand." ;
+	: CAVEMAN-oneline1 "Je ne comprends pas votre folie des 'chaises' du futur. Je comprends tout le reste." ;
+	: CAVEMAN-oneline2 "Nous n'avons pas de zombos la d'ou je viens. Qu'avez-vous fait pour en faire venir ?" ;
+	: CAVEMAN-oneline3 "PEUT-ETRE que j'ai fait exprès de dormir dans cette glace ! Peut-etre que j'aime la glace." ;
+	: CAVEMAN-oneline4 "Ces zombos sont lents, mais la glace l'est aussi et elle peut surprendre." ;
+	: CAVEMAN-oneline5 "J'ai besoin d'une plus grosse arme." ;
+	: CAVEMAN-oneline6 "Est-ce que les dinosaures parlants existent toujours ?" ;
+	: CAVEMAN-oneline7 "Je parle votre langue car j'ai voyage dans le temps une fois et dormi dans la glace deux fois." ;
+	: CAVEMAN-oneline8 "J'ai l'habitude de ces voyages dans le futur. Cela m'arrive souvent." ;
+	: CAVEMAN-oneline9 "Je suis sur qu'il y a un portail temporel quelque part au Canada." ;
+	: CAVEMAN-oneline10 "Peut-etre que je ne devrais pas retourner dans le passe. Je m'endormirai a nouveau dans la glace." ;
+	: CAVEMAN-oneline11 "Pour des monstres, les zombies sont vraiment lents. Je vais me ramollir en les combattant." ;
+	: CAVEMAN-oneline12 "Les dinosaures etaient tous recouverts de plumes. Ils avaient l'air ridicules." ;
+	: CAVEMAN-oneline13 "Au moins, je n'ai pas voyage dans un futur tres lointain cette fois-ci." ;
+	: CAVEMAN-oneline14 "Je me demande combien d'autres se sont retrouves pris dans la glace. Moi, ça m'est arrive tellement de fois." ;
+	: CAVEMAN-oneline15 "Courir, c'est mieux que d'etre mange. C'est moins bien que de se faire ecraser." ;
+	: CAVEMAN-oneline16 "I can't get used to your 'guns' fad. Give me a tree trunk, any day." ;
 
 	deck-new
 		card: CAVEMAN-oneline1

@@ -48,7 +48,7 @@ cyoa-choice: trade-army-7
 cyoa: trade-army
 	" Forte de lapprovisionnement militaire" cyoa-title!
 	($ Thegroup .. " ' trouve un camionnette a ordures. Elle est verrouillee fermement, avec une trappe laterale. Des noms et prix d'armes sont ecrits pres de l'ouverture.	" .. "Nhesitez pas a jeter simplement la nourriture dedans!" pbold .. "  dit une petite voix dans le camionnette a ordures." $) cyoa-text! basic-tone foodamt
-	choice( "Laisse le tranquille" )choice back-esc 
+	choice( "Laisse le tranquille" )choice back-esc
 	trunk-food 5 < if
 		($ "'Ceci n'est pas assez de nourriture pour la personne du camionnette!" $) +crtext badfx // clear-cyoa
 	else
@@ -122,11 +122,12 @@ cyoa-choice: trade-shotgun-1
 ;
 
 cyoa: trade-shotgun
-	"Colporteur de fusil de chasse" cyoa-title!
-	($ "Bonjour, monsieur I have the finest shotguns in all of Calradia You wont find a better deal anywhere else" .. "SHOTGUNS FOR SALE! SHOTGUNS FOR SAAAALE!" pbold $) cyoa-text! basic-tone foodamt
-	choice( "Laisse le" )choice back-esc 
-	most-grating if 
-		charchoice( "  lui dit de se calmer" fcoolit )choice: trade-shotgun-coolit
+	"Vendeur de fusils de chasse" cyoa-title!
+	($ "Cet homme porte plusieurs fusils de chasse, la plupart attaches a son dos. Il prononce un discours de vente simple mais efficace:
+	" .. "FUSIL A VENDRE! FUSIL A VEEEEEEENDRE!" pbold $) cyoa-text! basic-tone foodamt
+	choice( "Partir" )choice back-esc
+	most-grating if
+		charchoice( " lui dit de se CALMER" fcoolit )choice: trade-shotgun-coolit
 	then
 	trunk-food 5 < if
 		($ "Food to the " .. thegroup .. "  quelques cartouches de fusil de chasse gratuites." $) +crtext goodfx 5 trunk-shotgun-shell+ clear-cyoa
@@ -200,8 +201,8 @@ cyoa-choice: trade-rifle-1
 cyoa: trade-rifle
 	"Collectionneur de fusils" cyoa-title!
 	($ Thegroup .. "  parle a une femme a lair doux. Elle vous invite a decouvrir sa collection de fusils.	" .. "'J'en ai trouve tellement que je cherche a en vendre !" pbold $) cyoa-text! basic-tone foodamt
-	choice( "Laissez la" )choice back-esc 
-	most-grating if 
+	choice( "Laissez la" )choice back-esc
+	most-grating if
 		charchoice( " lui dit de se calmer" fcoolit )choice: trade-rifle-coolit
 	then
 	trunk-food 10 < if
@@ -283,8 +284,8 @@ cyoa-choice: trade-fanatic-6
 cyoa: trade-fanatic
 	"Armes de carnage" cyoa-title!
 	($ "Une femme particulierement intense vous propose de vous vendre une arme de rechange " .. "Je ne porte que le MEILLEUR equipement!	" rbold .. "Elle demarre sa tronconneuse et laccelere plusieurs fois pour souligner ses propos." $) cyoa-text! basic-tone foodamt
-	choice( "Partir pour linstant" )choice back-esc 
-	most-grating if 
+	choice( "Partir pour linstant" )choice back-esc
+	most-grating if
 		charchoice( " lui dit de se calmer" fcoolit )choice: trade-fanatic-coolit
 	then
 	trunk-food 5 < if
@@ -318,8 +319,8 @@ cyoa: trade-fanatic
 0 value blade-machete
 0 value blade-katana
 
-cyoa-choice: trade-blade-rob 
-	
+cyoa-choice: trade-blade-rob
+
 		($ "Le Maitre des Lames parvient a repousser " .. thegroup .. "  en utilisant ses connaissances considerables en matiere depees et ses katanas de centre commercial. " .. cname .. "  chope une machette solide." $) cyoa-text! bitefx rob-fail 1 WEAPON_MACHETE2 trunk.weapon+
 		aholeREV trade-flee
 ;
@@ -360,11 +361,11 @@ cyoa-choice: trade-blade-1
 cyoa: trade-blade
 	"Maitre dArmes" cyoa-title!
 	($ Thegroup .. "  rencontre un homme qui porte de nombreuses epees. Elles sentrechoquent lorsquil bouge.	" .. "'Un jour je fabriquerai la meilleure epee de decoupe de zombies jamais vue! Il me suffit de trouver comment fabriquer des epees en premier. Je vous en vendrai quelques unes que jai trouvees!" pbold $) cyoa-text! basic-tone foodamt
-	choice( "Laisse le" )choice back-esc 
+	choice( "Laisse le" )choice back-esc
 	most-ahole if
 		charchoice( "  vole le marchand" )choice: trade-blade-rob
 	then
-	most-grating if 
+	most-grating if
 		charchoice( "  lui dit de se calmer" fcoolit )choice: trade-blade-coolit
 	then
 	trunk-food 5 < if
@@ -392,7 +393,7 @@ cyoa: trade-blade
 0 value axe-fireaxe
 0 value axe-hatchet
 
-cyoa-choice: trade-axe-rob 
+cyoa-choice: trade-axe-rob
 	40 %chance if
 		($ cname .. "  vole la hache au marchand, qui reste la sans repondre du tout. " .. cname .. "  prend la hache medievale mais se fait peur. " $) cyoa-text! 0.4 1100 tone
 		notsolo if
@@ -410,7 +411,7 @@ cyoa-choice: trade-axe-coolit
 	then cyoa-text!
 	cool-it++
 	($ "'Le marchand de haches ne semble pas reagir.	" .. "....." rbold .. "
-	" .. cname .. " na aucune idee si " .. che .. "  a ete entendu ou non." $) 
+	" .. cname .. " na aucune idee si " .. che .. "  a ete entendu ou non." $)
 	+crtext attitudeREV witsREV 0.3 600 tone
 	($ Thegroup .. "  se sent tellement mal a laise que " .. gthey .. "  sen aillent" .. g1s .. "  le camp commercial des que possible." $) +crtext quitmission badfx
 ;
@@ -442,7 +443,7 @@ cyoa: trade-axe
 	most-ahole if
 		charchoice( " vole le marchand" )choice: trade-axe-rob
 	then
-	most-grating if 
+	most-grating if
 		charchoice( " lui dit de se calmer" )choice: trade-axe-coolit
 	then
 	trunk-food 3 < if
@@ -494,7 +495,7 @@ cyoa-choice: trade-firearms-20
 	1 WEAPON_UZI trunk.weapon+ -12 trunk-food+ charm-bullet ' firearms-uzi ++ ' firearms-goodstuff ++
 ;
 
-cyoa: trade-firearms-mega 
+cyoa: trade-firearms-mega
 
 	($ " Les commercants decident de montrer " .. thegroup .. "  LE BON MATERIEL." $) cyoa-text! goodfx foodamt
 	choice( "Partir pour linstant" )choice back-esc
@@ -562,7 +563,7 @@ cyoa: trade-firearms
 0 value pipebomb-5
 0 value pipebomb-2
 
-cyoa-choice: trade-pipebomb-rob 
+cyoa-choice: trade-pipebomb-rob
 	($ "'Au premier signe de probleme, le commercant ouvre son manteau pour reveler qu'il est couvert de bombes artisanales. D'un mouvement rapide, il allume une meche sur l'une d'entre elles.	" .. cname .. "  est juste a cote de lui, et a a peine assez de temps pour regretter profondement toute cette histoire de vol." $) cyoa-text! bitefx
 		rob-megafail aholeREV trade-flee
 ;
@@ -606,7 +607,7 @@ cyoa: trade-pipebomb
 	most-ahole if
 		charchoice( "  vole le marchand" )choice: trade-pipebomb-rob
 	then
-	most-grating if 
+	most-grating if
 		charchoice( "  lui dit de se calmer" fcoolit )choice: trade-pipebomb-coolit
 	then
 	trunk-food 5 < if
@@ -632,7 +633,7 @@ cyoa: trade-pipebomb
 0 value anime-3
 0 value anime-4
 
-cyoa-choice: trade-anime-rob 
+cyoa-choice: trade-anime-rob
 	70 %chance if
 		($ cname .. "  vole au commercant des epees et des shuriken, mais ecrase des animes parfaitement utilisables dans le processus " $) cyoa-text! goodfx
 		notsolo if
@@ -645,7 +646,7 @@ cyoa-choice: trade-anime-rob
 ;
 : charm-anime
 	most-charming if
-		choosechar ($ " Le commercant donne " .. cname .. "  un katana supplementaire." .. "OFFRE PROMOTIONNELLE, RIEN QUE POUR VOUS! *CLIN DOEIL*" pbold $) 
+		choosechar ($ " Le commercant donne " .. cname .. "  un katana supplementaire." .. "OFFRE PROMOTIONNELLE, RIEN QUE POUR VOUS! *CLIN DOEIL*" pbold $)
 		+cr +text 1 WEAPON_OTAKU trunk.weapon+ cicon
 	then
 ;
@@ -656,12 +657,12 @@ cyoa-choice: trade-anime-20
 : trade-anime-roll args( chara )
 	<- chara .trait@ "Fan danime" $= if
 		<- chara .morale4+
-	then;	
-	<- chara .cwits+ if 
-		<- chara .morale-- 
-	else 
-		<- chara .morale3+ 
-	then 
+	then;
+	<- chara .cwits+ if
+		<- chara .morale--
+	else
+		<- chara .morale3+
+	then
 ;
 : trade-anime-fancrush args( chara )
 	<- chara .trait@ "Fan danime" $= if
@@ -689,7 +690,7 @@ cyoa-choice: trade-anime-coolit
 	else
 		($ cname .. " echanger " .. "CALME TOI. AUSSI, L'ANIME N'EST PAS REEL!" pbold $) then cyoa-text!
 	cool-it++
-		($ "Il ny a pas moyen quil prenne bien cela." .. "NO! YOU'RE WRONG! STOP IT! NOooooooo!" rbold .. "il entre dans le camion et ensuite il sort en furie et confusion. Les autres negociants sont surpris!" $) badfx +crtext attitudeREV witsREV 
+		($ "Il ny a pas moyen quil prenne bien cela." .. "NO! YOU'RE WRONG! STOP IT! NOooooooo!" rbold .. "il entre dans le camion et ensuite il sort en furie et confusion. Les autres negociants sont surpris!" $) badfx +crtext attitudeREV witsREV
 		' trade-anime-fancrush foreach-team-char
 		trade-flee
 ;
@@ -697,7 +698,7 @@ cyoa-choice: trade-anime-anime
 	picon
 	($ pname .. " elle fait son catch phrase." .. "Ahem. " pbold .. "''Rayon d'amour''" rainbold .. " *toussir*" pbold $) text! goodfx
 	($ "Lhomme anime " .. "SE LANCE" fbold .. "  et abandonne tout son stock et une grande partie de ses provisions personnelles en cadeaux !" $) +crtext clear-cyoa
-	morale3+all 12 trunk-food+ 1 WEAPON_WINDSTAR trunk.weapon+ 
+	morale3+all 12 trunk-food+ 1 WEAPON_WINDSTAR trunk.weapon+
 	5 WEAPON_SHURIKEN trunk.weapon+ 5 WEAPON_OTAKU trunk.weapon+
 ;
 cyoa: trade-anime
@@ -714,7 +715,7 @@ cyoa: trade-anime
 	most-ahole if
 		charchoice( "  vole le marchand" )choice: trade-anime-rob
 	then
-	most-grating if 
+	most-grating if
 		charchoice( "  lui dit de se calmer" )choice: trade-anime-coolit
 	then
 	pchar anime? if
@@ -744,8 +745,8 @@ cyoa: trade-anime
 0 value blunt-sledge
 0 value blunt-megamaul
 
-cyoa-choice: trade-blunt-rob 
-	
+cyoa-choice: trade-blunt-rob
+
 		($ "Le maitre emousse repousse " .. thegroup .. "  en leur lancant un tas de marteaux, dont une masse. " .. cname .. "  les saisit du sol." $) cyoa-text! bitefx rob-fail 1 WEAPON_SLEDGE trunk.weapon+ 1 WEAPON_BALLPEEN trunk.weapon+ 2 WEAPON_CLAWHAMMER trunk.weapon+
 		aholeREV trade-flee
 ;
@@ -798,7 +799,7 @@ cyoa: trade-blunt
 	most-ahole if
 		charchoice( "  vole le marchand" )choice: trade-blunt-rob
 	then
-	most-grating if 
+	most-grating if
 		charchoice( " lui dit de se calmer" fcoolit )choice: trade-blunt-coolit
 	then
 	trunk-food 2 < if
@@ -831,8 +832,8 @@ cyoa: trade-blunt
 0 value polearm-spear
 0 value polearm-bardiche
 
-cyoa-choice: trade-polearm-rob 
-	
+cyoa-choice: trade-polearm-rob
+
 		($ "Le marchand de hallebarde fait tournoyer sa lance et la lance droit dans " .. cname .. "!		Super! Lance gratuite!" $) cyoa-text! bitefx rob-fail 1 WEAPON_MODSPEAR trunk.weapon+
 		aholeREV trade-flee
 ;
@@ -858,12 +859,12 @@ cyoa-choice: trade-polearm-4
 
 cyoa-choice: trade-polearm-3
 	($ Thegroup .. "  achete une lance fabriquee par le commercant." $) cyoa-text! goodfx
-		polearm-spear 0 = if 
+		polearm-spear 0 = if
 			($ "This is the latest model in zombie spearing design! Very easy to use. Very tactical.
-			The leverage also makes it take about half the effort to attack with compared to most other weapons!" pbold $) +crtext 
+			The leverage also makes it take about half the effort to attack with compared to most other weapons!" pbold $) +crtext
 		then
-		polearm-spear 2 = if 
-			($ "Cest le dernier que jai en stock. Jespere que votre phalange fonctionnera !" pbold $) +crtext 
+		polearm-spear 2 = if
+			($ "Cest le dernier que jai en stock. Jespere que votre phalange fonctionnera !" pbold $) +crtext
 		then
 	1 WEAPON_MODSPEAR trunk.weapon+ -9 trunk-food+ someicon ' polearm-spear ++
 ;
@@ -885,7 +886,7 @@ cyoa: trade-polearm
 	most-ahole if
 		charchoice( "  vole le marchand" )choice: trade-polearm-rob
 	then
-	most-grating if 
+	most-grating if
 		charchoice( "  lui dit de se calmer" fcoolit )choice: trade-polearm-coolit
 	then
 	trunk-food 3 < if
@@ -924,11 +925,11 @@ cyoa-choice: trade-silent-2
 
 cyoa-choice: trade-silent-1
 	($ Thegroup .. "  achete un pistolet silencieux." $) cyoa-text! goodfx
-		silent-pistol 0 = if 
-			($ "Jen ai encore quelques uns a vendre, si vous voulez des armes a feu silencieuses pour tout un groupe !" pbold $) +crtext 
+		silent-pistol 0 = if
+			($ "Jen ai encore quelques uns a vendre, si vous voulez des armes a feu silencieuses pour tout un groupe !" pbold $) +crtext
 		then
-		silent-pistol 3 = if 
-			($ "Cest mon dernier pistolet. Profitez de votre nouvel arsenal silencieux mais mortel !" pbold $) +crtext 
+		silent-pistol 3 = if
+			($ "Cest mon dernier pistolet. Profitez de votre nouvel arsenal silencieux mais mortel !" pbold $) +crtext
 		then
 	1 WEAPON_SILENTPISTOL trunk.weapon+ -3 trunk-food+ someicon ' silent-pistol ++
 ;
@@ -939,7 +940,7 @@ cyoa: trade-silent
 	(* most-ahole if
 		charchoice( "  vole le marchand" )choice: trade-silent-rob
 	then
-	most-grating if 
+	most-grating if
 		charchoice( "  lui dit de se calmer" fcoolit )choice: trade-silent-coolit
 	then *)
 	trunk-food 3 < if
@@ -957,7 +958,7 @@ cyoa: trade-silent
 		then
 	then
 ;
-	
+
 // Handy Tools Trader
 
 0 value handy-flashlight
@@ -976,8 +977,8 @@ cyoa-choice: trade-handy-2
 
 cyoa-choice: trade-handy-1
 	($ Thegroup .. " achete une lanterne." $) cyoa-text! goodfx
-		handy-flashlight 0 = if 
-			($ "Jen ai des millions si vous en avez besoin centaines de lanternes." pbold $) +crtext 
+		handy-flashlight 0 = if
+			($ "Jen ai des millions si vous en avez besoin centaines de lanternes." pbold $) +crtext
 		then
 	1 WEAPON_FLASHLIGHT trunk.weapon+ -1 trunk-food+ someicon ' handy-flashlight ++
 ;
@@ -991,7 +992,7 @@ cyoa: trade-handy
 	(* most-ahole if
 		charchoice( "  vole le marchand" )choice: trade-handy-rob
 	then
-	most-grating if 
+	most-grating if
 		charchoice( "  lui dit de se calmer" fcoolit )choice: trade-handy-coolit
 	then *)
 	trunk-food 1 < if
@@ -1019,7 +1020,7 @@ cyoa: trade-handy
 
 cyoa-choice: trade-heavy-mine2
 	($ Thegroup .. "  achete 8 mines terrestres." $) cyoa-text! goodfx
-		($ "Tendez un piege aux zombies avec ces mines, puis laissez les explosions faire tout le travail !" pbold $) +crtext 
+		($ "Tendez un piege aux zombies avec ces mines, puis laissez les explosions faire tout le travail !" pbold $) +crtext
 	8 WEAPON_LANDMINE trunk.weapon+ -20 trunk-food+ someicon ' heavy-mine2 ++
 ;
 
@@ -1035,7 +1036,7 @@ cyoa-choice: trade-heavy-2
 
 cyoa-choice: trade-heavy-mine1
 	($ Thegroup .. "  achete 2 mines terrestres." $) cyoa-text! goodfx
-		($ "Jeter une sur le sol, puis courir et attendre lexplosion!" pbold $) +crtext 
+		($ "Jeter une sur le sol, puis courir et attendre lexplosion!" pbold $) +crtext
 	2 WEAPON_LANDMINE trunk.weapon+ -6 trunk-food+ someicon ' heavy-mine1 ++
 ;
 
@@ -1070,7 +1071,7 @@ cyoa: trade-heavy
 
 cyoa-choice: trade-fireworks-4
 	($ Thegroup .. "  achete un KO Boomer! Autrefois illegal dans presque tous les pays!" $) cyoa-text! goodfx
-		($ "'J'entends dire que c'est toujours tres illegal au Canada!		25% de chances de vous faire exploser! Tentez votre chance!		Si vous sentez que ca chauffe dans votre main, essayez de la laisser tomber et de vous enfuir TRES vite!" pbold $) +crtext 
+		($ "'J'entends dire que c'est toujours tres illegal au Canada!		25% de chances de vous faire exploser! Tentez votre chance!		Si vous sentez que ca chauffe dans votre main, essayez de la laisser tomber et de vous enfuir TRES vite!" pbold $) +crtext
 	20 WEAPON_KOBOOMER trunk.weapon+ -5 trunk-food+ someicon ' fireworks-4 ++
 ;
 
@@ -1086,7 +1087,7 @@ cyoa-choice: trade-fireworks-2
 
 cyoa-choice: trade-fireworks-1
 	($ Thegroup .. " il achete 3 paquets de feux dartifice a poudre." $) cyoa-text! goodfx
-		($ "Allume une boite, puis regarde les zombies qui la poursuivent !" pbold $) +crtext 
+		($ "Allume une boite, puis regarde les zombies qui la poursuivent !" pbold $) +crtext
 	3 WEAPON_FIRECRACKERS trunk.weapon+ -2 trunk-food+ someicon ' fireworks-1 ++
 ;
 
@@ -1116,4 +1117,4 @@ cyoa: trade-firework
 	then
 ;
 
-} } 
+} }

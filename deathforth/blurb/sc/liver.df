@@ -1,11 +1,11 @@
 	: HHECK-oneline1 "Yep..." ;
-	: HHECK-oneline2 "'J'ai le sens de l'humour ! J'aime Tony Danza !" ;
-	: HHECK-oneline3 "Let me tell you all about the wonders of propane..." ;
+	: HHECK-oneline2 "J'ai un bon sens de l'humour ! J'aime Tony Danza !" ;
+	: HHECK-oneline3 "Laissez-moi vous parler des bienfaits du propane..." ;
 	: HHECK-oneline4 "BWAAAAAAAAAAAAAAH!" ;
-	: HHECK-oneline5 "'Il y avait de la suie sous les ongles de mon garcon ! On n'obtient pas ca avec un combustible propre !" ;
+	: HHECK-oneline5 "Il y avait de la suie sous les ongles de mon garcon ! Ca, ca n'arrive pas avec un combustible propre !" ;
 	: HHECK-oneline6 "Dale, espece de cretin !" ;
-	: HHECK-oneline7 "Je veux acheter un sacre marteau ! Pouvez vous me dire ou sont les marteaux ?" ;
-	: HHECK-oneline8 "'On s'amuse beaucoup, mais parlons de quelque chose de serieux : la securite du propane." ;
+	: HHECK-oneline7 "Je veux acheter un putain de marteau ! Pouvez-vous me dire ou se trouvent les marteaux ?" ;
+	: HHECK-oneline8 "Nous nous amusons beaucoup, mais parlons d'un sujet serieux : la securite du propane." ;
 	: HHECK-oneline9 "Mmm-hmm..." ;
 
 	deck-new
@@ -35,14 +35,14 @@
 	constant BLURB-HHECK-DECK
 	BLURB-HHECK-DECK var blurb-hheck-deck
 	BLURB-HHECK-DECK shuffles to blurb-hheck-deck
-	
-	
-	: EFUDD-oneline1 "'Je chasse les lapins !" ;
+
+
+	: EFUDD-oneline1 "Je chasse le laping !" ;
 	: EFUDD-oneline2 "Huhuhuhuhuhuhuhuh" ;
-	: EFUDD-oneline3 "Je deteste ce lapin !" ;
+	: EFUDD-oneline3 "Je deteste ce laping" ;
 	: EFUDD-oneline4 "Nuggs Chungus est ma benediction et ma malediction." ;
-	: EFUDD-oneline5 "'Parfois, je m'inquiete que mon chapeau soit trop grand. Mais ensuite je realise que c'est simplement un symbole de mon pouvoir !" ;
-	: EFUDD-oneline6 "'Le pouvoir de mon tampon me permet d'arreter le temps ! Vous ne pouvez pas le percevoir, car le temps est arrete pour vous." ;
+	: EFUDD-oneline5 "Parfois, je m'inquiete que mon chapeau soit trop grand. Mais ensuite, je me souviens que c'est simplement le symbole de ma puissance !" ;
+	: EFUDD-oneline6 "Le pouvoir de mon Sceau me permet d'arreter le temps ! Vous ne vous rendez compte de rien puisque le temps est arrete pour vous." ;
 
 	deck-new
 		card: EFUDD-oneline1

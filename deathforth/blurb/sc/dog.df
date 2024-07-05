@@ -1,7 +1,7 @@
-	: DOG-oneline1 "ABOYER !" ;
-	: DOG-oneline2 "ABOIEMENT ! ABOIEMENT !" ;
-	: DOG-oneline3 "OUAF !" ;
-	: DOG-oneline4 "AROOO!" ;
+	: DOG-oneline1 "OUAF !" ;
+	: DOG-oneline2 "OUAF ! OUAF !" ;
+	: DOG-oneline3 "WOUF !" ;
+	: DOG-oneline4 "GRRRRRR !" ;
 
 	deck-new
 		card: DOG-oneline1
@@ -12,18 +12,18 @@
 	DOG-ONELINERS var dog-oneliners
 	DOG-ONELINERS shuffles to dog-oneliners
 
-	: DOG-emote1 "  regarde autour de lui avec excitation." ;
-	: DOG-emote2 "  baisse la tete." ;
-	: DOG-emote3 "  halete." ;
-	: DOG-emote4 "  sort la tete par la fenetre." ;
-	: DOG-emote5 "  mache un jouet qui couine." ;
-	: DOG-emote6 "  mache un os de non zombie." ;
-	: DOG-emote7 "  commence a baver." ;
-	: DOG-emote8 "  aboie sur la faune sauvage au hasard." ;
+	: DOG-emote1 " regarde autour de lui avec excitation." ;
+	: DOG-emote2 " baisse la tete." ;
+	: DOG-emote3 " halete." ;
+	: DOG-emote4 " sort la tete par la fenetre." ;
+	: DOG-emote5 " mache un jouet qui couine." ;
+	: DOG-emote6 " mache un os qui n'est pas celui d'un zombie." ;
+	: DOG-emote7 " commence a baver." ;
+	: DOG-emote8 " aboie sur la faune sauvage au hasard." ;
 	: DOG-emote9 " aboie apres un chat." ;
-	: DOG-emote10 " sendort." ;
-	: DOG-emote11 " commence a renifler lair." ;
-	: DOG-emote12 " pleurniche" ;
+	: DOG-emote10 " s'endort." ;
+	: DOG-emote11 " commence a renifler l'air." ;
+	: DOG-emote12 " pleurniche." ;
 
 
 	deck-new
@@ -42,7 +42,7 @@
 	constant DOG-EMOTES
 	DOG-EMOTES var dog-emotes
 	DOG-EMOTES shuffles to dog-emotes
-	
+
 : dog-oneliner
 	dog-oneliners depths 0= if DOG-ONELINERS shuffles to dog-oneliners then
 	blurbslot 0= if

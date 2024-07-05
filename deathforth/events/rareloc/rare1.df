@@ -112,10 +112,10 @@ cyoa: rare1-museum
 cyoa: rare1-factory
 	"Usine mysterieuse" cyoa-title!
 	someicon 0 8 rnd to mystfactory
-	($ Thegroup .. "  decouvre une usine dont les signes ont rouille jusqua rien. Les zombies " .. " envahissent" rbold .. " ' envahissent entierement ce lieu. Il y a probablement encore quelque chose de ce qui etait produit par cette usine, quelle que soit sa nature.'," $) cyoa-text! basic-tone
+	($ Thegroup .. "  repère une usine dont les enseignes sont rongees par la rouille. Les zombies " .. " ONT PRIS POSSESSION " rbold .. " des lieux. A l'interieur il reste probablement un peu de ce que l'usine fabriquait avant, quoi que ce soit.'," $) cyoa-text! basic-tone
 	1.5 8 18 rnd 1 2 rnd zforecast // former 1.8
 	"events/rareloc/region/industry.df" $load-region
-		choice( " Enquete sur lUsine" )choice: premission
+		choice( " Enqueter sur l'usine" )choice: premission
 		gas-draw
 ;
 
@@ -123,20 +123,21 @@ cyoa: rare1-factory
 
 cyoa: rare1-altar
 	"Maison malveillante" cyoa-title!
-	
-	($ Thegroup .. "  entre dans une maison au bout dune impasse. Elle radie une " .. "ACABLANT" rbold .. "  sensation de terreur et de malveillance. Il pourrait y avoir une boite de conserve a linterieur!" $) cyoa-text! basic-tone
+
+	($ Thegroup .. " tombe sur une maison au bout d'une impasse. Il s'en degage un sentiment d'effroi et de mechancete" .. "ECRASANTE" rbold .. "
+	Il y a peut-etre des boites de conserve a l'interieur !" $) cyoa-text! basic-tone
 	1.6 8 18 rnd 0 1 rnd zforecast // former 2.3
 	"events/rareloc/region/altar.df" $load-region
-		choice( "Enqueter sur la maison" )choice: premission
+		choice( "Investigate House" )choice: premission
 		gas-draw
 ;
 
 // Giant Pig Car
 
 cyoa: rare1-hotdog
-	"Animal geant" cyoa-title!
-	
-	($ Thegroup .. "  voit un animal gigantesque sur le cote de la route, au milieu dun groupe de magasins. Est ce une hallucination? Ou une sorte de piege?" $) cyoa-text! basic-tone
+	"Animal Geant" cyoa-title!
+
+	($ Thegroup .. "  apercoit un animal gigantesque sur le bord de la route, au milieu d'un ensemble de magasins. Peut-etre s'agit-il d'une hallucination ? Ou d'un piege ?" $) cyoa-text! basic-tone
 	2.3 8 18 rnd 0 1 rnd zforecast
 	"events/rareloc/region/hotdog.df" $load-region
 		choice( "Enqueter sur lanimal" )choice: premission
@@ -148,8 +149,8 @@ cyoa: rare1-hotdog
 cyoa: rare1-hermit
 	// image-cabin-in-woods
 	char-gen to recruitee 2 recruitee .specialtype! ricon
-	"Visite de voisinage" cyoa-title!
-	($ "En essayant de seloigner dune grande horde " .. thegroup .. " ' fait un detour par les bois profonds. Apres avoir pris un mauvais virage, ils reperent une cabane. Il y a de la fumee qui sort de la cheminee!" $) cyoa-text! basic-tone
+	"Visite de Courtoisie" cyoa-title!
+	($ "Alors qu'ils tentent d'echapper a une horde, " .. thegroup .. " fait un detour par les bois. Apres s'etre trompe de route, ils reperent une cabane. Il y a de la fumee qui sort de la cheminee!" $) cyoa-text! basic-tone
 	3 12 16 rnd 1 siegecast // 2.2
 	"events/rareloc/region/hermit.df" $load-region
 		choice( "Verifie ca" )choice: premission
@@ -159,12 +160,13 @@ cyoa: rare1-hermit
 // Alien Car
 
 cyoa: rare1-ufo
-	"La verite est ailleurs" cyoa-title!
+	"La Verite Est Ailleurs" cyoa-title!
 		char-gen to recruitee 51 recruitee .specialtype! ricon
-		($ "En traversant les bois en voiture " .. thegroup .. " SEES A UFO AMIDST THE TREES! WHOAAAAAAA!!!!" rbold .. "'		Attention! Il y a quelque chose qui bouge pres de lui!" $) cyoa-text!
+		($ "En conduisant a travers la foret, " .. thegroup .. " VOIT UN OVNI PARMI LES ARBRES ! WHOUAAAAAAA !!!!" rbold .. "
+		Attention! Il y a quelque chose qui bouge pres de lui!" $) cyoa-text!
 		2.8 14 19 rnd 2 siegecast // untouched
 		"events/rareloc/region/alien.df" $load-region
-		choice( "Enqueter sur lOVNI!" )choice: premission
+		choice( "Enqueter sur l'OVNI" )choice: premission
 		gas-draw
 	 goodfx
 ;
@@ -281,7 +283,7 @@ cyoa: rare1-rangers
 
 // Bryce Li
 
-cyoa-choice: bruce-picked 
+cyoa-choice: bruce-picked
 	cchar .weapon_default@ WEAPON_KUNG = if
 		($ cname .. "  se fait enseigner quelques techniques de niveau maitre! " .. cHe .. "  frappe maintenant encore plus fort! Maintenant " .. chis .. "  les mains peuvent toucher trois cibles par attaque!" $) text!
 		WEAPON_MASTERKUNG
@@ -304,7 +306,7 @@ cyoa: brucerescued
 			else
 				($ "En retour de laide, il enseigne " .. cname .. "  comment ecraser des zombies avec " .. chis .. "  a mains nues !" $) +crtext WEAPON_KUNG
 			then cchar .weapon_default! goodfx
-		else		
+		else
 			($ "En remerciement de son aide " .. rhim .. ", " .. rhe .. " offers to teach one person how to splat zombies bare-handed.
 			Who should get the training?" $) +crtext
 			' bruce-picked cyoa-human-choice

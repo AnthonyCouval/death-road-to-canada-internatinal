@@ -7,7 +7,7 @@ road{
 	0 value temp-aggro
 	1 value road-difficulty
 	1 value siege-duration
-	
+
 	0 value gas-drivemore
 	0 value gas-drove
 }
@@ -16,9 +16,9 @@ road{
 
 : aggrocheck road{ temp-aggro } ;
 
-: aggro 
+: aggro
 	aggrocheck 4 < if
-		road{ temp-aggro } region.zombie_aggro! 
+		road{ temp-aggro } region.zombie_aggro!
 	else
 		3 region.zombie_aggro! 3 region.zombie_alertscale!
 	then
@@ -31,8 +31,8 @@ road{
 : 2diff aggro 2 difficulty ;
 
 // sdiff just gets rid of the aggro for sieges, since siege-start puts that in anyway
-: 2sdiff 2 difficulty ; 
-: 5sdiff 5 difficulty ; 
+: 2sdiff 2 difficulty ;
+: 5sdiff 5 difficulty ;
 : 10sdiff 10 difficulty ;
 
 : halfrnd rnd 2 / ;
@@ -45,11 +45,11 @@ road{
 	10diff 10 < if "Faible" then; // 11
 	10diff 13 < if "Modere" then; // 16
 	10diff 16 < if "Gros" then; // 21
-	10diff 19 < if "Tres gros" rbold then; // 31 
+	10diff 19 < if "Tres gros" rbold then; // 31
 	10diff 22 < if "Tres Epais!" rbold then;
 	10diff 24 < if "Tres Epais!!" rbold then;
 	10diff 26 < if "Very Thick!!!" rbold then;
-	10diff 29 < if "Sardine en boite" rbold then; // 41 
+	10diff 29 < if "Sardine en boite" rbold then; // 41
 	10diff 32 < if "Sardine Packed!" rbold then;
 	10diff 35 < if "Sardine Packed!!" rbold then;
 	10diff 38 < if "Sardine Packed!!!" rbold then;
@@ -89,11 +89,14 @@ road{
 ;
 
 : zforetext
-	($ "Votre prevision de zombie est :		TAILLE DE LESSAIM : " pbold .. swarmforecast .. "		AGRESSION : " pbold .. aggroforecast .. "		HEURE ACTUELLE : " pbold .. timeforecast $) +crtext
+	($ "Prevision du nombre de zombies:
+		TAILLE DE LA HORDE: " pbold .. swarmforecast .. "
+		AGRESSIVITE: " pbold .. aggroforecast .. "
+		HEURE ACTUELLE: " pbold .. timeforecast $) +crtext
 ;
 
 : zfore-music
-	10diff 19 < if 
+	10diff 19 < if
 		easy-music-load
 	else
 		hard-music-load
@@ -107,8 +110,8 @@ road{
 	<- timeset to timeofday
 	<- aggro road{ to temp-aggro }
 	<- tdiff road{ to temp-difficulty }
-		
-	zforetext	
+
+	zforetext
 	zfore-music
 ;
 
@@ -159,9 +162,12 @@ road{
 	<- stime road{ to siege-duration }
 	<- sdiff siege-scalar * road{ to temp-difficulty }
 	zfore-music
-	
-	($ "'ALERTE DE SIEGE! IL N'Y A PAS DE RETRAITE!" fbold .. "tAILLE DE LHORDE : " pbold .. siegeforecast .. "		HEURE ACTUELLE : " pbold .. timeforecast .. "dUREE DU SIEGE : " pbold .. siegetime $) +crtext
-	
+
+	($ "ALERTE ASSAUT ! IL N'Y A PAS D'ECHAPPATOIRE!" fbold .. "
+		TAILLE DE LA HORDE: " pbold .. siegeforecast .. "
+		HEURE ACTUELLE: " pbold .. timeforecast .. "
+		DUREE DE L'ASSAUT: " pbold .. siegetime $) +crtext
+
 ;
 
 : isexplorer? statmod{ .explorer? } ;
@@ -170,20 +176,20 @@ road{
 
 : explorerdiscount
 	explorer? if drop
-		gstats{ perk-explorer } 3 >= if 2 - 
+		gstats{ perk-explorer } 3 >= if 2 -
 			else gstats{ perk-explorer } 2 >= if 1 - then then
-	else 
-		drop 
+	else
+		drop
 	then
 ;
-: gas-drawcost 
+: gas-drawcost
 	road{ gas-drove 1 + car-guzzle 2 / explorerdiscount * } >int
 ;
 : gas-reroll
 	road{ gas-drawcost -1 * trunk-gas+ -1 car-tune+ 1 to gas-drivemore }
 ;
 
-: gas-drawchoice 
+: gas-drawchoice
 	choice( "Aller vers une autre localisation   " .. gas-drawcost .. "  essence" )choice: gas-reroll
 ;
 
@@ -200,7 +206,7 @@ road{
 constant skiptxtstack
 
 : skiptxt skiptxtstack shuffles pops nip ;
-: gas-skip 
+: gas-skip
 	choice( skiptxt pbold )choice
 ;
 

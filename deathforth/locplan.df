@@ -93,7 +93,7 @@ deck-new
 	"Centre commercial" rchoice-card: malltest
 	"Gymnase envahi" rchoice-card: swarmgym-cyoa
 	"Arcade envahie" rchoice-card: swarmarcade-cyoa
-	"Aire de repos" choice-card: rest-stop 
+	"Aire de repos" choice-card: rest-stop
 	"Aire de repos envahie" rchoice-card: rest-death // Roadside Nightmare
 	"Aire de repos avec voiture" choice-card: rest-car // Roadside Car Stop
 	"Cimetiere mecanique avec voiture" choice-card: junk-car // Junkyard Car Parking
@@ -114,11 +114,11 @@ value loc-pick-stack-base
 loc-pick-stack-base shuffles var loc-pick-stack
 
 deck-new
-	"Hotel calme" choice-card: inner3-cyoa
+	"Hotel abandonne" choice-card: inner3-cyoa
 	"Maison sur la route" choice-card: inner5-cyoa
 	"Aire de repos" choice-card: rest-easy
-	"Yall Mart" choice-card: yallmart-easy
-	"Usine calme" choice-card: indust-easy
+	"Yall-Mart" choice-card: yallmart-easy
+	"Usine abandonnee" choice-card: indust-easy
 value easyloc-pick-stack-base
 
 easyloc-pick-stack-base shuffles var easyloc-pick-stack
@@ -132,12 +132,12 @@ pops nip ;
 pops nip ;
 
 : explorer-pick
-	explorer? if drop 3 else drop 
+	explorer? if drop 3 else drop
 		10 %chance if 3 else 2 then
-	then 
+	then
 ;
 
-: pick-3-locs 
+: pick-3-locs
 	explorer-pick stack sizes for get-a-loc shove next to 3-loc-stack
 	cyoa-3-locs
 ;
@@ -148,10 +148,10 @@ pops nip ;
 
 : locpick-redrawcost road{ car-guzzle 2.5 * } >int ;
 
-: explorer-redrawcost 
+: explorer-redrawcost
 	gstats{ perk-explorer } 3 >= if
 		road{ car-guzzle 1.5 * } >int
-	else 
+	else
 		gstats{ perk-explorer } 2 >= if
 			road{ car-guzzle 2 * } >int
 		else
@@ -200,19 +200,20 @@ pops nip ;
 
 : easylocpick
 	cyoa-start
-	"Sembarquer sur la route de la mort" cyoa-title!
-	($ "Pour commencer le voyage " .. thegroup .. " ' decide de se procurer quelques fournitures d'un endroit voisin.		Pour survivre a la route de la Mort, il vous faudra rassembler autant de fournitures que possible ! Vous aurez egalement besoin de trouver des moyens de former et de faire grandir votre equipe." $) text!
+	"Embarking on the Death Road" cyoa-title!
+	($ "Pour commencer le voyage, " .. thegroup .. " decide de se ravitailler dans un endroit proche.
+		Pour survivre sur la Route de la Mort, vous devrez accumuler autant de fournitures que possible ! Vous devrez egalement trouver des moyens d'entrainer et de developper votre equipe." $) text!
 	// Temp Testing
-	// choice( "Ami gele" fbold )choice: rare2-caveman
+	// choice( "Frozen Friend" fbold )choice: rare2-caveman
 	pick-3-locs-easy
 	explorer? if drop
 		easyloc-pick-stack drawcard
 	then
 ;
-	
+
 (* AUTO CHOICE DECK EXAMPLE
 
-deck-new 
+deck-new
 	"Aire de repos" choice-card: beep ( <- the choice handler, i.e. rest-stop )
 value choices-list
 

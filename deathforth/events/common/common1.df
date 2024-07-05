@@ -1,5 +1,5 @@
 
-cyoa{ road{ 
+cyoa{ road{
 
 // Twinkie Truck
 
@@ -22,9 +22,9 @@ cyoa-choice: common1-twinkie-mech
 
 cyoa-choice: common1-twinkie-smash
 	cpet? if
-		($ cname .. " commence a macher sur la serrure. " $) 
+		($ cname .. " commence a macher sur la serrure. " $)
 	else
-		($ cname .. " trouve une grande pierre et ensuite frappe fort sur la serrure. " $) 
+		($ cname .. " trouve une grande pierre et ensuite frappe fort sur la serrure. " $)
 	then cyoa-text!
 		cstrength+ if
 			($ "WHAAAAAAM!" rbold .. " La serrure explose " $) +text common1-twinkie-get
@@ -35,7 +35,7 @@ cyoa-choice: common1-twinkie-smash
 			cpet? if
 				($ cHe .. " en fait des dommages a " .. chis .. " dents contre le metal solide!" $)
 			else
-				($ cHe .. " finit par ecraser " .. chis .. " main en lair plutot que douvrir le camion!" $) 
+				($ cHe .. " finit par ecraser " .. chis .. " main en lair plutot que douvrir le camion!" $)
 			then +text bitefx sting-- strength--
 		then strengthREV
 ;
@@ -76,7 +76,7 @@ cyoa-choice: common1-deer-leave
 
 cyoa-choice: common1-deer-runover
 	choosehuman
-	($ cname .. "  appuie sur le gaz et ecrase la voiture contre le cerf." $) cyoa-text! 
+	($ cname .. "  appuie sur le gaz et ecrase la voiture contre le cerf." $) cyoa-text!
 	common1-deer-eat car-plowthrough
 ;
 
@@ -84,8 +84,8 @@ cyoa-choice: common1-deer-shoot
 	($ cname .. "  tire sur le cerf" $) cyoa-text!
 	vehicle.which@ 0 > if "  dune des fenetres de la voiture. " else ". " then +text
 		shooting+roll if
-			($ cHe .. "  fait le tir" $) +crtext 
-			vehicle.which@ 0 > if 
+			($ cHe .. "  fait le tir" $) +crtext
+			vehicle.which@ 0 > if
 				", empochant le cerf tout en allant a lencontre de toute ethique de chasseur."
 			else
 				"!"
@@ -113,7 +113,7 @@ cyoa: common1-deer
 // Cauterize or stitch wound
 
 cyoa-choice: common1-stitches-no
-	($ cname .. " prend la decision " .. che .. " 'ne pense pas avoir besoin de points de suture, et qu'il vaut mieux ignorer le probleme.' " .. cHe .. " finit par saigner partout, et lbras ne guerit jamais completement.," $) cyoa-text! badfx strength-- sting-- 
+	($ cname .. " prend la decision " .. che .. " 'ne pense pas avoir besoin de points de suture, et qu'il vaut mieux ignorer le probleme.' " .. cHe .. " finit par saigner partout, et lbras ne guerit jamais completement.," $) cyoa-text! badfx strength-- sting--
 ;
 
 cyoa-choice: common1-stitches-med
@@ -145,7 +145,7 @@ cyoa: common1-stitches
 
 // Lonely Gas Station
 
-: common1-gas-get 
+: common1-gas-get
 	($ Thegroup .. "  ramasse ce precieux gaz. " $) +crtext 70 110 rnd trunk-gas+ goodfx
 ;
 
@@ -166,7 +166,7 @@ cyoa-choice: common1-gas-climb
 	($ cname .. "  se porte volontaire pour grimper dans les reservoirs. " $) cyoa-text!
 		cpet? if
 			($ cHe .. "  y reste coince et il faut beaucoup de temps pour sortir. " .. cname .. "  en ressort completement trempe dessence." $) +text
-			morale2- sting-- 
+			morale2- sting--
 			notsolo if
 				($ notcname .. "  essore " .. chim .. "  et recupere lessence !" $)
 				+crtext 70 110 rnd trunk-gas+ goodfx
@@ -191,41 +191,41 @@ cyoa: common1-gas
 
 // Jon's tooth pain event and revamped version of his radio event
 
-: cardJ4-mcheck 
+: cardJ4-mcheck
 	medicalroll if
 		($ cname .. " connaissait vraiment ce quil faisait. En utilisant les outils et les fournitures medicales disponibles, " .. che .. " a pu tirer la molaire de maniere propre et avec relativement peu de douleur " $) cyoa-text! goodfx
 		medical++
 	then;
-	
+
 		($ cname .. " avait beaucoup de mal. Lextraction dentaire etait sale, maladroite et douloureuse. De plus, " .. che .. " a tire la mauvaise molaire et a du le faire a nouveau. " $) cyoa-text! bitefx ouch-- morale3-
-		
+
 	dead? if
 		+cr ($ "Apres avoir tire la deuxieme molaire " .. cname .. " on entendit dire " .. "OUAI MERDE CET APPORT DE Bruit" pbold .. " et ensuite " .. che .. "  est mort spontanement." $) +text
 	then
-	
+
 ;
 
 cyoa-choice: cardJ4-dentist cardJ4-mcheck medicalREV ;
 
-: cardJ4-mecheck 
+: cardJ4-mecheck
 	mechanicroll if
 		 ($ "Utilisant leffet de levier ajoute, " .. che .. "  claque la portiere de la voiture, arrachant proprement la dent." $) +text goodfx
-		mechanic++ 
+		mechanic++
 	then;
-	
+
 		($ "Mal prepare a la force soudaine du claquement de la portiere, " .. che .. "  est tire vers la voiture et heurte " .. chis .. "  la tete contre la portiere. " $) +text bitefx ouch-- morale--
-		
+
 	dead? if
 		+cr ($ "Ce scenario exact etait en fait un moyen assez courant de mourir avant lapocalypse zombie. Ces accidents ont ete tenus a lecart des nouvelles en raison de " .. "GRANDES ENTREPRISES AUTOMOBILES" rbold .. "." $) +text
 	then
 ;
 
 cyoa-choice: cardJ4-mechanical
-	($ cname .. ", sinspirant de vieilles emissions de dessins animes, decide dattacher " .. chis .. "  dent a la portiere de la voiture." $) cyoa-text! 
+	($ cname .. ", sinspirant de vieilles emissions de dessins animes, decide dattacher " .. chis .. "  dent a la portiere de la voiture." $) cyoa-text!
 		+cr cardJ4-mecheck mechanicREV
 ;
 
-: cardJ4-scheck 
+: cardJ4-scheck
 	cpet? if
 		($ cname .. "  essaie de se debarrasser de la dent cassee en mordant une pierre. Quelques dents tombent et la douleur est atroce. Mais au moins la mauvaise dent est tombee aussi." $) cyoa-text! badfx
 		nonfatal if
@@ -234,14 +234,14 @@ cyoa-choice: cardJ4-mechanical
 	then;
 	strengthroll if
 		($ cname .. "  attrape une paire de pinces et se met au travail, tirant la dent aussi fort que possible. En utilisant uniquement sa volonte pour lutter contre la douleur, " .. che .. "  enleve la dent rapidement et avec etonnamment peu de problemes." $) cyoa-text! goodfx
-		strength++ 
+		strength++
 	then;
 		($ cname .. " ' attrape une paire de pinces et se met au travail. L'extraction ne se passe pas bien. Apres beaucoup de douleur et de sang la dent finit par sortir." $) cyoa-text! bitefx ouch-- morale2-
-		
+
 		dead? if
 			+cr ($ "Certainement " .. cname .. " moult souffre de cela." $) +text
 		then
-		
+
 ;
 
 cyoa-choice: cardJ4-force cardJ4-scheck strengthREV ;
@@ -250,7 +250,7 @@ cyoa: cardJ4-test
 	"Ma Hooth" cyoa-title!
 	choosehuman cicon
 	($ cname .. " a une douleur dentaire presque handicapante. Sans acces aux outils precis necessaires la seule option reste de tirer la dents. " .. cHe .. " pese les options actuelles." $) cyoa-text! basic-tone
-	
+
 		choice( "Faire sortir !" )choice: cardJ4-force
 		cnotpet? if
 			choice( "Jetais autrefois un dentiste!" )choice: cardJ4-dentist
@@ -277,16 +277,16 @@ cyoa-choice: cardJ2-fix
 				"Ce qui, bien sur, n'aide en rien la situation." +crtext cardJ2-broke
 			then
 		then
-	then;	
+	then;
 	cmechanic+ if
 		($ cname .. " repare le lecteur CD avec un minimum de difficulte" $) cyoa-text! goodfx morale++all
 	then;
 	ctemper- cstrength+ and if
 		($ cname .. " " $) cyoa-text! goodfx morale++all strengthREV
 	then;
-	($ cname .. " en francais  retire le lecteur CD et se demande comment le reparer. " $) cyoa-text! 
+	($ cname .. " retire le lecteur CD et se demande comment le reparer. " $) cyoa-text!
 	mechanicroll if
-		($ cHe .. " repare ce qui ne va pas" $) +crtext goodfx mechanic++ morale++all 
+		($ cHe .. " repare ce qui ne va pas" $) +crtext goodfx mechanic++ morale++all
 	else
 		($ cHe .. " ne parvient pas a le reparer." $) +text cardJ2-broke
 	then mechanicREV
@@ -302,17 +302,17 @@ cyoa-bridge: cardJ2-fix4
 	' cardJ2-fix cyoa-team-choice
 ;
 
-cyoa: cardJ2-test 
-	vehicle.which@ 0 = if 
+cyoa: cardJ2-test
+	vehicle.which@ 0 = if
 		image-road-end
 		"Marche epuisante" cyoa-title! someicon
-		($ Thegroup .. "  marche a un rythme effrene. Il ny a pas dendroit sur ou se cacher, donc sarreter pour une pause serait trop dangereux." $) text! 
+		($ Thegroup .. "  marche a un rythme effrene. Il ny a pas dendroit sur ou se cacher, donc sarreter pour une pause serait trop dangereux." $) text!
 		(*	solo if ($ cname .. "  devient tres fatigue ! " $) else "Tout le monde devient tres fatigue ! " then +crtext
 		($ gThey .. "  sera epuise pendant le prochain combat." $) +text
 		nosleep *) morale--all badfx
 	then;
 	"Reparation audio" cyoa-title!
-	($ Thegroup .. "  est frustre parce que le lecteur CD de la voiture est coince, jouant la meme chanson encore et encore. Qui devrait essayer de le reparer ?" $) cyoa-text! 4 500 tone 
+	($ Thegroup .. "  est frustre parce que le lecteur CD de la voiture est coince, jouant la meme chanson encore et encore. Qui devrait essayer de le reparer ?" $) cyoa-text! 4 500 tone
 		team-count 3 > if
 			' cardJ2-fix 2 #cyoa-team-choice
 			choice( "Choisissez quelquun dautre" )choice: cardJ2-fix4
@@ -366,8 +366,8 @@ cyoa-choice: magazine1-cats
 				morale4+
 			else
 				morale2+ attitude++
-			then 
-		then		
+			then
+		then
 ;
 
 cyoa: magazine1-cyoa
@@ -389,7 +389,7 @@ cyoa: magazine1-cyoa
 cyoa-choice: magazine2-glu
 	"Anecdotes Inspirantes" cyoa-title!
 	($ cname .. "  se rend compte que ce magazine a toujours ete ringard, mais apprecie toujours les histoires optimistes. Une histoire parle dun chat qui sauve son proprietaire de letouffement lors dun buffet. Inspirant." $) cyoa-text! 2 300 tone attitudeREV attitude++ magazine2-loot
-;	
+;
 cyoa-choice: magazine2-sci
 	"Science douteuse" cyoa-title!
 	($ cname .. " ' se sent pessimiste quant a la prediction du magazine concernant les aeroglisseurs volants dans quelques annees, maintenant que la civilisation est plus ou moins detruite. C'etait quand meme un magazine assez divertissant." $) cyoa-text! 1 300 tone attitudeREV attitude-- magazine2-loot
@@ -397,7 +397,7 @@ cyoa-choice: magazine2-sci
 cyoa-choice: magazine2-celeb
 	"Actualites des celebrites" cyoa-title!
 	($ "Ce magazine a toujours ete incroyablement mechant, peut etre plus encore maintenant que la plupart des gens qui sy trouvent sont maintenant manges " .. cname .. "  est une personne un peu pire pour lavoir meme lu." $) cyoa-text! 2 300 tone loyaltyREV loyalty-- witsREV wits-- morale2+ magazine2-loot
-;	
+;
 cyoa: magazine2-cyoa
 	"Cabinet dentaire" cyoa-title!
 	choosehuman cicon
@@ -412,48 +412,48 @@ cyoa: magazine2-cyoa
 // Prepper Magazine - Person Pick CYOA if you have people, Instant Result if you don't.
 
 : mag3roll 30 %chance if .medical++ else 50 %chance if .shooting++ else .mechanic++ then then ;
-: mag3share cyoa-good-dialog "Tout le monde se passe le magazine, lisant les articles qui les interessent. Comme toujours, quelquun finit par mettre des taches de beurre de cacahuete partout sur le mag, au point quil devient illisible." cyoa-text! 
-	' mag3roll foreach-team-char someone 50 70 rnd LOOT_GAS trunk.loot+ ; 
+: mag3share cyoa-good-dialog "Tout le monde se passe le magazine, lisant les articles qui les interessent. Comme toujours, quelquun finit par mettre des taches de beurre de cacahuete partout sur le mag, au point quil devient illisible." cyoa-text!
+	' mag3roll foreach-team-char someone 50 70 rnd LOOT_GAS trunk.loot+ ;
 
 : mag3solo shooting++ medical++ mechanic++ 50 70 rnd LOOT_GAS trunk.loot+ ;
 : mag3result cyoa-good-dialog
 	($ "Il sagissait dun numero special hypothetique sur lapocalypse zombie, a lepoque " .. cname .. "  etudie attentivement les conseils sur les armes a feu, larticle sur la medecine durgence et les astuces de reparation courantes inhabituelles mais efficaces." $) cyoa-text! cicon mag3solo
 ;
 
-cyoa-bridge: mag3share-pick 
+cyoa-bridge: mag3share-pick
 	someicon
 	"Qui devrait lire le magazine Preppared Preppers ?" cyoa-text!
 	' mag3result cyoa-team-choice
 ;
 
 : magazine3-cyoa
-	cyoa-start "Magazine Prepared Preppers" cyoa-title! 
+	cyoa-start "Magazine Prepared Preppers" cyoa-title!
 	0 to cyoaicon cyoaicon
 	($ Thegroup .. " ' siphonne l'essence de certains vehicules abandonnes, puis repere un magazine dans l'une des voitures. C'est un numero de Prepared Preppers, l'edition speciale, en parfait etat ! " $) cyoa-text!
-	solo if 
-		soloer choosechar ($ cHe .. "  etudie sa sagesse desormais justifiee." $) +text 
+	solo if
+		soloer choosechar ($ cHe .. "  etudie sa sagesse desormais justifiee." $) +text
 		mag3solo goodfx
 	then;
 	+cr "Qui peut le lire ?" +text basic-tone
 	team-count 3 > if
 		' mag3result 2 #cyoa-team-choice
-		choice( "Choisissez quelquun dautre" )choice: mag3share-pick 
+		choice( "Choisissez quelquun dautre" )choice: mag3share-pick
 	else
 		' mag3result 3 #cyoa-team-choice
 	then
-	choice( "Partagez avec tout le monde" )choice: mag3share 
-; 
+	choice( "Partagez avec tout le monde" )choice: mag3share
+;
 
 // END Prepper Magazine
 
 // Burnt Library
 
-cyoa-choice: books-are-for-nerds 
+cyoa-choice: books-are-for-nerds
 	"LES LIVRES SONT POUR LES NERDS" cyoa-title!
 	cpet? if
-		($ cname .. "  bondit, arrache le livre dans " .. chis .. "  machoires, et " .. "LE DECHIRE EN MORCEAUX" rbold .. "  comme " .. che .. "  secoue le livre dun cote a lautre. Prends CA, nerd." $) 
+		($ cname .. "  bondit, arrache le livre dans " .. chis .. "  machoires, et " .. "LE DECHIRE EN MORCEAUX" rbold .. "  comme " .. che .. "  secoue le livre dun cote a lautre. Prends CA, nerd." $)
 	else
-		($ cname .. "  attrape le livre et " .. "il la coupe en deux" rbold .. " en roulant des gros grognons " .. "'		OUI C'EST CA CE QUE J'EN PENSE AUX LIVRES." pbold $) 
+		($ cname .. "  attrape le livre et " .. "il la coupe en deux" rbold .. " en roulant des gros grognons " .. "'		OUI C'EST CA CE QUE J'EN PENSE AUX LIVRES." pbold $)
 	then cyoa-text! goodfx
 	morale2+ temperREV strengthREV temper-- strength++ cchar morale--all-except
 ;
@@ -473,7 +473,7 @@ cyoa-choice: book1-morale
 	"'Docteur Dink le temps des vers" cyoa-title!
 	($ "Ce livre est plein de images colorees et est excellent pour les enfants de tous ages " .. thegroup .. " qui reellement aime avoir quelque chose, nimporte quoi, neuf a lire." $) cyoa-text! goodfx morale2+ cchar morale++all-except
 ;
-: book1-swole 
+: book1-swole
 	// cchar angrystrong-revealed? not if then;	cchar angrystrong? if
 		most-angrystrong if
 			charchoice( "rAGE DE LIVRE" )choice: books-are-for-nerds

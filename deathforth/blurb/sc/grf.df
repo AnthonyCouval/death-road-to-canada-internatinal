@@ -11,16 +11,16 @@
 	else
 		blurbslot 2 < if
 			50 %chance if
-				($ "Lavez votre costume deja !" $)
+				($ "Lave ton costume deja !" $)
 			else
-				($ "Pouah ! Pourquoi dois je etre a cote de toi ?" $) 
+				($ "Beurk! Pourquoi dois-je etre a cote de toi ?" $)
 			then
 			blurbsay STAT_MORALE me .stat--
-		then	
+		then
 	then
 ;
 
-: grf-megasmell 
+: grf-megasmell
 	blurbslot 0= if
 		qmsg ($ me .name@ .. "  emet une odeur indescriptible." $) txt
 	else
@@ -28,16 +28,16 @@
 	then
 ;
 
-	: GRF-oneline1 "*sons etouffes a travers la tete de la combinaison*" ;
+	: GRF-oneline1 "*sons etouffes a travers le manteau de fourrure*" ;
 	: GRF-oneline2 "*bruits gutturaux etouffes derangeants*" ;
-	: GRF-oneline3 "*muffled* HRRRRRRRRRRRNG" ;
-	: GRF-oneline4 "*gemissements etouffes de blesses*" ;
-	: GRF-oneline5 "*muffled* ... LOVE LASAGA [sic] ..." ;
-	: GRF-oneline6 "I'M... UNHAPPY... JON" ;
-	: GRF-oneline7 "... I FREAKING HATE [word that sounds like MONDAYS?] ..." ;
-	: GRF-oneline8 "*sifflements etouffes*" ;
-	: GRF-oneline9 "im a furry" ;
-	: GRF-oneline10 "*bruits etouffes etranges*" ;
+	: GRF-oneline3 "*etouffe* HRRRRRRRRRRRNG" ;
+	: GRF-oneline4 "*bruits sourds de gemissements*" ;
+	: GRF-oneline5 "*etouffe* ... J'AIME LES LASAGNES [sic] ..." ;
+	: GRF-oneline6 "JE NE SUIS.. PAS HEUREUX... JON" ;
+	: GRF-oneline7 "... JE HAIS VRAIMENT LES [mot qui sonne comme LUNDIS ?] ..." ;
+	: GRF-oneline8 "*respiration sifflante etouffee*" ;
+	: GRF-oneline9 "*grognements incomprehensibles a travers le manteau de fourrure*" ;
+	: GRF-oneline10 "*bruits etranges et etouffes*" ;
 
 	deck-new
 		card: GRF-oneline1
@@ -61,11 +61,11 @@
 	then
 ;
 
-	: GRF-emote1 " ramasse des morceaux de crasse dans le costume de fursuit." ;
-	: GRF-emote2 " regarde dans le vide" ;
-	: GRF-emote3 " commence a pleurer." ;
-	: GRF-emote4 "  il regle ses furets de fursuit." ;
-	
+	: GRF-emote1 " enleve de la crasse sur la combinaison." ;
+	: GRF-emote2 " regarde fixement dans le vide." ;
+	: GRF-emote3 " se met a sangloter." ;
+	: GRF-emote4 " caresse son manteau de fourrure." ;
+
 	deck-new
 		card: GRF-emote1
 		card: GRF-emote2
@@ -89,7 +89,7 @@
 	card: grf-megasmell
 	10 cards: grf-oneliner
 	4 cards: GRF-emote
-	
+
 	constant BLURB-GRF-DECK
 	BLURB-GRF-DECK var blurb-grf-deck
 	BLURB-GRF-DECK shuffles to blurb-grf-deck

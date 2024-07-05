@@ -53,15 +53,15 @@ defer car-go
 : car-menu-setup args( me )
 	menustart
 	<- me .anim.state@ -2 = if
-		' car-get-out "Faisons le danser" menuadd
+		' car-get-out "ALLONS DANSER !" menuadd
 	then;
 	<- me .anim.state@ 0= if
-		' car-start "DEMARRAGE DE LA Voiture" menuadd
+		' car-start "DEMARRER LA VOITURE" menuadd
 	else
-		' car-go rnd5050 if "ACCELERE A FOND!" else "'Faites le sauter !" then menuadd
+		' car-go rnd5050 if "APPUIE A FOND SUR L'ACCELERATEUR" else "DONNE TOUT !" then menuadd
 	then
-	' car-honk "Bougne" menuadd
-	' car-get-out "Sortez" menuadd
+	' car-honk "KLAXONNER" menuadd
+	' car-get-out "SORTIR" menuadd
 ;
 
 : car-go_
@@ -244,7 +244,7 @@ last to car-start
 	<- me .vel.x@ 1 > if then;
 
 	// Car was started, do a bit of an engine rev
-	<- me .anim.substate@ if 
+	<- me .anim.substate@ if
 		<- me .stun@ if 2 <- me .anim.counter@ + <- me .anim.counter! then
 		<- me .anim.counter@ 0= if 0 <- me .anim.substate! then;
 	then;
@@ -264,7 +264,7 @@ last to car-start
 
 	<- car .chassis@ to car-chassis
 	<- car .chassis_max@ to car-max-chassis
-	<- car .engine@ to car-engine  
+	<- car .engine@ to car-engine
 	<- car .engine_max@ to car-max-engine
 	<- car .armour@ to car-armor
 	<- car .armour_max@ to car-max-armor
@@ -371,7 +371,7 @@ mission{ cyoa{
 
 : thething dup .subtypeid@ ITEM_VEHICLE =
 	if to thecar else drop then ;
-: getcar ' thething foreach-active-thing ; 
+: getcar ' thething foreach-active-thing ;
 
 : lift-car interactee player .carry ($ DEATH .. "RAUUUGH!!!" $) me .say sfx{ pip 10 fx .freq! 250 fx .freq2! 0.01 fx .duty! 500 fx .d! } ;
 
@@ -393,12 +393,12 @@ mission{ cyoa{
 	cyoa-add-choice
 		"Montez dedans." cyoa-choice-text!
 		' get-into-car cyoa-choice-handler!
-	
+
 	// Change this from soloer later
 	cyoa-add-choice
 		"Prendre la voiture." cyoa-choice-text!
 		' lift-car cyoa-choice-handler!
-	
+
 	cyoa-add-choice
 		"Non merci." cyoa-choice-text!
 
@@ -450,11 +450,11 @@ cyoa: carkeyz
 	0 lt .action_icon!
 ;
 
-: spawn-locked-car 
+: spawn-locked-car
 	50 %chance if
 		tireiron 50 %chance if -8 else 8 then movex .drift
 	then
-	10 30 rnd LOOT_GAS spawnloot 6 8 rnd movey 50 %chance if 2 else 10 then movex 
+	10 30 rnd LOOT_GAS spawnloot 6 8 rnd movey 50 %chance if 2 else 10 then movex
 	spawn-locked-car-noloot
 ;
 
@@ -472,6 +472,6 @@ cyoa: carkeyz
 : bag-me-out bag-me map{ pixelw 2 / lt .pos.x! pixelh lt .pos.y! } ;
 
 : scale-car-up args( pct car ) map{ pixelh dup <- pct * - } <- car car-map-posy ;
-: %mv-up 0 100 clamp 100 / mv@ dup 0= if 
-		drop bag-me-out lt 
+: %mv-up 0 100 clamp 100 / mv@ dup 0= if
+		drop bag-me-out lt
 	then scale-car-up ;

@@ -26,10 +26,10 @@ load? kitten.df
 cyoa{ road{
 
 	0 stack
-		"'Courez chaque fois que vous le pouvez ! Combattez quand vous y etes oblige. Ces zombies ne laissent pas tomber de butin de zombie." shove
-		"'Fouillez pour trouver toutes les munitions que vous pouvez. Developpez les competences de votre equipe. Vous devrez devenir plus fort !" shove
-		"Balancer des armes de melee est epuisant jusqua ce que vous augmentiez votre force et votre condition physique !" shove
-		"'Lorsque vous etes epuise, vous commencez a transpirer. Arretez de vous balancer pendant un moment ou vous ferez beaucoup moins de degats." shove
+		"Courez chaque fois que vous le pouvez ! Combattez quand vous y etes oblige. Ces zombies ne laissent pas tomber de butin de zombie." shove
+		"Fouillez pour trouver toutes les munitions que vous pouvez. Developpez les competences de votre equipe. Vous devrez devenir plus fort !" shove
+		"Manier des armes de melee est epuisant jusqua ce que vous augmentiez votre force et votre condition physique !" shove
+		"Lorsque vous etes epuise, vous commencez a transpirer. Arretez de vous balancer pendant un moment ou vous ferez beaucoup moins de degats." shove
 		"Vous pouvez faire durer votre voiture beaucoup plus longtemps si vous avez un excellent mecanicien dans lequipe." shove
 		"'Si vous n'aimez pas vos choix Always Be Looting, essayez de conduire pour trouver de nouveaux endroits." shove
 		"Plus il y a de monde plus il y a de combattants ! Cela signifie egalement une plus grande consommation de nourriture." shove
@@ -43,7 +43,7 @@ cyoa{ road{
 		"FATIGUE donne de gros malus de stats! Eliminez la en dormant au prochain camp ou en vous reposant avant une mission." shove
 		"Si le moral des membres de lequipe devient trop bas, ils commenceront a se disputer, a desesperer et a se poignarder dans le dos." shove
 		"Jeter des meubles en les ramassant puis en appuyant sur attaquer. Jeter peut etre puissant et efficace." shove
-		"Les personnages peuvent avoir des traits de personnalite qui leur donnent plus doptions lors devenements !" shove
+		"Les personnages peuvent avoir des traits de personnalite qui leur donnent plus d'options lors d'evenements !" shove
 		"Les personnages paranoiaques peuvent reduire la gravite des attaques de bandits ou reveler les statistiques des nouvelles recrues." shove
 		"Les personnages oublieux peuvent manquer de moral en toute securite. Plusieurs fois." shove
 		"Les personnages charmants obtiennent toutes sortes de bonus, en particulier dans les camps de commercants." shove
@@ -60,14 +60,14 @@ cyoa{ road{
 		"Les zombies peuvent vous poursuivre pendant longtemps, selon leur agressivite et leur irritation." shove
 		"Certains endroits sont des pieges mortels! Lisez les previsions zombies avant dexplorer une zone." shove
 		"Le feu et les explosifs peuvent endommager vos propres personnages, alors faites attention. Le feu est particulierement dangereux." shove
-		"'Un feu peut eliminer une armee de zombies si c'est heureux. Il est tres dangereux d'en utiliser a l'interieur." shove
-		"Baiser un zombie sans arme ne fait presque rien, sinon pour le laisser tomber pendant un moment." shove
+		"Un feu peut eliminer une armee de zombies si vous avez de la chance. Par contre il est tres dangereux d'en utiliser a l'interieur." shove
+		"Donner un coup de poing a un zombie sans arme ne sert quasiment a rien, si ce n'est le faire lacher prise pendant un court instant." shove
 		"Vous pouvez changer le personnage que vous controlez dans le menu Pause, ce qui offre une meilleure maitrise." shove
-		"Les personnages proches peuvent jeter des armes lun a lautre dans le menu Pause." shove
-		"'Essayez de sacrifier quelqu'un que vous n'aimez pas en le laissant manger volontairement. Cela distrait les zombies." shove
+		"Les personnages proches peuvent echanger des armes dans le menu Pause." shove
+		"Essayez de sacrifier quelqu'un que vous n'aimez pas en le laissant se faire manger volontairement. Cela distrait les zombies." shove
 		"Les caracteristiques des personnages sont initialement cachees. Les personnes que vous recrutez peuvent mentir sur leurs competences!" shove
 		"Beaucoup de voleurs peuvent etre achetes avec de la nourriture. Certains voleurs peuvent etre battus par un type de personnalite specifique." shove
-		"Si vos personnages ont tous la sante pleine, les voleurs ne tuent generalement pas lun deux." shove
+		"Si vos personnages ont tous la sante pleine, les voleurs ne tuent generalement pas l'un deux." shove
 		"Toutes les statistiques vont de 0 a 6. Une statistique de 0 1 echouera generalement automatiquement. 5 6 reussira generalement." shove
 		"Fermer des portes retardera les zombies pendant un temps, car ils ont oublie comment ouvrir une porte." shove
 		"Les zombies attaquent les meubles qui sinterposent. Vous pouvez laisser tomber ou jeter des objets pour creer des obstacles." shove
@@ -75,20 +75,20 @@ cyoa{ road{
 		"Une competence mecanique tres elevee vous permettra de reparer une voiture immediatement. Les reparations ulterieures deviennent plus difficiles." shove
 		"Les armes a tir lent sont tres efficaces en munitions. Parfois vous voudrez gacher des munitions avec une automatique." shove
 		"Certaines armes de melee ont une attaque en zone, touchant plusieurs zombies en un seul coup. Certaines attaques en zone sont basees sur le hasard." shove
-		"'Les zombies deviennent plus agressifs et plus nombreux la nuit. Les zombies vous sentent mieux si vous saignez." shove
+		"Les zombies deviennent plus agressifs et plus nombreux la nuit. Les zombies vous sentent mieux si vous saignez." shove
 		"Les zombies sont touches pour des degats supplementaires sils sont dabord renverses. Certaines armes ont un fort renversement." shove
-		"'Quelques excellentes armes de melee pour les personnes ayant des statistiques elevees: Epee de chevalier. Machette robuste. Hache a incendie. Masse." shove
-		"Some great melee weapons for low Strength/Fitness: Aluminum Bat. Nightstick. Xtreme Hockey Stick." shove
+		"Quelques excellentes armes de melee pour les personnes ayant des statistiques elevees: Epee de chevalier. Machette robuste. Hache a incendie. Masse." shove
+		"Voici quelques excellentes armes de melee pour ceux qui ont peu de force ou de condition physique : Batte en aluminium, Matraque, crosse de hockey Xtreme." shove
 		"Les fusils a pompe sont toujours tres efficaces pour les personnes ayant de faibles competences en tir. Degats et renversement eleves." shove
 		"Les pistolets et lUzi ont lavantage que les balles sont le type de munitions le plus courant." shove
 		"Les armes automatiques sont tres difficiles a controler si vous avez de faibles competences en tir." shove
-		"Les fusils ont des degats eleves et un piercing eleve. Un tir pourrait eclabousser toute une ligne de zombies." shove
-		"'Vous pouvez souvent faire reposer vos coequipiers dans la voiture. Utile si quelqu'un est blesse ou si vous voulez un groupe plus petit." shove
-		"'Il n'y a pas vraiment de penalite pour qu'un coequipier soit mange par des zombies. Je vous donne juste ce fait." shove
-		
+		"Les fusils ont des degats eleves et une grande capacite de perforation. Un seul tir peut pulveriser toute une rangee de zombies." shove
+		"Vous pouvez souvent faire reposer vos coequipiers dans la voiture. Utile si quelqu'un est blesse ou si vous voulez un groupe plus petit." shove
+		"Il n'y a pas vraiment de penalite pour qu'un coequipier soit mange par des zombies. Je vous donne juste ce fait." shove
+
 	constant HINT-LIST
 	HINT-LIST var hint-list HINT-LIST shuffles to hint-list
-		
+
 : hintlist
 	hint-list depths 0= if "'  Determinez vos traits et avantages preferes, puis creez un tas de personnages personnalises avec eux.	  Si vous avez du gaz de rechange, vous pouvez ignorer de nombreux endroits. Chaque saut rend les bons plus probables!	  Pour la fin de partie, vous voulez des statistiques elevees et de superbes armes de melee ou une automatique + des munitions.	Nous n'avons plus d'indices! Bonne chance!" else shuffles pops nip then pbold
 ;
@@ -101,7 +101,7 @@ cyoa{ road{
 cyoa: special-losthope
 	1.3 to diff-scalar 1.2 to road-difficulty 15 to road-trip-days
 	"TESTER LA VILLE DE LESPOIR PERDUE EN MODE ROUTE PLUS MORTELLE!" text!
-	2.3 12 14 rnd 4 siegecast "events/finale/deathcity.df" $load-region 
+	2.3 12 14 rnd 4 siegecast "events/finale/deathcity.df" $load-region
 	choice( "TOUT OU RIEN!" rbold )choice: premission
 	150 trunk-rifle-shell+ 1 WEAPON_AK47 trunk.weapon+
 ;
@@ -112,11 +112,11 @@ cyoa: test-newcity
 	($ "Francais" $) cyoa-text! basic-tone
 	1 1.3 frnd 7 15 frnd 2 zforecast
 	0.4 1 frnd weather! -1 1 frnd wind_force!
-	// citylayoutdeck 
+	// citylayoutdeck
 	// "events/city/region/burb-vary-3x4.df" $load-region
 	"events/city/region/test/region-downtown-custom.df" $load-region
 	// "events/city/region/test/region-downtown-test2.df" $load-region
-	
+
 		lot-draw
 ;
 
@@ -155,26 +155,26 @@ cyoa: location-testing2
 
 : weapon-testing
 	goblin-laugh
-	
+
 	200 trunk-gas+
-	
+
 	// 200 WEAPON_NAPALM trunk.weapon+
 
 	160 WEAPON_EJHAMMER trunk.weapon+
 	1 WEAPON_JACKHAMMER trunk.weapon+
 	1 WEAPON_CHAINSAW trunk.weapon+
-	
+
 	20 WEAPON_FIRECRACKERS trunk.weapon+
-	
+
 	// WEAPON_EBLOWER trunk.weapon+
 	// WEAPON_EWHACKER trunk.weapon+
 	// WEAPON_LANDMINE trunk.weapon+
 	// 24 WEAPON_GLAUNCH trunk.weapon+
 	// 12 WEAPON_BAZOOKA trunk.weapon+
-	
+
 	// 1 WEAPON_CAVALRY trunk.weapon+
 	1 WEAPON_BLACKHAMMER trunk.weapon+
-		
+
 ;
 
 : weapon-testing-2 ;
@@ -188,7 +188,7 @@ defer hintrepeat
 : startchoices
 	choice( "PRENDRE LA ROUTE" )choice
 //	choice( "WARP TO CANADA [crashdebug]" )choice: crashtest
-	DEBUG_BUILD TEST_BRANCH or if 
+	DEBUG_BUILD TEST_BRANCH or if
 		// choice( "COMMENCER PAR UNE REFERENCE JOJO" fbold )choice: special-testing
 		choice( "COMMENCER DANS UNE FORTERESSE MECANIQUE" fbold )choice: location-testing
 		choice( "COMMENCER DANS UN PARC" fbold )choice: location-testing2
@@ -197,7 +197,7 @@ defer hintrepeat
 //	choice( "Essayer une nouvelle ville" fbold )choice: test-newcity
 	puppymode kittenmode
 	wyk? if choice( "REINITIALISER LES CODES WYK" rbold )choice: wykreset then;
-	hint-list depths 0= not if choice( "Lire un autre indice" )choice: hintrepeat then
+	hint-list depths 0= not if choice( "Lire un autre conseil" )choice: hintrepeat then
 ;
 
 : 4morale-team args( char )
@@ -207,10 +207,10 @@ defer hintrepeat
 : startcheck
 	8 trunk-food+
 	2 WEAPON_FLASHLIGHT trunk.weapon+
-	
+
 	// 4 pchar .morale!
 	// notsolo if 4 1 #teamchar .morale! then
-	
+
 	' 4morale-team foreach-team-char
 ;
 
@@ -222,66 +222,67 @@ cyoa: starthintme
 ' starthintme to hintrepeat
 
 cyoa: knoobstartP
-	wyk? if 
+	wyk? if
 		($ "COURSE WYK : " .. wyk-name .. "  Edition" $) cyoa-title!
 	else
 		"Death Road to Canada" cyoa-title!
 	then
 	// choice( "PRENDRE LA ROUTE" )choice
 		soloer choosechar cicon
-		
-		time.month 6 = time.month.day 1 = and if 
+
+		time.month 6 = time.month.day 1 = and if
 			' beaver-scget stack-road-action
 		then
-		
-		time.month 6 = time.month.day 4 = and if 
+
+		time.month 6 = time.month.day 4 = and if
 			' july4-scget stack-road-action
 		then
-	
-		time.month 11 = time.month.day 25 = and if 
+
+		time.month 11 = time.month.day 25 = and if
 			' santa-test stack-road-action
 		then
-		
-		time.month 11 = time.month.day 24 = and if 
+
+		time.month 11 = time.month.day 24 = and if
 			' santa-test stack-road-action
 		then
-		
-		time.month 10 = time.week.day 4 = and if 
+
+		time.month 10 = time.week.day 4 = and if
 			time.month.day 21 > time.month.day 29 < and if
 				' turkey-test stack-road-action
 			then
 		then
 
-		halloween? if 
+		halloween? if
 			' halloween-event stack-road-action
 		then
-		
-		time.month 1 = time.month.day 14 = and if 
+
+		time.month 1 = time.month.day 14 = and if
 			' feb14-scget stack-road-action
 		then
-				
+
 		// Placeholder.. accidental LNK DAY that one time
-		// time.month 2 = time.month.day 29 = and if 
+		// time.month 2 = time.month.day 29 = and if
 		//	' lnk-test stack-road-action
 		// then
 
 	cheevo{ post-all }
 
 	' startcheck stack-road-action
-	
-	gamedef{ ' OPPmode gamemode? } if 
+
+	gamedef{ ' OPPmode gamemode? } if
 		"events/OPPmode.df" $load-region to-mission
 	then;
-	
-	gamedef{ ' 4jerksmode gamemode? ' 4jerksmodeEX gamemode? } or if 
+
+	gamedef{ ' 4jerksmode gamemode? ' 4jerksmodeEX gamemode? } or if
 		"events/4jerksmode.df" $load-region to-mission
 	then;
 
-	($ cname .. " 	En francais  entend des rumeurs selon lesquelles le Canada est un endroit sur, sans menace de zombies.	Nayant rien a gagner a rester en Floride, " .. che .. " decide de braver la route de la mort et de voyager vers le nord." $) cyoa-text!
-	
+	($ cname .. " entend des rumeurs selon lesquelles le Canada est un endroit sur, a l'abri de la menace des zombies.
+	N'ayant rien a gagner a rester en Floride, " .. che .. " decide de braver la Route de la Mort et de conduire vers le nord." $) cyoa-text!
+
 	hintlist +crtext
-			
-	wyk? if "COURSE WYK : " +crtext 
+
+	wyk? if "COURSE WYK : " +crtext
 		gstats{ wyk-highscore } case
 			0 of "7 Steam keys are hidden on the Death Road!" fbold endof
 			1 of "6 cles Steam restantes!" rbold endof
@@ -291,9 +292,9 @@ cyoa: knoobstartP
 			5 of "Toutes les cles ont ete trouvees! Bravo!" pbold endof
 		endcase +text
 	then
-		
+
 		startchoices
-				
+
 ;
 
 // *********** OLD STUFF BELOW *************
@@ -311,13 +312,13 @@ cyoa: knoobstartB
 
 // END temporary beta start message
 
-cyoa-choice: kn1recruit 
+cyoa-choice: kn1recruit
 	recruitee character# cyoa-char-icon!
 	WEAPON_WRENCH recruitee .weapona!
 	($ rname .. "  est maintenant membre de lequipe !	" .. cname .. "  souffle un peu dans la bouche a propos de cela.	Vers le Canada!" $) cyoa-text! 2 300 tone
 	morale-- recruitee .recruit
 ;
-cyoa-choice: kn1nope 
+cyoa-choice: kn1nope
 	($ cname .. "  sort de la. 	" .. "VOIS VOUS PLUS TARD." pbold .. " semble etre un bon depart.	" $) cyoa-text! morale2+ goodfx
 ;
 
@@ -329,7 +330,7 @@ cyoa: knoobevent1
 	choice( "Recruter " .. rname )choice: kn1recruit
 	cchar charchoice( "  SORT SANS FAISSEMENT" )choice: kn1nope
 
-	($ "Comme " .. cname .. "  commence le voyage vers le Canada, ils rencontrent leur voisin " .. rname .. ". 
+	($ "Comme " .. cname .. "  commence le voyage vers le Canada, ils rencontrent leur voisin " .. rname .. ".
 	" .. cname .. " has always hated this person, but could use the help and/or decoy." $) cyoa-text! basic-tone
 ;
 
@@ -360,12 +361,12 @@ cyoa: knoobevent2
 		choice( "150gaz supplementaires" )choice: kn2-gas
 ;
 
-cyoa-choice: kn3recruit 
+cyoa-choice: kn3recruit
 	recruitee character# cyoa-char-icon!
 	($ rname .. "  est maintenant membre de lequipe !	" .. cname .. "  grimace alors que la nouvelle recrue engloutit les deux boites de nourriture longtemps stockees. En route pour le Canada!" $) cyoa-text! 2 300 tone
 	-2 LOOT_FOOD trunk.loot+ recruitee .recruit
 ;
-cyoa-choice: kn3nope 
+cyoa-choice: kn3nope
 	($ cname .. "  sort de la. 	" .. "PERSONNE NE TOUCHE MES BOITES DE NOURRITURE." pbold .. " cetait probablement le bon choix." $) cyoa-text! goodfx morale++
 ;
 
@@ -402,7 +403,7 @@ cyoa: knoobstart1
 	choice( "PRENDRE LA ROUTE" )choice
 		soloer choosechar cicon
 
-	($ cname .. " 	En francais  entend des rumeurs selon lesquelles le Canada est un endroit sur, sans menace de zombies.	Nayant rien a gagner a rester en Floride, " .. che .. "  decide de rassembler des provisions accumulees et de se diriger vers le nord.	" .. cname .. " amene avec lui une batte de baseball de confiance!" $) cyoa-text!
+	($ cname .. " entend des rumeurs selon lesquelles le Canada est un endroit sur, sans menace de zombies.	N'ayant rien a gagner a rester en Floride, " .. che .. "  decide de rassembler des provisions accumulees et de se diriger vers le nord.	" .. cname .. " amene avec lui une batte de baseball de confiance!" $) cyoa-text!
 		100 LOOT_GAS trunk.loot+ 2 LOOT_MEDICAL trunk.loot+ 8 LOOT_FOOD trunk.loot+ 1 WEAPON_BASEBALL trunk.weapon+
 ;
 

@@ -26,14 +26,14 @@ cyoa-bridge: bandit-car-coolit
 		+crtext morale3+all rescue-trainitem cooled-it goodfx
 	else cool-it++
 		($ "'Lord Humungoid n'aime pas ca. Les bandits prennent la voiture et toutes les " .. thegroup .. "'provisions qu'ils trouvent." $) +crtext badfx car-abandon bandit-all morale2-all
-	then witsattREV 
+	then witsattREV
 ;
 
 cyoa-choice: bandit-car-pay
 	image-buff-bandit
 	($ Thegroup .. " ' sort de la voiture et s'en va indemne. Les derniers mots de Lord Humungoid avant de sortir dans la " .. thegroup .. "'voiture sont " .. "A PLUS TARD, LES NERDS !" rbold $) cyoa-text! car-abandon bandit-gas
 ;
-	
+
 
 cyoa: bandit-car
 	"Bandits collectionneurs de voitures" cyoa-title!
@@ -63,7 +63,7 @@ cyoa-choice: bandit-medic-help
 
 cyoa-choice: bandit-medic-paranoid
 	cpet? if
-		($ cname .. "  knew that something was very wrong the whole time. Due to " .. chis .. " " .. cgrowlhiss .. "ing, " .. everyone .. "  is warned early. " .. gTheyare .. "  ready to fight before the bandits are, and escape unharmed." $) 
+		($ cname .. "  knew that something was very wrong the whole time. Due to " .. chis .. " " .. cgrowlhiss .. "ing, " .. everyone .. "  is warned early. " .. gTheyare .. "  ready to fight before the bandits are, and escape unharmed." $)
 	else
 		($ "Always suspicious, " .. cname .. "  cache la voiture et les approvisionnements avant dapprocher le reglement. " .. cHe .. " ' pretend ne posseder rien de valeur. Les voleurs s'y mefient, mais ne trouvent rien. Ils laissent finalement " .. thegroup .. "  go." $)
 	then cyoa-text! witsattREV goodfx
@@ -81,13 +81,13 @@ cyoa-bridge: bandit-medic-coolit
 		+crtext morale3+all rescue-trainitem cooled-it goodfx
 	else cool-it++
 		($ "Les voleurs regardent le " .. thegroup .. " attendent un moment. Puis ils prennent la plupart des " .. ghis .. " approvisionnements." $) +crtext badfx bandit-mostgas morale2-all
-	then witsattREV 
+	then witsattREV
 ;
 
 : bandit-medic-pay
 		-8 trunk-medical+
 ;
-	
+
 
 cyoa: bandit-medic
 	"Piege aux Marchands" cyoa-title!
@@ -106,7 +106,7 @@ cyoa: bandit-medic
 	then
 		medicalest charchoice( "  propose de soigner les blessures" )choice: bandit-medic-help
 		most-grating if
-			charchoice( " 'Calmez vous'" fcoolit )choice: bandit-medic-coolit
+			charchoice( "'Calmez vous'" fcoolit )choice: bandit-medic-coolit
 		then
 		most-paranoid if
 			charchoice( "  ai vu ca venir" )choice: bandit-medic-paranoid
@@ -117,12 +117,12 @@ cyoa: bandit-medic
 // Weapon thieves
 
 cyoa-choice: bandit-weapon-paranoid
-	solo if 
+	solo if
 		($ cname .. "  se sentais suspicieux a propos du campement, alors " .. che .. "  ai laisse la voiture en marche. " .. cHe .. "  fait semblant de ceder a leurs demandes, mais court vers la voiture qui attend des que " .. che .. " ' peut. Les armes des bandits sont trop merdiques pour faire quoi que ce soit a la voiture une fois que " .. che .. "' est a l'interieur, alors " .. che .. "  DECOLLE." rbold $) cyoa-text! goodfx
 	else
 		($ cname .. "  se sentais suspicieux a propos du campement, alors " .. che .. "  voulait attendre pres de la voiture. Alors que " .. everyone .. " se fait voler, la voiture fonce a travers le camping, ecrase une tente, puis sarrete. Les bandits sont effrayes, alors ils senfuient!" $) cyoa-text!
-		cpet? if 
-			cdog? if 
+		cpet? if
+			cdog? if
 				($ cname .. " verrouille accidentellement " .. chim .. "il se met dans la voiture et aboie pour quon le laisse sortir." $)
 			else
 				($ Everyone .. " nest pas sur que " .. cname .. " a fait tout cela expres ou non." $)
@@ -147,10 +147,10 @@ cyoa-bridge: bandit-weapon-coolit
 		+crtext morale3+all rescue-trainitem cooled-it goodfx
 	else cool-it++
 		($ "Les bandits commencent tous a attaquer " .. cname .. ". Ils oublient les armes." $) +crtext badfx ouch2-
-	then witsattREV 
+	then witsattREV
 ;
 
-: bandit-weapon-check args( @ ) 
+: bandit-weapon-check args( @ )
 	<- @ .cstrength+ if
 		($ <- @ .colourname .. "  combat les bandits avec " .. <- @ xhis .. "  force !" $) +crtext
 		<- @ .strengthREV
@@ -164,7 +164,7 @@ cyoa-bridge: bandit-weapon-coolit
 ;
 
 cyoa-choice: bandit-weapon-fight
-	($ Thegroup .. " ' decide de tenter sa chance dans un combat.		Les armes des bandits sont rudimentaires, mais elles restent dangereuses." $) cyoa-text! 
+	($ Thegroup .. " ' decide de tenter sa chance dans un combat.		Les armes des bandits sont rudimentaires, mais elles restent dangereuses." $) cyoa-text!
 		bitefx ' bandit-weapon-check foreach-team-char
 ;
 
@@ -177,7 +177,7 @@ cyoa-choice: bandit-weapon-pay
 cyoa-choice: bandit-weapon-calmshot
 	($ cname .. " " .. ghis .. " arme se d'une arme a la vitesse de la foudre et brise en morceaux les armes des bandits. Les bandits commencent a s'enfuir!  Weapon at lightning speeds and breaks all the bandits' flimsy weapons apart. The bandits start running!" $) cyoa-text! goodfx shootingREV temperREV shooting++
 ;
-	
+
 
 cyoa: bandit-weapon
 	"Voleurs de fusils  Weapon Stealing Bandits" cyoa-title! someicon
@@ -215,7 +215,7 @@ cyoa-choice: bandit-loyal-pick
 	then
 		($ cname .. "  se faufile autour du point de controle plus tard, et rejoint " .. everyone .. "." $) +crtext
 		loyaltyREV
-		
+
 ;
 
 cyoa-choice: bandit-loyal-plow

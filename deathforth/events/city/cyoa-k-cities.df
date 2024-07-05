@@ -63,8 +63,8 @@ cyoa{ road{
 	constant CITYLAYOUT-DECK
 	CITYLAYOUT-DECK var citylayout-deck
 	CITYLAYOUT-DECK shuffles to citylayout-deck
-	
-: citylayoutdeck 
+
+: citylayoutdeck
 	citylayout-deck depths 0= if CITYLAYOUT-DECK shuffles to citylayout-deck then
 	drawcard ;
 
@@ -83,7 +83,7 @@ cyoa: easycity2
 	someicon
 	($ Thegroup .. " spies une ville au loin. Il y a plus de morts vivants que d'habitude, mais il est tot dans la journee, donc ils devraient etre grognons. Du moins au debut." $) cyoa-text! basic-tone
 	1.1 1.3 frnd 7 9 frnd 0 zforecast
-	($ "En francais Lorsque vous conduisez dans la ville " .. thegroup .. " apercevoir quelque chose" $) +crtext
+	($ "En conduisant vers la ville " .. thegroup .. " repere quelque chose" $) +crtext
 	easycity-picker $load-region
 		lot-draw
 ;
@@ -91,10 +91,10 @@ cyoa: easycity2
 cyoa: easycity3
 	"Pluie Legere" cyoa-title!
 	someicon
-	($ Thegroup .. "  arrive dans une ville alors quil commence a pleuvoir. La bruine semble irriter les zombies locaux." $) cyoa-text! basic-tone
+	($ Thegroup .. "  arrive dans une ville alors qu'il commence a pleuvoir. La fine pluie semble exciter les zombies locaux." $) cyoa-text! basic-tone
 	0.9 10 15 frnd 2 zforecast
-	0.1 0.2 frnd weather! -0.5 0.5 frnd wind_force! 
-	($ "En francais Lorsque vous conduisez dans la ville " .. thegroup .. "  decouvre:" $) +crtext
+	0.1 0.2 frnd weather! -0.5 0.5 frnd wind_force!
+	($ "En conduisant vers la ville " .. thegroup .. " decouvre:" $) +crtext
 	easycity-picker $load-region
 		lot-draw
 ;
@@ -103,8 +103,8 @@ cyoa: easycity4
 	"Craindre la Nuit" cyoa-title!
 	someicon
 	($ Thegroup .. "  conduit dans une ville alors quil commence a faire nuit. Essaie de ne pas perdre la notion du temps. Les choses peuvent devenir difficiles apres le coucher du soleil." $) cyoa-text! basic-tone
-	0.8 17 18 frnd 0 zforecast 
-	($ "En francais Lorsque vous conduisez dans la ville " .. thegroup .. "  trouve:" $) +crtext
+	0.8 17 18 frnd 0 zforecast
+	($ "Lorsque vous conduisez dans la ville " .. thegroup .. "  trouve:" $) +crtext
 	easycity-picker $load-region
 		lot-draw
 ;
@@ -114,7 +114,7 @@ cyoa: easycity5
 	someicon
 	($ Thegroup .. " ' conduit a travers une ville qui n'a pas ete completement envahie. Tu devrais chercher des provisions pour le voyage." $) cyoa-text! basic-tone
 	0.9 1.1 frnd 10 16 frnd 0 1 rnd zforecast
-	($ "En francais Lorsque vous conduisez dans la ville " .. thegroup .. " apercevoir quelque chose" $) +crtext
+	($ "S'approchant de la ville " .. thegroup .. " repere quelque chose" $) +crtext
 	easycity-picker $load-region
 		lot-draw
 ;

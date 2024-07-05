@@ -5,31 +5,31 @@
 	then
 ;
 
-	: dull-oneline19 "'Si tout le monde m'ecoutait, nous serions deja au Canada!" ;
-	: dull-oneline22 "Personne ne mecoute jamais!" ;
+	: dull-oneline19 "Si tout le monde m'ecoutait, nous serions deja au Canada!" ;
+	: dull-oneline22 "Personne ne m'ecoute jamais!" ;
 
-	: dull-oneline1 "'Cela ne serait pas arrive si nous avions garde Obama hors de la Maison Blanche." ;
+	: dull-oneline1 "Tout ca ne se serait jamais produit si nous avions empeche Obama d'acceder a la Maison Blanche." ;
 	: dull-oneline2 "Merci beaucoup zombie Obama." ;
-	: dull-oneline3 "Nous devrions essayer de mettre le feu aux zombies plus souvent. Cest le moyen le plus simple." ;
-	: dull-oneline4 "'Qu'est ce que c'est que tous ces trucs de zombies?" ;
-	: dull-oneline5 "'Pourquoi ces zombies ne courent ils pas vite comme dans les films?" ;
+	: dull-oneline3 "Nous devrions essayer de mettre le feu aux zombies plus souvent. C'est le moyen le plus simple." ;
+	: dull-oneline4 "Qu'est ce que c'est que tous ces trucs de zombies?" ;
+	: dull-oneline5 "Pourquoi ces zombies ne courent ils pas vite comme dans les films?" ;
 // VVVVVVVV JONZ BLURBZ VVVVVVVVV
 	: dull-oneline6 "Ou sont les zombies qui explosent et ceux qui ont une langue?" ;
-	: dull-oneline7 "On y est presque?" ;
-	: dull-oneline8 "Free healthcare... in Obama's America." ;
-	: dull-oneline9 "'Je sais ce que je fais, j'ai joue a beaucoup de jeux de zombies." ;
+	: dull-oneline7 "On y est presque ?" ;
+	: dull-oneline8 "Soins medicaux gratuits... dans l'Amerique d'Obama." ;
+	: dull-oneline9 "Je sais ce que je fais, j'ai joue a beaucoup de jeux de zombies." ;
 	: dull-oneline21 "Je ne veux pas aller au Canada! Il fait trop froid!" ;
-// VVVVVVVV DONZ BLURBZ VVVVVVVVV	
-	: dull-oneline10 "Je pourrais vraiment aller pour NIMPORTE QUOI dautre en ce moment." ;
-	: dull-oneline11 "L'apocalypse ne devait pas etre des voitures rad, du cuir et beaucoup moins d'attente?" ;
-	: dull-oneline12 "Zombies. Blech. So gauche. What is this, 2004?" ;
-	: dull-oneline13 "Je voudrais jouer plus de jeux video et moins me cacher des zombies." ;
+// VVVVVVVV DONZ BLURBZ VVVVVVVVV
+	: dull-oneline10 "J'aimerais bien faire n'importe quoi d'autre en ce moment." ;
+	: dull-oneline11 "L'apocalypse n'etait-elle pas censee etre synonyme de voitures radioactives, de cuir et de moins d'attente ?" ;
+	: dull-oneline12 "Zombies. Beurk. Tellement depasse. On est en quelle annee deja, 2004 ?" ;
+	: dull-oneline13 "Je voudrais plus jouer aux jeux video et moins me cacher des zombies." ;
 	: dull-oneline14 "Je me demande si on peut en garder un comme animal de compagnie." ;
-	: dull-oneline15 "Tu te souviens de lamusement ? Je me souviens de lamusement. Mec, lamusement me manque." ;
-	: dull-oneline16 "Je suppose que cest pour toujours maintenant. Ca ressemble vraiment a toujours." ;
-	: dull-oneline17 "On devrait abandonner la voiture et trouver un gros zombie sur lequel on peut se balader." ;	
-	: dull-oneline18 "Aucun de ces zombies na rien dinteressant a dire." ;
-	: dull-oneline20 "Ce dont on a besoin cest de BEAUCOUP de tronconneuses." ;
+	: dull-oneline15 "Tu te souviens du plaisir ? Je me souviens du plaisir. Mec, le plaisir me manque." ;
+	: dull-oneline16 "Je suppose que ce sera comme ça pour toujours maintenant. Ca semble etre eternel maintenant." ;
+	: dull-oneline17 "On devrait abandonner la voiture et trouver un gros zombie qu'on pourrait monter comme un cheval." ;
+	: dull-oneline18 "Aucun de ces zombies n'a rien dinteressant a dire." ;
+	: dull-oneline20 "Ce dont on a besoin c'est de BEAUCOUP de tronconneuses." ;
 
 	deck-new
 		card: dull-oneline1
@@ -54,7 +54,7 @@
 		card: dull-oneline20
 		card: dull-oneline21
 		card: dull-oneline22
-		
+
 	constant DULL-ONELINERS
 	DULL-ONELINERS var dull-oneliners
 
@@ -75,7 +75,7 @@
 		then
 	then
 ;
-	
+
 : obama-this
 2nd-char choosechar
 	blurbslot 0= if
@@ -83,7 +83,7 @@
 	else
 		blurbslot 2 < if
 			cwits- not if
-				($ "'Ca n'a plus d'importance, " .. 1st-char .name@ .. "." $) blurbsay
+				($ "Ca n'a plus d'importance, " .. 1st-char .name@ .. "." $) blurbsay
 				"PARLEZ DAUTRE CHOSE !" blurbsay
 				STAT_MORALE 1st-char .stat--
 		else
@@ -96,12 +96,12 @@
 
 : zombie-games
 	2nd-char choosechar
-	blurbslot 0= if 
+	blurbslot 0= if
 		"Tout ca ressemble a mes jeux video de zombies en ligne !" blurbsay
 	else
-		blurbslot 2 < if		
+		blurbslot 2 < if
 			cwits- if
-				($ "Jadore ces jeux, " .. 1st-char .name@ .. "!" $) blurbsay
+				($ "J'adore ces jeux, " .. 1st-char .name@ .. "!" $) blurbsay
 			else
 				STAT_MORALE me .stat--
 			then
@@ -112,21 +112,21 @@
 : dull-dullaggro1
 2nd-char choosechar
 	blurbslot 0= if
-		"La prochaine fois quon sarrete je veux utiliser la batterie de la voiture pour alimenter ma console de jeu !" blurbsay
+		"La prochaine fois quon s'arrete j'aimerais utiliser la batterie de la voiture pour alimenter ma console de jeu !" blurbsay
 	else
 		blurbslot 2 < if
 			ctemper+ cwits- or if
 				($ "Si tu me 1v1, " .. 1st-char .name@ .. "." $) blurbsay
-				"Aucuns objets, aucune betise." blurbsay
+				"Pas d'objet, pas de connerie." blurbsay
 				STAT_MORALE me .stat++
 				STAT_MORALE 1st-char .stat++
 			else
 				"Non." blurbsay
 				STAT_MORALE 1st-char .stat--
-			then 
+			then
 		then
 	then
-;	
+;
 
 	deck-new
 		card: zombie-games

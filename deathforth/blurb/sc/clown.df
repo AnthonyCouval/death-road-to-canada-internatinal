@@ -1,11 +1,11 @@
 	: CLOWN-oneline1 "HA HA HA" ;
 	: CLOWN-oneline2 "HAHAHAHAHA" ;
 	: CLOWN-oneline3 "HA HA HA HA HA HA HA" ;
-	: CLOWN-oneline4 "HAHAHA ! HAHAHAHAHAHA !" ;
-	: CLOWN-oneline5 "'HAHA, QU'EST CE QUI SE PASSE ? ON dirait que tu viens de voir un clown !" ;
-	: CLOWN-oneline6 "*HONK* *HONK*" ;
-	: CLOWN-oneline7 "'HAHA, CE N'EST PAS DU MAQUILLAGE !" ;
-	: CLOWN-oneline8 "CEST MA COULEUR DE CHEVEUX NATURELLE ! HAHA !" ;
+	: CLOWN-oneline4 "HAHAHA! HAHAHAHAHAHA!" ;
+	: CLOWN-oneline5 "HAHA, QU'EST-CE QU'IL Y A ? ON DIRAIT QUE TU VIENS DE VOIR UN CLOWN !" ;
+	: CLOWN-oneline6 "*TUT* *TUT*" ;
+	: CLOWN-oneline7 "HAHA, CE N'EST PAS DU MAQUILLAGE !" ;
+	: CLOWN-oneline8 "C'EST MA COULEUR DE CHEVEUX NATURELLE ! HAHA !" ;
 
 	deck-new
 		card: CLOWN-oneline1
@@ -20,16 +20,16 @@
 	CLOWN-ONELINERS var clown-oneliners
 	CLOWN-ONELINERS shuffles to clown-oneliners
 
-	: CLOWN-emote1 " tourne une petite boite a musique et elle joue quelque chose de sinistre." ;
-	: CLOWN-emote2 " fait un animal en ballon mais il a un visage humain." ;
-	: CLOWN-emote3 "  regarde fixement tout en emettant des gloussements impatients." ;
-	: CLOWN-emote4 "  agit de maniere generalement troublante a tout moment." ;
-	: CLOWN-emote5 "  commence a cirer ses chaussures surdimensionnees." ;
-	: CLOWN-emote6 "  enleve un faux nez pour en reveler un autre." ;
-	: CLOWN-emote7 "  sort une petite corne et commence a la caresser." ;
-	: CLOWN-emote8 "  commence a jongler avec des conserves." ;
-	: CLOWN-emote9 "  commence a jongler avec des armes." ;
-	: CLOWN-emote10 "  siffle des chansons de carnaval." ;
+	: CLOWN-emote1 " remonte une petite boite a musique et elle se met à jouer quelque chose de flippant." ;
+	: CLOWN-emote2 " fait un animal en ballon, mais il a etrangement un visage humain." ;
+	: CLOWN-emote3 " fixe du regard tout en emettant des ricanements bizarres." ;
+	: CLOWN-emote4 " se comporte de maniere perturbante en permanence." ;
+	: CLOWN-emote5 " commence a cirer ses chaussures surdimensionnees." ;
+	: CLOWN-emote6 " enleve un faux nez pour en reveler un autre." ;
+	: CLOWN-emote7 " sort une petite corne et commence a la caresser." ;
+	: CLOWN-emote8 " commence a jongler avec des boites de conserve." ;
+	: CLOWN-emote9 " commence a jongler avec des armes." ;
+	: CLOWN-emote10 " siffle des chansons de carnaval." ;
 
 	deck-new
 		card: CLOWN-emote1
@@ -43,9 +43,9 @@
 		card: CLOWN-emote9
 		card: CLOWN-emote10
 	constant CLOWN-EMOTES
-	CLOWN-EMOTES var clown-emotes	
+	CLOWN-EMOTES var clown-emotes
 	CLOWN-EMOTES shuffles to clown-emotes
-	
+
 : clown-oneliner
 	clown-oneliners depths 0= if CLOWN-ONELINERS shuffles to clown-oneliners then
 	blurbslot 0= if

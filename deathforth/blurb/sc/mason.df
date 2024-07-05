@@ -1,40 +1,40 @@
 : mason-stareat
-	blurbslot 0= if 
-		solo if 
-			($ "fixe le vide en particulier tout en aiguisant sa machette." $) blurbdo 
+	blurbslot 0= if
+		solo if
+			($ "regarde dans le vide tout en aiguisant sa machette." $) blurbdo
 		then;
-		($ "fixe " ..  2nd-char .name@ .. "  tout en aiguisant sa machette." $) blurbdo
+		($ "fixe " ..  2nd-char .name@ .. " tout en aiguisant sa machette. $) blurbdo
 	else
 		blurbslot 2 < if
 			50 %chance if
-				($ "Uhhh... crap." $) blurbsay
+				($ "Uhhh... merde." $) blurbsay
 			else
-				($ "se tortille dinconfort." $) blurbdo
+				($ "se tortille de douleur." $) blurbdo
 			then
-			99 %chance if 
-				($ "continue de regarder." $) 1st-char .blurbdo
+			99 %chance if
+				($ "continue a le fixer." $) 1st-char .blurbdo
 			else
-				($ "'SALUT JE SUIS MASON MOORHIZ" $) 1st-char .blurbsay
+				($ "SALUT JE SUIS MASON MOORHIZ" $) 1st-char .blurbsay
 			then
 			STAT_MORALE me .stat--
 		then
 	then
 ;
 
-	: MASON-oneline1 "  regarde silencieusement." ;
-	: MASON-oneline2 "  bouillonne tranquillement de rage." ;
-	: MASON-oneline3 "  degage une aura de malice." ;
-	: MASON-oneline4 "  regarde le vide." ;
-	: MASON-oneline5 "  siffle de facon menacante." ;
-	: MASON-oneline6 " reste completement immobile tout en tenant un couperet." ;
-	: MASON-oneline7 "  pense a quelque chose, probablement un meurtre." ;
-	: MASON-oneline8 " contemple le sens de la vie." ;
-	: MASON-oneline9 " marmonne brievement pour lui meme." ;
-	: MASON-oneline10 "  developpe une crampe a force de rester assis." ;
-	: MASON-oneline11 "  essuie le sang du couperet." ; 
-	: MASON-oneline12 "  essuie le sang du masque." ; 
-	: MASON-oneline13 "  tient le couperet au dessus de sa tete, pret a frapper nimporte quoi." ;
-	: MASON-oneline14 "  a encore plus de sang sur lui quil y a quelques minutes." ;
+	: MASON-oneline1 " le fixe en silence." ;
+	: MASON-oneline2 " est en proie a la rage." ;
+	: MASON-oneline3 " emet une aura de mechancete." ;
+	: MASON-oneline4 " regarde dans le vide." ;
+	: MASON-oneline5 " emet une respiration menacante." ;
+	: MASON-oneline6 " est assis, completement immobile, avec un hachoir a la main." ;
+	: MASON-oneline7 " pense a quelque chose, probablement a un meurtre." ;
+	: MASON-oneline8 " s'interroge sur le sens de la vie. ;
+	: MASON-oneline9 " grogne sur lui-meme." ;
+	: MASON-oneline10 " commence a avoir des crampes a force de rester assis." ;
+	: MASON-oneline11 " essuie le sang sur son hachoir." ;
+	: MASON-oneline12 " essuie le sang sur son masque." ;
+	: MASON-oneline13 " tient son hachoir au-dessus de sa tete, pret a frapper n'importe quoi." ;
+	: MASON-oneline14 " a plus de sang sur lui qu'il n'en avait il y a quelques minutes." ;
 
 	deck-new
 		card: MASON-oneline1
@@ -63,7 +63,7 @@
 ;
 
 : ...say
-	blurbslot 0= if 
+	blurbslot 0= if
 		"..." blurbsay
 	then
 ;

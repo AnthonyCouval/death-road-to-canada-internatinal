@@ -2,12 +2,12 @@
 : statlist STAT_VITALITY for i 1- dup type " - " type statname print next ;
 
 : quick-histat-check
-	0 #teamchar .histat-stack shuffles pops statname . 
+	0 #teamchar .histat-stack shuffles pops statname .
 	1 #teamchar .histat-stack shuffles pops statname .
 ;
 
 : quick-hiskill-check
-	0 #teamchar .hiskill-stack shuffles pops statname .  
+	0 #teamchar .hiskill-stack shuffles pops statname .
 	1 #teamchar .hiskill-stack shuffles pops statname .
 ;
 
@@ -15,11 +15,11 @@
 
 // : ehis .. epilogue-gender 1 < if "  son " else "  sa " then .. ;
 // : ehim .. epilogue-gender 1 < if "  le " else "  sa " then .. ;
-// : ehe .. epilogue-gender 1 < if "  il " else "  elle " then .. ; 
+// : ehe .. epilogue-gender 1 < if "  il " else "  elle " then .. ;
 
 : ehis epilogue-gender 1 < if "son" else "son" then ;
 : ehim epilogue-gender 1 < if "lui" else "son" then ;
-: ehe epilogue-gender 1 < if "il" else "elle" then ; 
+: ehe epilogue-gender 1 < if "il" else "elle" then ;
 
 // THE REAL FUN BEGINS BELOW
 
@@ -196,15 +196,15 @@ dog-personality-endsay-base shuffles var dog-personality-endsay
 
 	// Gender check to ehis for less clumsy pronouns
 	// <- char .female@ 0 > if "femelle" . 1 else "male" . 0 then to epilogue-gender
-	
+
 	<- char .female@ 0 > if
  		1 to epilogue-gender
  	else
  		0 to epilogue-gender
 	then
-	
+
 	// Special Characters
-	
+
 	<- char .mason? 		  if "... :D" then;
 	<- char .hermit? 		  if "'Feh! J'arrive pas a croire que j'ai ete convaincu de quitter ma cabane." then;
 	<- char .specialtype@ 3 = if "Joyeux Noel a tous !" then;
@@ -269,31 +269,31 @@ dog-personality-endsay-base shuffles var dog-personality-endsay
 	<- char .bryu?		   	   if "'HADOOK ! KADOOSHIN !" then;
 	<- char .hhell?		   	   if "Heh... all thanks to Sweet Lady Propane." then;
 	<- char .efudd?		   	   if "Je suis victorieux ! Moi ! E*FUDD !" then;
-	
+
 	<- char dog? if dog-personality-endsay depths 0= if drop "bork." else pops nip then then;
 	<- char cat? if "MIAOU!" then;
 	<- char goat? if "BAAAAA!" then;
 	<- char pig? if "OINK !" then;
 	<- char ispet? if "HRONK !" then;
-	
+
 	<- char .trait@ "CARL !" $= if "CAAARRRL!" then;
 	<- char .trait@ "EST CE QUE CA EST KEPA" $= if "Oh he, jy suis arrive. Merci davoir joue a Death Road to Canada !" then;
-	
+
 	<- char .dexterity@ 2 > if dex-personality-endsay depths 0= if drop "Bien au dela de la fraicheur !" else pops nip then then;
-	
+
 	<- char .trait@ "Fan danime" $= if animefan-personality-endsay depths 0= if drop "Je taime, Canada chan." else pops nip then then;
 	<- char .trait@ "Phenix" $= if "D" then;
-	<- char .perk@ "Tous Sauf Toi Cest Chiant" $= if tstc-personality-endsay depths 0= if drop "Suis je finalement trop gonfle ?" else pops nip then then;
+	<- char .perk@ "Force de la nature incontrolable" $= if tstc-personality-endsay depths 0= if drop "Suis je finalement trop gonfle ?" else pops nip then then;
 	<- char .trait@ "Type de heros" $= if herotype-personality-endsay depths 0= if drop "'J'serai toujours votre gardien de corps." else pops nip then then;
 	<- char .trait@ "Gourmand" $= if gourmand-personality-endsay depths 0= if drop "Delicieux !" else pops nip then then;
-	
+
 	// If a character has the berserker trait, gives them an ending line for it.
 	<- char .trait@ "BERSERK !" $= if berserk-personality-endsay depths 0= if drop "BERSERKER !" else pops nip then then;
-	
+
 	// Rare checks above, common checks below.
-	
+
 	<- char .xtreme-stat-stack depths 0= if 0 else shuffles pops then to EPILOGUE-PICK drop
-	
+
 	EPILOGUE-PICK STAT_ATTITUDE = if
 		<- char .cattitude+ if
 			att-high-endsay depths 0= if drop "Ouais !" else pops nip then
@@ -302,7 +302,7 @@ dog-personality-endsay-base shuffles var dog-personality-endsay
 			att-low-endsay depths 0= if drop "Pff." else pops nip then
 		then;
 	then
-	
+
 	EPILOGUE-PICK STAT_COMPOSURE = if
 		<- char .ctemper+ if
 			comp-high-endsay depths 0= if drop "Ouf." else pops nip then
@@ -311,7 +311,7 @@ dog-personality-endsay-base shuffles var dog-personality-endsay
 			comp-low-endsay depths 0= if drop "Aie !" else pops nip then
 		then;
 	then
-	
+
 	EPILOGUE-PICK STAT_WITS = if
 		<- char .cwits+ if
 			wits-high-endsay depths 0= if drop "Je le savais !" else pops nip then
@@ -320,17 +320,17 @@ dog-personality-endsay-base shuffles var dog-personality-endsay
 			wits-low-endsay depths 0= if drop "Euh, quoi ?" else pops nip then
 		then;
 	then
-	
+
 	EPILOGUE-PICK STAT_LOYALTY = if
 		<- char .cloyalty+ if
-			team-count-alive 1 > if loyal-high-endsay else loyal-high-endsay-solo then 
+			team-count-alive 1 > if loyal-high-endsay else loyal-high-endsay-solo then
 			depths 0= if drop "est devenu un citoyen modele du Canada.*" else pops nip then
 		then;
 		<- char .cloyalty- if
 			loyal-low-endsay depths 0= if drop "a continue detre un enorme connard.*" else pops nip then
 		then;
 	then
-		 		
+
 	generic-personality-endsay depths 0= if drop "Hourra !" else pops nip then
 
 ;
@@ -492,7 +492,7 @@ dog-skill-endsay-base shuffles var dog-skill-endsay
 : epilogue-skill-check args( char )
 
 	// Special Characters
-	
+
 	<- char .mason? 		  if "sest fait une tonne damis et a ouvert un camp dete!*" then;
 	<- char .hermit? 		  if "est devenu un ermite au Canada. Au lieu detre un ermite en Amerique.*" then;
 	<- char .specialtype@ 3 = if "a pu repandre la joie de Noel dans tout le Canada.*" then;
@@ -557,71 +557,71 @@ dog-skill-endsay-base shuffles var dog-skill-endsay
 	<- char .bryu?		   	   if "lance un tournoi de combat au Canada, ou il tire principalement des boules de feu sur des elans" then;
 	<- char .hhell?		   	   if "ouvre une entreprise de propane au Canada. Le hic : il vend aussi des accessoires pour le propane.*" then;
 	<- char .efudd?		   	   if "forme une equipe de basket ball, juste au cas ou les extraterrestres defient la terre a un match de cerceaux.*" then;
-	
+
 	<- char dog? if dog-skill-endsay depths 0= if drop "a vecu cette vie de chien.*" else pops nip then then;
 	<- char cat? if "a commence une campagne de meurtres de masse sur la faune locale, comme le font les chats.*" then;
 	<- char goat? if "est devenu une chevre canadienne. Ce qui est comme une chevre non canadienne.*" then;
 	<- char pig? if "a ete largement reconnu au Canada comme etant UN COCHON!*" then;
 	<- char ispet? if "etait enfin redevenu un animal libre et setait evanoui dans la nature.*" then;
-	
+
 	<- char .trait@ "CARL !" $= if "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRRL!" then;
 	<- char .trait@ "EST CE QUE CA EST KEPA" $= if "Conseil secret : cherchez le puits des souhaits dans la crypte de la decadence !" then;
-	
+
 	<- char .dexterity@ 2 > if dex-endsay depths 0= if drop "est alle vite.*" else pops nip then then;
-	
-	<- char .perk@ "Ami du Chien" $= if dogpal-skill-endsay depths 0= if drop "est reste un veritable ami du chien.*" else pops nip then then;
+
+	<- char .perk@ "Ami des chiens" $= if dogpal-skill-endsay depths 0= if drop "est reste un veritable ami des chiens.*" else pops nip then then;
 	<- char .trait@ "BERSERK !" $= if berserk-skill-endsay depths 0= if drop "est reste fou furieux!*" else pops nip then then;
 	<- char .trait@ "Voleur" $= if bandit-skill-endsay depths 0= if drop "a vecu une longue vie de vols et de rapines.*" else pops nip then then;
-	<- char .trait@ "Fan danime" $= if animefan-skill-endsay depths 0= if drop "a poursuivi ses etudes danime.*" else pops nip then then;
+	<- char .trait@ "Fan d'anime" $= if animefan-skill-endsay depths 0= if drop "a poursuivi ses etudes d'anime.*" else pops nip then then;
 	<- char .trait@ "Gourmand" $= if gourmand-skill-endsay depths 0= if drop "a bu et dine au Canada.*" else pops nip then then;
-		
+
 	// Above, rare case checks that prevent the common checks from happening.
 	// Common checks below.
-	
+
 	<- char .hiskill-stack depths 0= if 0 else shuffles pops then to EPILOGUE-PICK drop
-	
+
 	EPILOGUE-PICK STAT_SHOOTING = if
 		<- char .cshooting+ if
 			shoot-endsay depths 0= if drop ($ "est reste en forme pendant sa retraite EHIS.*" $) else pops nip then
 		then;
 	then
-	
+
 	EPILOGUE-PICK STAT_MECHANICAL = if
 		<- char .cmechanic+ if
 			mech-endsay depths 0= if drop ($ "est reste en forme pendant sa retraite EHIS.*" $) else pops nip then
 		then;
 	then
-	
+
 	EPILOGUE-PICK STAT_MEDICAL = if
 		<- char .cmedical+ if
 			med-endsay depths 0= if drop ($ "est reste en forme pendant sa retraite EHIS.*" $) else pops nip then
 		then;
 	then
-	
+
 	EPILOGUE-PICK STAT_DEXTERITY = if
 		<- char .dexterity@ 0 > if
 		// Extra dexterity ending check if it's their highest skill, which is unlikely.
 			dex-endsay depths 0= if drop "est devenu plus rapide que Sonic.*" else pops nip then
 		then;
 	then
-	 
+
 	EPILOGUE-PICK STAT_STRENGTH = if
 		<- char .cstrength+ if
 			str-endsay depths 0= if drop "continue a etre gonfle au Canada.*" else pops nip then
 		then;
 	then
-	
+
 	EPILOGUE-PICK STAT_FITNESS = if
 		<- char .cfitness+ if
 			fit-endsay depths 0= if drop ($ "est reste en forme pendant sa retraite EHIS.*" $) else pops nip then
 		then;
 	then
-	
+
 	// Failsafe placeholder below, this should instead be a generic pool it draws from
 	// Like blurb/blogic draws from blurb/blurbdeck.df for generic sayings
-	
+
 	generic-skill-endsay depths 0= if drop "a commence une nouvelle vie au Canada, avec moins de zombies.*" else pops nip then
-		
+
 	// Old test, made each character say their gender
 	// <- char .female@ 0 = if	"HOMME" else	"FEMME" then
 ;

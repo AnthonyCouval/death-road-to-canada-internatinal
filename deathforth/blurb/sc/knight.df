@@ -1,13 +1,13 @@
-	: KNIGHT-oneline1 "'Ma quete est sacree et secrete, du roi lui meme ! Je ne peux pas en parler." ;
-	: KNIGHT-oneline2 "'Je suis plus ou moins invincible ! Qu'est ce qui pourrait mal tourner ?" ;
-	: KNIGHT-oneline3 "Sans ecuyer, je nenleve jamais larmure." ;
-	: KNIGHT-oneline4 "Que ton est quete soit couronnee de succes." ;
-	: KNIGHT-oneline5 "'Non, je ne fais pas de GN. Je suis un vrai chevalier !" ;
-	: KNIGHT-oneline6 "Le code de la chevalerie est toujours vivant !" ;
-	: KNIGHT-oneline7 "'Cette armure n'est pas ideale pour les longues randonnees. Si seulement j'avais encore un cheval !" ;
-	: KNIGHT-oneline8 "Il faudrait une legion de morts vivants pour traverser ma cuirasse." ;
+	: KNIGHT-oneline1 "Ma quete est sacree et secrete, elle vient du roi lui-meme ! Je ne peux pas en parler." ;
+	: KNIGHT-oneline2 "Je suis plus ou moins invincible ! Qu'est-ce qui pourrait mal se passer ?" ;
+	: KNIGHT-oneline3 "Sans ecuyer, je n'enleve jamais mon armure." ;
+	: KNIGHT-oneline4 "Que ta quete soit couronnee de succes." ;
+	: KNIGHT-oneline5 "Non, je ne joue pas a un jeu de role. Je suis un vrai chevalier !" ;
+	: KNIGHT-oneline6 "Le code de la chevalerie n'est pas encore mort !" ;
+	: KNIGHT-oneline7 "Cette armure n'est pas ideale pour les longues randonnees. Si seulement j'avais encore un cheval !" ;
+	: KNIGHT-oneline8 "Il faudrait une legion de morts-vivants pour traverser mon armure d'acier." ;
 	: KNIGHT-oneline9 "Les bardes chanteront mes aventures." ;
-	: KNIGHT-oneline10 "Merci pour cette joyeuse cooperation !" ;
+	: KNIGHT-oneline10 "Merci pour cette joyeuse coopération !" ;
 
 	deck-new
 		card: KNIGHT-oneline1

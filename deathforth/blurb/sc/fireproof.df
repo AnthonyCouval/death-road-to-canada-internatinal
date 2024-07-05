@@ -1,19 +1,19 @@
-	: FIREPROOF-oneline1 "Les zombies sont vraiment inflammables." ;
-	: FIREPROOF-oneline2 "Brulez tout ca!" ;
-	: FIREPROOF-oneline3 "Jai brule mon petit doigt sur une poele une fois alors je porte ce costume maintenant." ;
-	: FIREPROOF-oneline4 "Quand les gens prennent feu, ce n'est pas vraiment de ma faute, c'est la leur." ;
+	: FIREPROOF-oneline1 "Les zombies sont clairement inflammables." ;
+	: FIREPROOF-oneline2 "Brulez tout !" ;
+	: FIREPROOF-oneline3 "Je me suis brule le petit doigt a cause d'une poele brulante une fois, du coup maintenant je porte ce costume." ;
+	: FIREPROOF-oneline4 "Quand les gens prennent feu, ce n'est pas vraiment de MA faute, c'est la leur." ;
 	: FIREPROOF-oneline5 "Ce costume me protege du feu et aussi de la sauce piquante super epicee." ;
-	: FIREPROOF-oneline6 "Ma strategie preferee est de lancer un cocktail molotov et de rester dedans." ;
-	: FIREPROOF-oneline7 "On peut tirer plus de kilometres dun chalumeau en mettant le feu aux meubles." ;
-	: FIREPROOF-oneline8 "'J'ai toujours aime bruler des choses! Maintenant c'est juste plus acceptable socialement." ;
-	: FIREPROOF-oneline9 "Si seulement javais pu acheter facilement des lance flammes avant que la zombocalypse ne se produise." ;
-	: FIREPROOF-oneline10 "Le lance flammes est la meilleure arme." ;
-	: FIREPROOF-oneline11 "Jaime les haches a feu parce quelles me rappellent le feu." ;
-	: FIREPROOF-oneline12 "Si jobtiens suffisamment de cocktails Molotov, je pourrais moccuper des zombies. Tous." ;
-	: FIREPROOF-oneline13 "Est il chaud ici ou est ce juste ma combinaison de feu encombrante?" ;
-	: FIREPROOF-oneline14 "Je refuse denlever ce costume, jamais. Un incendie peut se declarer a tout moment." ;
-	: FIREPROOF-oneline15 "Le gaz est la ressource la plus precieuse, car les lance flammes utilisent du gaz." ;
-	: FIREPROOF-oneline16 "Je me demande a quel point le Canada est inflammable." ;
+	: FIREPROOF-oneline6 "Ma strategie preferee consiste a lancer un molotov et a rester dedans." ;
+	: FIREPROOF-oneline7 "Un bon moyen de se servir d'un chalumeau et de mettre le feu a des meubles avec." ;
+	: FIREPROOF-oneline8 "J'ai toujours aime bruler des choses ! Maintenant, c'est juste plus socialement acceptable." ;
+	: FIREPROOF-oneline9 "Si seulement il avait ete plus facile d'acheter des lance-flammes avant l'apocalypse zombie." ;
+	: FIREPROOF-oneline10 "Le lance-flammes est la meilleure arme." ;
+	: FIREPROOF-oneline11 "J'aime les haches de pompier parce qu'elles me rappellent le feu." ;
+	: FIREPROOF-oneline12 "Si je recupere assez de cocktails Molotov, je pourrais m'occuper de ces zombies. De tous ces zombies." ;
+	: FIREPROOF-oneline13 "Il fait chaud ici ou c'est juste mon epais costume ignifuge ?" ;
+	: FIREPROOF-oneline14 "Je refuse d'enlever ce costume, a jamais. Un incendie peut survenir a tout moment." ;
+	: FIREPROOF-oneline15 "L'essence est la ressource la plus precieuse, car les lance-flammes utilisent de l'essence." ;
+	: FIREPROOF-oneline16 "Je me demande à quel point le Canada est inflammable." ;
 
 	deck-new
 		card: FIREPROOF-oneline1

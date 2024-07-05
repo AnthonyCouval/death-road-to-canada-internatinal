@@ -1,11 +1,11 @@
-	
-	
-	: SPEEDB-oneline1 "#VOITURE EST LENTE JE SUIS RAPIDE#" ;
-	: SPEEDB-oneline2 "#2 LENT#" ;
-	: SPEEDB-oneline3 "#KLAXON KLAXON#" ;
+
+
+	: SPEEDB-oneline1 "#LA VOITURE EST LENTE, MOI JE SUIS RAPIDE#" ;
+	: SPEEDB-oneline2 "#TRO LENT#" ;
+	: SPEEDB-oneline3 "#TUT TUT#" ;
 	: SPEEDB-oneline4 "#VROUM#" ;
-	: SPEEDB-oneline5 "#BESOIN DE VITESSE#" ;
-	: SPEEDB-oneline6 "#FAUT ALLER VITE#" ;
+	: SPEEDB-oneline5 "#NEED 4 SPEED#" ;
+	: SPEEDB-oneline6 "#ALLER VITE#" ;
 
 	deck-new
 		card: SPEEDB-oneline1
@@ -31,15 +31,15 @@
 	constant BLURB-SPEEDB-DECK
 	BLURB-SPEEDB-DECK var blurb-speedb-deck
 	BLURB-SPEEDB-DECK shuffles to blurb-speedb-deck
-	
-	
-	
-	: PUNCHB-oneline1 "#FAUT FRAPPER#" ;
-	: PUNCHB-oneline2 "#EXECUTER LES DIRECTIVES DE FRAPPE#" ;
-	: PUNCHB-oneline3 "#VIVE AIME FRAPPE#" ;
-	: PUNCHB-oneline4 "#TEMPS DE FRAPPER#" ;
-	: PUNCHB-oneline5 "#COURBE POUR FRAPPER#" ;
-	: PUNCHB-oneline6 "#FRAPPE FRAPPE FRAPPE#" ;
+
+
+
+	: PUNCHB-oneline1 "#DOIT FRAPPER#" ;
+	: PUNCHB-oneline2 "#EXeCUTER LES DIRECTIVES DE COUP DE POING#" ;
+	: PUNCHB-oneline3 "#VIVRE POUR FRAPPER#" ;
+	: PUNCHB-oneline4 "#TEMPS 2 FRAPPE#" ;
+	: PUNCHB-oneline5 "#A L'AFFUT D'UN COUP#" ;
+	: PUNCHB-oneline6 "#FRAPPER FRAPPER FRAPPER#" ;
 
 	deck-new
 		card: PUNCHB-oneline1
@@ -65,17 +65,17 @@
 	constant BLURB-PUNCHB-DECK
 	BLURB-PUNCHB-DECK var blurb-punchb-deck
 	BLURB-PUNCHB-DECK shuffles to blurb-punchb-deck
-	
-	
-	
-	: JACKHAM-oneline1 "'Je suis en pause!" ;
+
+
+
+	: JACKHAM-oneline1 "Je suis en pause !" ;
 	: JACKHAM-oneline2 "Toujours en pause ici." ;
-	: JACKHAM-oneline3 "We were working on fixing the roads, but..." ;
-	: JACKHAM-oneline4 "Construction? Plus comme funstruction." ;
+	: JACKHAM-oneline3 "On etait en train de reparer les routes, mais..." ;
+	: JACKHAM-oneline4 "Construction ? Plutot amustruction." ;
 	: JACKHAM-oneline5 "C'est la vie." ;
-	: JACKHAM-oneline6 "On devrait juste avoir un bulldozer pour ces zombies." ;
-	: JACKHAM-oneline7 "Peut etre qu'il y a un moyen de coller une tronconneuse a mon marteau piqueur?" ;
-	: JACKHAM-oneline8 "Un marteau piqueur est un pere tronconneuse, quand on y pense." ;
+	: JACKHAM-oneline6 "Nous devrions nous procurer un bulldozer pour ces zombies." ;
+	: JACKHAM-oneline7 "Peut-etre existe-t-il un moyen de fixer une tronconneuse a mon marteau-piqueur ?" ;
+	: JACKHAM-oneline8 "Quand on y pense, le marteau-piqueur c'est un peu le pere d'une tronconneuse..." ;
 
 	deck-new
 		card: JACKHAM-oneline1
@@ -103,16 +103,16 @@
 	constant BLURB-JACKHAM-DECK
 	BLURB-JACKHAM-DECK var blurb-jackham-deck
 	BLURB-JACKHAM-DECK shuffles to blurb-jackham-deck
-	
-	
-	
-	: GOTH-oneline1 "Bela... Lugosi's... dead (undead undead)" ;
-	: GOTH-oneline2 "Japprecie lobscurite sombre de la zombocalypse." ;
-	: GOTH-oneline3 "Ma couleur preferee: Noir Grimdark." ;
-	: GOTH-oneline4 "Tout cela va directement dans ma poesie sombre." ;
-	: GOTH-oneline5 "Cest exactement comme mes films de Tim Burton." ;
-	: GOTH-oneline6 "'C'est difficile de suivre la mode gothique avec tous les magasins de vetements detruits." ;
-	: GOTH-oneline7 "Ma deuxieme couleur preferee : le noir ordinaire." ;
+
+
+
+	: GOTH-oneline1 "Bela... Lugosi... est mort (mort-vivant, mort-vivant)" ;
+	: GOTH-oneline2 "J'apprecie l'obscurite sinistre de la zombapocalypse." ;
+	: GOTH-oneline3 "Ma couleur preferee : Noir sombre." ;
+	: GOTH-oneline4 "Tout cela ira directement dans ma sombre poesie." ;
+	: GOTH-oneline5 "C'est exactement comme dans les films de Tim Burton." ;
+	: GOTH-oneline6 "Il est difficile de se tenir au courant de la mode gothique quand tous les magasins de vetements sont detruits." ;
+	: GOTH-oneline7 "Ma deuxième couleur preferee : le noir ordinaire." ;
 
 	deck-new
 		card: GOTH-oneline1

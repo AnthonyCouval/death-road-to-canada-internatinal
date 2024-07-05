@@ -83,7 +83,7 @@ all-leaving
 	then
 
 	mission-right-leave? if
-		player .pos.x@ pixelw 16 - > if mission-right-leave? then;	
+		player .pos.x@ pixelw 16 - > if mission-right-leave? then;
 	then
 
 	0
@@ -103,23 +103,23 @@ all-leaving
 
 	cyoa-start
 	"PARTIR" cyoa-title!
-	ZOMBOTOWN if 
+	ZOMBOTOWN if
 		"SORTIE DE LA VILLE DE ZOMBO" cyoa-title!
 		"Voulez vous revenir a lecran titre ?"
 	else
 		"Voulez vous retourner sur la route ?"
-		
+
 		mv@ 0 > if
 			cr$ .. cr$ .. RED .. "Vous abandonnerez votre voiture " .. WHITE .. "si vous " .. RAINBOW .. "vous en allez" .. WHITE .. "  sans elle !" ..
 		then
-	
+
 	then cyoa-text!
-	
+
 	cyoa-add-choice
 		"Non, restez ici." cyoa-choice-text!
 
 	cyoa-add-choice
-		"'Oui, prenons la route." cyoa-choice-text!
+		"Oui, prenons la route." cyoa-choice-text!
 		mv@ 0 = if
 			' walk-try-end-mission cyoa-choice-handler!
 		else
@@ -133,14 +133,14 @@ last to main-event-mission-edge
 	cyoa-start
 	beep "porte sans echappatoire" print
 	"PAS DECHAPPATOIRE" cyoa-title!
-	"'Vous ne pouvez pas quitter cet endroit. Vous devrez trouver une autre sortie." cyoa-text!
+	"Vous ne pouvez pas quitter cet endroit. Vous devrez trouver une autre sortie." cyoa-text!
 ;
 
 : door-sieged
 	cyoa-start
 	beep "porte assiegee" print
 	"PAS DECHAPPATOIRE" cyoa-title!
-	"'Il est trop dangereux de sortir pour le moment. Vous ne pouvez pas encore quitter cet endroit." cyoa-text!
+	"Il est trop dangereux de sortir pour le moment. Vous ne pouvez pas encore quitter cet endroit." cyoa-text!
 ;
 
 
@@ -154,7 +154,7 @@ last to main-event-mission-edge
 		"Non, restez ici." cyoa-choice-text!
 
 	cyoa-add-choice
-		"'Oui, allons y." cyoa-choice-text!
+		"Oui, partons." cyoa-choice-text!
 		' walk-try-end-mission cyoa-choice-handler!
 ;
 
@@ -174,12 +174,12 @@ last to main-event-mission-location-leave
 	// TODO: summary stuff
 
 
-	
+
 	(* THIS WAS REALLY SCREWY and broke if you were in a building in a city, presumably because driveout would happen but you weren't around to see the car drive out
 	getcar thecar if
 		vehicle.which@ if driveout beep "cyoa car fail2 a driveout" print then; // Car
 	then *)
-	
+
 	main-event-mission-end // No car
 ;
 
@@ -264,7 +264,7 @@ last to main-event-mission-killed
 : handle-quit cyoa{
 	cyoa-active? if then;
 //	4 500 tone
-	cyoa-new- 
+	cyoa-new-
 	"QUITTER?" cyoa-title!
 
 	game.location 0 < if
@@ -272,20 +272,20 @@ last to main-event-mission-killed
 		choice( "NON" )choice back-esc
 		choice( "OUI" )choice: mad_quit
 	then;
-	
-	"ABORTER le jeu et revenir a lecran titre?" cyoa-text!
+
+	"ABANDONNER le jeu et revenir a l'ecran titre?" cyoa-text!
 	choice( "NON" )choice back-esc
 	road? if
-		"Vous pouvez reprendre la partie plus tard avec REINTEGRER LA PARTIE!" +crtext
+		"Vous pouvez reprendre la partie plus tard avec CONTINUER LA PARTIE!" +crtext
 		choice( "OUI" )choice: quit-to-title
 	then;
 	ZOMBOTOWN if
 		"QUITTER ZOMBO TOWN" cyoa-title!
-		"Revenir a lecran titre ?		Tous les achats que vous avez effectues sont deja enregistres." cyoa-text!
+		"Revenir a l'ecran titre ?		Tous les achats que vous avez effectues sont deja enregistres." cyoa-text!
 		choice( "OUI" )choice: quit-to-title
 	then;
-	mission? if 
-		"AVERTISSEMENT : Quitter directement dune mission supprimera le sauvegarde!" rbold +crtext
+	mission? if
+		"AVERTISSEMENT : Quitter directement une mission supprimera la sauvegarde!" rbold +crtext
 		choice( "QUITTER ET SUPPRIMER LA SAUVEGARDE" )choice: quit-from-mission
 	then;
 	choice( "OUI" )choice: quit-from-mission
@@ -298,7 +298,7 @@ last to main-event-do-quit
 : handle-esc
 	game.location 0 < if
 		cyoa-active? if then;
-		cyoa-new- 
+		cyoa-new-
 		"QUITTER?" cyoa-title!
 		"QUITTER le jeu?" cyoa-text!
 		choice( "NON" )choice back-esc

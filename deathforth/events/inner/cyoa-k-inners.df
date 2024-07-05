@@ -12,22 +12,22 @@ cyoa: inner8-cyoa
 	1.3 1.5 frnd 9 15 frnd 0 1 rnd zforecast
 	"events/inner/region/hellhotel.df" $load-region
 		choice( "Visiter limmeuble dhabitation" )choice: premission
-		gas-draw		
+		gas-draw
 ;
 
 cyoa: inner7-cyoa
-	
+
 	"Grande maison sur la colline" cyoa-title!
 	someicon
 	($ Thegroup .. " ' se rend dans une ville qui a ete reduite en cendres. Une grande maison se profile sur une colline voisine. Meme de loin, elle semble completement envahie par les zombies." $) cyoa-text! basic-tone
 	1.3 1.5 frnd 9 15 frnd 0 1 rnd zforecast
 	"events/inner/region/hardopen1.df" $load-region
 		choice( "Visiter la maison" )choice: premission
-		gas-draw		
+		gas-draw
 ;
 
 cyoa: inner6-cyoa
-	
+
 	"Maison criblee de balles" cyoa-title!
 	someicon
 	($ Thegroup .. "  voit une maison de loin. En sapprochant, on dirait quune grande fusillade sest produite ici entre humains. De la maison, on peut entendre de nombreux gemissements de morts vivants. " $) cyoa-text! basic-tone
@@ -38,7 +38,7 @@ cyoa: inner6-cyoa
 ;
 
 cyoa: inner5-cyoa
-	
+
 	"Maison sur la route" cyoa-title!
 	someicon
 	($ Thegroup .. "  repere une maison sur la route. Elle semble assez calme de lexterieur, mais en regardant par les fenetres, on apercoit des formes qui se cachent dans le noir." $) cyoa-text! basic-tone
@@ -61,7 +61,7 @@ cyoa: inner4-cyoa
 cyoa: inner3-cyoa
 	"Hotel dans une ville tranquille" cyoa-title!
 	someicon
-	($ Thegroup .. "  traverse une ville vide, sans aucune provision a trouver et peu dactivite de zombies. Un petit hotel semble avoir plus de morts vivants qui errent a linterieur que les autres." $) cyoa-text! basic-tone
+	($ Thegroup .. "  traverse une ville vide, sans aucune provision a trouver et peu de zombies en activite. Un petit hotel semble avoir plus de morts vivants qui errent a l'interieur que les autres." $) cyoa-text! basic-tone
 	0.4 1 frnd 9 15 frnd 0 1 rnd zforecast
 	"events/inner/region/easyhotel.df" $load-region
 		choice( "Explorer lhotel" )choice: premission
@@ -69,10 +69,10 @@ cyoa: inner3-cyoa
 ;
 
 cyoa: policeHQ-cyoa
-	
+
 	"Quartier general de la police" cyoa-title!
 	someicon
-	($ Thegroup .. "  repere le siege de la police locale. Les morts vivants qui lentourent semblent deja assez enerves, mais il pourrait y avoir de bonnes choses la dedans." $) cyoa-text! basic-tone
+	($ Thegroup .. "  repere le siege de la police locale. Les morts vivants qui l'entourent semblent deja assez enerves, mais il pourrait y avoir de bonnes choses la dedans." $) cyoa-text! basic-tone
 	1.1 1.3 frnd 9 15 frnd 2 4 rnd zforecast
 	"events/inner/region/policeHQ.df" $load-region
 		choice( "Explorer le QG de la police" )choice: premission
@@ -80,7 +80,7 @@ cyoa: policeHQ-cyoa
 ;
 
 cyoa: hospital-cyoa
-	
+
 	"Raide sur lhopital" cyoa-title!
 	someicon
 	($ Thegroup .. "  voit un hopital. On peut encore souvent trouver des fournitures medicales dans des endroits comme celui ci, en raison du grand nombre de morts vivants qui errent encore." $) cyoa-text! basic-tone
@@ -91,7 +91,7 @@ cyoa: hospital-cyoa
 ;
 
 cyoa: doubleoffice-cyoa
-	
+
 	"Grande complexe bureautique" cyoa-title!
 	someicon
 	($ Thegroup .. "  voit un grand immeuble de bureaux. La quantite de zombies qui sy trouvent laisse penser que les gens allaient encore travailler comme dhabitude, meme apres lepidemie." $) cyoa-text! basic-tone
@@ -102,7 +102,7 @@ cyoa: doubleoffice-cyoa
 ;
 
 cyoa: safeoffice-cyoa
-	
+
 	"Bureau elegant" cyoa-title!
 	someicon
 	($ Thegroup .. "  voit un immeuble de bureaux qui semble cher de lexterieur. Il doit y avoir quelque chose qui vaut la peine detre pris la dedans." $) cyoa-text! basic-tone
@@ -113,7 +113,7 @@ cyoa: safeoffice-cyoa
 ;
 
 cyoa: safeinhouse-cyoa
-	
+
 	"Maison elegante" cyoa-title!
 	someicon
 	($ Thegroup .. "  espionne une maison qui a lair couteuse de lexterieur. Il y a peut etre quelque chose a verifier dedans." $) cyoa-text! basic-tone
@@ -124,7 +124,7 @@ cyoa: safeinhouse-cyoa
 ;
 
 cyoa: maginhouse-cyoa
-	
+
 	"Maison en colere" cyoa-title!
 	someicon
 	($ Thegroup .. "  conduit devant une maison et voit que les zombies etaient mecontents avant " .. gthey .. "  etait arrive. Il ny a pas de signes de vie, sauf de lin vie." $) cyoa-text! basic-tone
@@ -135,7 +135,7 @@ cyoa: maginhouse-cyoa
 ;
 
 cyoa: maginapt-cyoa
-	
+
 	"Appartement en colere" cyoa-title!
 	someicon
 	($ Thegroup .. " ' remarque un appartement avec des zombies agites qui rodent a proximite. Ils peuvent etre mecontents pour rien, car il n'y a pas de signes d'autres personnes la bas." $) cyoa-text! basic-tone
@@ -146,7 +146,7 @@ cyoa: maginapt-cyoa
 ;
 
 cyoa: rescuehouse-cyoa
-	
+
 	"Secours a domicile" cyoa-title!
 	someicon
 	($ Thegroup .. "  voit une horde agitee de zombies qui poursuivent quelquun. Ils fuient dans une maison voisine." $) cyoa-text! basic-tone
@@ -157,7 +157,7 @@ cyoa: rescuehouse-cyoa
 ;
 
 cyoa: rescueapt-cyoa
-	
+
 	"Secours en appartement" cyoa-title!
 	someicon
 	($ "De loin, " .. thegroup .. "  remarque quelquun qui senfuit dune horde mecontente. Il disparait dans un immeuble dappartements." $) cyoa-text! basic-tone
@@ -168,7 +168,7 @@ cyoa: rescueapt-cyoa
 ;
 
 cyoa: gymapt-cyoa
-	
+
 	"Grand Appartement" cyoa-title!
 	someicon
 	($ Thegroup .. "  conduit pres dun immeuble dappartements assez grand. Il peut prendre du temps a lexplorer, mais il pourrait en avoir une piscine interieure !" $) cyoa-text! basic-tone
@@ -179,7 +179,7 @@ cyoa: gymapt-cyoa
 ;
 
 cyoa: bigarcade-cyoa
-	
+
 	"Arcade morte" cyoa-title!
 	someicon
 	($ Thegroup .. "  trouve un arcade assez grand, plein de jeux video maintenant silencieux. Peut etre quen les verifiant, lun deux fonctionnera a lessence ou a la batterie. Ca pourrait arriver." $) cyoa-text! basic-tone
@@ -190,7 +190,7 @@ cyoa: bigarcade-cyoa
 ;
 
 cyoa: 4suburb-cyoa
-	
+
 	"Petite banlieue" cyoa-title!
 	someicon
 	($ Thegroup .. " il conduit a travers une banlieue en ruine. Il y a quelques batiments qui semblent n'avoir pas ete completement detruits." $) cyoa-text! basic-tone
@@ -201,7 +201,7 @@ cyoa: 4suburb-cyoa
 ;
 
 cyoa: 4apartment-cyoa
-	
+
 	"Appartements abandonnes" cyoa-title!
 	someicon
 	($ Thegroup .. "  traverse une ville. Quelques immeubles se demarquent comme etant legerement moins en ruines que les environs." $) cyoa-text! basic-tone
@@ -212,7 +212,7 @@ cyoa: 4apartment-cyoa
 ;
 
 cyoa: 4commercial-cyoa
-	
+
 	"Rangee commerciale" cyoa-title!
 	someicon
 	($ Thegroup .. " ' traverse pres du quartier commercant d'une ville. A une courte distance, quelques magasins sont visibles qui semblent valoir le detour." $) cyoa-text! basic-tone
@@ -223,7 +223,7 @@ cyoa: 4commercial-cyoa
 ;
 
 cyoa: houserow-car
-	
+
 	"Voiture gratuite!" cyoa-title!
 	someicon
 	($ Thegroup .. " ' traverse une ville. Une voiture est garee dans les rues et elle a l'air presque neuve. Elle n'attend qu'a etre prise!" $) cyoa-text! basic-tone

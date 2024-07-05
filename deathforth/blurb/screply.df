@@ -38,28 +38,28 @@ have anything work right.
 : sc-billy " ><> " ; // maybe replace with bfish
 
 : sc-gnomey
-	sc-mood 0 > if "Oui oui oui !" then;
+	sc-mood 0 > if "Ooo! Ooo!" then;
 	sc-mood 0 < if "Vous etes un DINKUS !" then;
 	"Mes pieds me font mal !"
 ;
 
 : sc-alvis
 	sc-mood 0 > if "merci beaucoup" then;
-	sc-mood 0 < if "cest pas gentil ca" then;
-	"oui oui oui"
+	sc-mood 0 < if "meccestpasgentilca" then;
+	"Hi hi hi"
 ;
 
 : sc-santa
 	sc-mood 0 > if "HO ! HO ! HO !" then;
-	sc-mood 0 < if "THAT SOUNDS LIKE A SAD CHRISTMAS TO MEEEEEE..." then;
-	"HO, HO, HO !," ;
+	sc-mood 0 < if "CELA RESSEMBLE A UN TRISTE NOEL POUR MOI..." then;
+	"HO, HO, HO !" ;
 
 : sc-evilsanta "HO HO HO" fbold ;
 
 : sc-tlb
-	sc-mood 0 > if  "OUI ! OUI !" fbold then;
-	sc-mood 0 < if "TU DOIS TENTRAINER ET PRENDRE DE LA MASSE !" then;
-	"CONSTRUIRE DE LA MASSE! CONSTRUIRE DU VOLUME!"
+	sc-mood 0 > if  "YEAH ! YEAH !" fbold then;
+	sc-mood 0 < if "TU DOIS T'ENTRAINER ET PRENDRE DE LA MASSE !" then;
+	"DEVELOPPE TA MASSE ! DEVIENS MASSIF !"
 ;
 
 (*
@@ -101,7 +101,7 @@ have anything work right.
 // Shortcut word to avoid typing this logic for each mood.
 : sc-check
 	sc-pick 0= if sc-reply then;
-	false // I tested this without the false and it still works, so this probably doesn't even do anything?	
+	false // I tested this without the false and it still works, so this probably doesn't even do anything?
 ;
 (* TESTING THING
 	: sc-check
