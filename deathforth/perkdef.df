@@ -1142,95 +1142,161 @@ perkdef{
 
 	// Traits
 	"Paranoiaque" $trait
-		"Une combinaison de grande perception et dextreme pessimisme permet a quelquun de se preparer au pire !		+ Peut identifier des traits dans de nouveaux recrutes		+ Toujours a la recherche de danger		  Pouvait etre un vrai grouchus" $desc
+		"Une combinaison de grande perception et d'extreme pessimisme permet a quelqu'un de se preparer au pire !
+		+ Peut identifier des traits chez les nouvelles recrues
+		+ Toujours a l'affut du danger.
+		- Peut etre vraiment grincheux" $desc
 		' paranoidtrait applyword
 	"Insensible" $trait
-		"Un excellent point de vue sur la vie combine a une faible perception permettent des merveilleux exploits de deni !		+ Peut ignorer le desespoir		  Mauvaises lancees pour la perception et les esprits" $desc
+		"Un excellent point de vue sur la vie combine a une faible perception permettent des merveilleux exploits de deni !
+		+ Peut ignorer le desespoir
+		- Mauvais jets pour la perception et l'esprit" $desc
 		' oblivtrait applyword
-	"Charmant" $trait
-		"A partir de la perception des autres, d'une bonne attitude et de la charisma pur, il y a quelque chose de ce personne qui ouvre les portes !		+ Charme son entree dans des choses gratuites ou en sorte de situations mauvaises		  Ne peut pas charmer sa sortie de tout" $desc
+	"Charmeur" $trait
+		"Grace a uen bonne perception des autres, a une bonne attitude et a un pur charisme, il y a quelque chose chez cette personne qui ouvre des portes !
+		+ Parvient a obtenir des choses gratuites ou a se sortir de mauvaises situations grace a son charme
+		- Ne peut pas se sortir de tout avec son charme" $desc
 		' charmtrait applyword
 	"Irritant" $trait
-		"This person thinks they're soooooo cool. But they're not! They're just annoying!
-		+ Tell people to 'Cool it'
-		- Anger pretty much everybody" $desc
+		"Cette personne pense qu'elle est vraaaaaaaaaaiment cool. Mais elle ne l'est pas ! Elle est juste agacante !
+		+ Dit aux gens de se "CALMER"
+		- enerve a peu pres tout le monde" $desc
 		' gratingtrait applyword
-	"Voleur" $trait
-		"Etre indigne de confiance peut etre un atout dans la post apocalypse.		+ Arnaquer les autres		  Arnaquer le groupe		  Bombe a retardement" $desc
+	"Bandit" $trait
+		"Etre un bandit peut etre un atout dans un monde post-apocalypse.
+		+ Arnaquer les autres
+		- Arnaquer le groupe
+		- Bombe a retardement" $desc
 		' bandittrait applyword
 	"Passe Mysterieux" $trait
-		"This person... has a mysterious past......
-		+ 3 points given to fight skills at random
-		- Randomized and extreme personality!" $desc
+		"Cette personne... a un passe mysterieux......
+		+ 3 points attribues aux competences de combat de facon aleatoire
+		- Personnalite aleatoire et borderline !" $desc
 		' mysterytrait applyword
 	"Pratique" $trait
-		"A une grande variete de competences utiles, mais cest un peu ennuyeux.		+ 3 points attribues aux competences de combat au hasard		+ 3 points attribues aux competences de soutien au hasard		  Personnalite ennuyeuse" $desc
+		"A une grande variete de competences utiles, mais c'est un peu ennuyeux.
+		+ 3 points attribues aux competences de combat au hasard
+		+ 3 points attribues aux competences de soutien au hasard
+		Personnalite ennuyeuse" $desc
 		' practicaltrait applyword
 	"Guerrier" $trait
-		"Bon debut sur les competences de thwacking de zombies, avec une personnalite quelconque. + 2 points de force en plus ! + 2 points de forme en plus !   Personnalite ennuyeuse" $desc
+		"Bon depart pour les competences de frappe de zombies, avec une personnalite quelconque.
+		+ 2 points de plus en force !
+		+ 2 points de plus en forme physique !
+		Personnalite ennuyeuse" $desc
 		' warriortrait applyword
 	"Colerique" $trait
-		"'Quelqu'un a un mauvais caractere ! L'agression peut etre utile. + 1 point supplementaire en force   Mauvais caractere du a un faible sang froid + Le temperament peut parfois etre bon" $desc
+		"Quelqu'un qui a un mauvais caractere ! L'agressivite peut s'averer utile.
+		+ 1 point supplementaire en force
+		- Mauvais caractere du a un faible sang froid
+		+ Ce temperament peut parfois avoir du bon" $desc
 		' fiercetrait applyword
 	"Sang-froid" $trait
-		"Calme et serein. Utile pour tirer sur une horde ! + Tres calme grace a un sang froid eleve + 1 point supplementaire en tir" $desc
+		"Calme et serein. Utile pour tirer sur une horde !
+		+ Tres calme grace a un sang froid eleve
+		+ 1 point supplementaire en tir" $desc
 		' calmtrait applyword
-	"Nourrissant" $trait
-		"Toujours penser aux autres ! Dune maniere ou dune autre pas encore de nourriture pour zombies. + 2 points de plus en medecine ! Superbe attitude + Peut aller au dela du maximum pour la competence medicale !!   Peut etre un acte" $desc
+	"Bienveillant" $trait
+		"Toujours penser aux autres ! Pas encore de nourriture pour zombies.
+		+ 2 points en medecine ! Tres bonne attitude
+		+ Peut depasser d'un point le maximum pour la competence medicale !
+		- Peut etre un acte" $desc
 		' nurturetrait applyword
 	"Inventif" $trait
-		"A laise avec les machines, comme les voitures. + 2 points de plus en mecanique ! Excellentes verifications desprit ! + Peut aller au dela du maximum pour la competence mecanique !!   Peut avoir besoin de plus de pratique pour reparer la voiture" $desc
+		"A l'aise avec les machines comme avec les voitures.
+		+ 2 points de plus en mecanique ! Excellents tests de QI !
+		+ Peut aller au dela du maximum pour la competence mecanique !!
+		- Peut avoir besoin de plus de pratique pour reparer la voiture" $desc
 		' inventtrait applyword
 	"Pleurnichard" $trait
-		"Une sorte de fragile. Mais vraiment doue pour fuir ! + Bonus de vitesse de course !   Prend un coup de moins que la normale   Mauvaise attitude" $desc
+		"Une sorte de fragile. Mais vraiment doue pour fuir !
+		+ Bonus de vitesse de course !
+		- Prend un coup de moins que la normale
+		- Mauvaise attitude" $desc
 		' frantictrait applyword
 	"Type resilient" $trait
-		"Vraiment costaud ! Le muscle ! Pas un planificateur a long terme. + Prend un coup de plus que la normale   Mauvais jets desprit" $desc
+		"Vraiment costaud ! Le muscle ! Pas un planificateur a long terme.
+		+ Prend un coup de plus que la normale
+		- Mauvais jets d'esprit" $desc
 		' toughtrait applyword
-	"BERSERK !" $trait
-		"Destroy all zombies! Never retreat! Oh no, I got bit!
-		+ 4 points to strength, fitness, and shooting!!
-		+ Can go one over the maximum for the above stats!!!
-		- Super low personality stats! Dies in one bite!!" $desc
+	"BERSERKER !" $trait
+		"Detruire tous les zombies ! Ne jamais reculer ! Oh non, je me suis fait mordre !
+		+ 4 points de force, forme physique et tir !!
+		+ Peut depasser le maximum pour les statistiques ci-dessus !!!
+		- Statistiques de personnalite tres faibles ! Meurt en une seule morsure !!"" $desc
 		' berserktrait applyword
 	"Civilise" $trait
-		"Conserve les vieilles valeurs avant que le monde ne devienne fou. Cest bon et mauvais.		+ Statistiques de loyaute et de personnalite tres elevees !		+ 1 point aux competences medicales et mecaniques !!		  Penalite de moral permanente et significative !!" $desc
+		"Conserve les vieilles valeurs avant que le monde ne devienne fou. C'est a la fois positif et negatif.
+		+ Stats de loyaute et de personnalite super elevees !
+		+ 1 point aux competences medicales et mecaniques !!
+		- Penalite permanente et significative pour le moral !!" $desc
 		' civiltrait applyword
-	"Sommeil profond" $trait
-		($ "Dort nimporte quand, nimporte ou. #1 meilleur au sommeil !		+ Sommeil surhumain ! A besoin de tres peu de sommeil.		+ Nobtient jamais le statut FATIGUE, jamais." .. soundsleep-lock $) $desc
+	"Gros dormeur" $trait
+		($ "Dort n'importe quand, n'importe ou. Le #1 du sommeil !
+		+ Sommeil surhumain ! A besoin de tres peu de sommeil.
+		+ N'obtient jamais le statut FATIGUE, jamais." .. soundsleep-lock $) $desc
 		' soundsleeptrait applyword
 	"Gourmand" $trait
-		($ "'Apprecie vraiment les vieilles conserves !		+ Manger un repas complet restaure 1 point de moral de ce personnage, jusqu'a ce qu'il soit plein ! Obtient un point de sante maximum supplementaire !		  Mange un peu plus, 3 aliments au lieu de 2. Le manque de nourriture diminue le moral plus rapidement !" .. gourmand-lock $) $desc
+		($ "Apprecie vraiment les vieilles boites de conserve !
+		+ Un repas complet restaure 1 point de morale a ce personnage jusqu'a ce que ce soit plein ! Gagne un point supplementaire de sante maximale !
+		- Mange un peu plus, 3 unites de nourriture au lieu de 2. Le manque de nourriture diminue plus rapidement le moral !" .. gourmand-lock $) $desc
 		' gourmandtrait applyword
 	"Explorateur urbain" $trait
-		($ "Benie dune vie interessante !		+ Beaucoup plus de chances de trouver un batiment ou un personnage etrange dans les evenements de pillage de la ville ! Chance normale : 10 %  Avec trait : 50 %		+ Double les chances de trouver des camps de commercants rares !" .. cityseek-lock $) $desc
+		($ "Beni d'une vie interessante !
+		+ Beaucoup plus de chances de trouver un batiment ou un personnage etrange lors des evenements de pillage en ville ! Chance normale : 10%, avec le trait : 50%
+		+ Double les chances de trouver des Camps de Commercants Rares !" .. cityseek-lock $) $desc
 		' cityseektrait applyword
 	"Voyage leger" $trait
-		($ "Portez moins pour pouvoir courir un peu plus vite !		+ Bonus de vitesse de course !		+ 1 point de plus en fitness !		  Ne peut transporter que deux armes a la fois !" .. travellight-lock $) $desc
+		($ "Portez moins pour courir un peu plus vite !
+		+ Bonus de vitesse de course !
+		+ 1 point de plus en condition physique !
+		- Ne peut porter que deux armes a la fois !" .. travellight-lock $) $desc
 		' travellighttrait applyword
 	"Altruiste" $trait
-		($ "'Je serai toujours ton garde du corps. Eh bien, une fois.		+ Sauve un coequipier de la mort dans un evenement textuel !		  Ne le fait qu'une seule fois par partie !		+ Commence avec une loyaute maximale !" .. herotype-lock $) $desc
+		($ "Je serai toujours ton garde du corps. Enfin, une fois.
+		+ Sauve un coequipier de la mort lors d'un evenement textuel !
+		- Ne peut le faire qu'une seule fois par partie !
+		+ Commence avec une loyaute maximale !" .. herotype-lock $) $desc
 		' herotypetrait applyword
 	"Petit mangeur" $trait
-		($ "Mange beaucoup moins que la normale ! Prend de minuscules bouchees !		+ Un repas complet ne necessite que 1 aliment !!		  Obtient une penalite de 2 points sur la force maximale !		  Obtient une penalite de 1 point sur la forme physique maximale." .. tinyeat-lock $) $desc
+		($ "Mange beaucoup moins que la normale ! Prends de toutes petites bouchees !
+		+ Un repas complet ne necessite qu'1 de nourriture!!
+		- A deux points de penalites en force!
+		- A un point de penalite en forme physique." .. tinyeat-lock $) $desc
 		' tinyeattrait applyword
-	"Fan danime" $trait
-		($ "'C'est comme ca dans mes animes de zombies !		+ L'arme est remplacee par un puissant Katana fort.		  Le Katana ne peut pas etre lache, meme a la mort.		  AVERTISSEMENT : Evitez d'avoir le moral plein ! MEFIEZ VOUS DE L'ANIME !" .. animefan-lock $) $desc
+	"Fan d'anime" $trait
+		($ "C'est exactement comme mes animes de zombies !
+		+ L'arme de depart est remplace par un Katana Surpuissant.
+		- Le Katana ne peut pas etre lache, meme mort.
+		- AVERTISSEMENT : Evitez d'avoir un moral trop elevee ! MEFIEZ-VOUS DES ANIMES !" .. animefan-lock $) $desc
 		' animefantrait applyword
 	"Specialiste" $trait
-		($ "Un peu trop focalise sur une methode declaboussure de zombies.		+ 2 points de force, de forme physique et de tir		+ Peut depasser le maximum pour les statistiques ci dessus !!		  Ne peut transporter quUNE SEULE ARME a la fois !!" .. specialist-lock $) $desc
+		($ "Un peu trop obsede par une seule methode d'eclatement de zombies.
+		+ 2 points pour la force, la condition physique et le tir
+		+ Peut depasser d'un point le maximum pour les statistiques ci-dessus !
+		- Ne peut porter qu'UNE ARME a la fois !!" .. specialist-lock $) $desc
 		' spectrait applyword
-	"Lutteur" $trait
-		($ "Si un zombie tombe, vous pouvez le ramasser !		+ Jeter ou lancer des zombies portes !		  Personnalite ennuyeuse" .. grappler-lock $) $desc
+	"Grappler" $trait
+		($ "Si un zombie tombe, tu peux le ramasser !
+		+ Lancez ou frappez les zombies portes !
+		- Personnalite ennuyeuse" .. grappler-lock $) $desc
 		' grapplertrait applyword
 	"Phenix" $trait
-		($ "Le phenix nait des cendres ! *flotte les bras comme si elles etaient des ailes*		+ Se ressuscite a la mort, a plein de sante !!		+ Incombustible ! Stationnez vous dans les flammes !		  Perd entierement le trait apres la premiere mort" .. phoenix-lock $) $desc
+		($ "Le phenix renait de ses cendres ! *bouge ses bras comme s'il s'agissait d'ailes*
+		+ Ressuscite a la mort, avec toute sa sante !!
+		+ Inflammable ! Reste dans les flammes !
+		- Perd le trait entier apres la premiere mort !" .. phoenix-lock $) $desc
 		' phoenixtrait applyword
-	"Dingus Savant" $trait
-		($ "Predestine pour grandes choses ! Na jamais eu lintention de travailler a cela.		+ Obtient une bonus de 1 point supplementaire au maximum pour toutes les competences !		  Prend un coup de moins que la norme !		  Penalite de 2 points supplementaires au maximum de moralite" .. savant-lock $) $desc
+	"Savant Fou" $trait
+		($ "Toujours destine a de grandes choses ! N'a jamais pris la peine de travailler pour cela.
+		+ Obtient un bonus de 1 point au maximum pour toutes les competences !
+		- Prend 1 coup de moins que la normale !
+		- 2 points de penalite au moral maximum !" .. savant-lock $) $desc
 		' savanttrait applyword
-	"Apprenant rapide" $trait
-		($ "Commence bas, mais apprend rapidement des nouvelles competences !		+ Obtient double la quantite de competence dans le tir, mecanique et medical !		  Chaque bonus de croissance sarrete apres que sa competence atteigne 4 points" .. fastlearn-lock $) $desc
+	"Apprends vite" $trait
+		($ "Commence au bas de l'echelle, mais acquiert rapidement de nouvelles competences !
+		+ Double les competences de tir, de mecanique et de medecine !
+		- Chaque bonus de croissance s'arrete lorsque la competence atteint 4 points." .. fastlearn-lock $) $desc
 		' fastlearntrait applyword
 
 

@@ -2,7 +2,7 @@
 	: HNK-oneline2 "Pret a commencer la mission." ;
 	: HNK-oneline3 "L'equipe Delta, plutot l'equipe Odeur-ta." ;
 	: HNK-oneline4 "La Mort ne peut pas mourir. Je parle de moi. C'est mon surnom." ;
-	: HNK-oneline5 "G-Virus, c'est plutôt le C-Virus (pour "cul")." ;
+	: HNK-oneline5 "G-Virus, c'est plutôt le C-Virus (pour 'cul')." ;
 	: HNK-oneline6 "Je ne peux pas vous dire quelle est ma mission ! C'est un secret !" ;
 	: HNK-oneline7 "Je pourrai peut-etre dire quelle est ma mission secrete une fois que je serai au Canada." ;
 	: HNK-oneline8 "Allons-y !" ;
@@ -14,7 +14,7 @@
 	: HNK-oneline14 "Il n'y a meme pas de zombies speciaux. Ca devrait etre facile." ;
 	: HNK-oneline15 "Je n'ai jamais echoue a une mission." ;
 	: HNK-oneline16 ($ "Ici " .. 1st-char .name@ .. ", termine. *kkkkrrrrrrrtzzzzzz*" $) ;
-	: HNK-oneline17 ($ 1st-char .name@ .. " est un acronyme. J'ai oublie ce qu'il signifie. $) ;
+	: HNK-oneline17 ($ 1st-char .name@ .. " est un acronyme. J'ai oublie ce qu'il signifie." $) ;
 
 	deck-new
 		card: HNK-oneline1

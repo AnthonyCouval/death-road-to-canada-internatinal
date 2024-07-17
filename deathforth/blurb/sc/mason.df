@@ -3,7 +3,7 @@
 		solo if
 			($ "regarde dans le vide tout en aiguisant sa machette." $) blurbdo
 		then;
-		($ "fixe " ..  2nd-char .name@ .. " tout en aiguisant sa machette. $) blurbdo
+		($ "fixe " ..  2nd-char .name@ .. " tout en aiguisant sa machette." $) blurbdo
 	else
 		blurbslot 2 < if
 			50 %chance if
@@ -28,7 +28,7 @@
 	: MASON-oneline5 " emet une respiration menacante." ;
 	: MASON-oneline6 " est assis, completement immobile, avec un hachoir a la main." ;
 	: MASON-oneline7 " pense a quelque chose, probablement a un meurtre." ;
-	: MASON-oneline8 " s'interroge sur le sens de la vie. ;
+	: MASON-oneline8 " s'interroge sur le sens de la vie." ;
 	: MASON-oneline9 " grogne sur lui-meme." ;
 	: MASON-oneline10 " commence a avoir des crampes a force de rester assis." ;
 	: MASON-oneline11 " essuie le sang sur son hachoir." ;

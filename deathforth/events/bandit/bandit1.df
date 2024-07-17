@@ -294,10 +294,10 @@ cyoa: bandit-buff
 		bandit-demand
 		strongest charchoice( " les defie a un concours de poses" )choice: bandit-buff-pose
 		most-grating if
-			charchoice( " 'dit aux bandits de' se calmer'" fcoolit )choice: bandit-buff-coolit
+			charchoice( " dit aux bandits de 'SE CALMER'" fcoolit )choice: bandit-buff-coolit
 		then
 		most-oblivious if
-			charchoice( " 'demande ce qui se passe avec les tenues" )choice: bandit-buff-obliv
+			charchoice( " demande ce qui se passe avec les tenues" )choice: bandit-buff-obliv
 		then
 		bandit-fight
 
@@ -344,44 +344,49 @@ cyoa-choice: bandit-allofit-run
 ;
 cyoa-bridge: bandit-allofit-coolit
 	cpet? if
-		($ cname .. "  pete sur les bandits, leur donnant tout " .. chis .. "  gaz de pet." $)
+		($ cname .. " pete sur les bandits, les asphyxiant tous avec son gaz de la mort." $)
 	else
-		($ cname .. "  dit aux bandits de" .. "  CALMER LE JEU." pbold $)
+		($ cname .. " dit aux bandits de se " .. " CALMER." pbold $)
 	then cyoa-text!
 	cool-it-7 if
-		char-gen to recruitee " Bandit reforme" recruitee .name!
-		($ "'Cela arrete les bandits dans leur elan.		Et s'ils avaient mal vecu leur vie tout ce temps ?		Les choses auraient elles pu mieux se passer s'ils s'etaient simplement  calmes  ?		Ils decident de ne faire que de bonnes choses a partir de maintenant, et offrent un cadeau !		" .. Thegroup .. " est indemne, avec " .. ghis .. " spirits raised." $)
+		char-gen to recruitee "Reformed Bandit" recruitee .name!
+		($ "Les bandits sont ainsi stoppes dans leur elan.
+		Et s'ils avaient mal vecu pendant tout ce temps ?
+		Les choses auraient-elles pu mieux se passer s'ils avaient simplement decide de se 'CALMER' ?
+		Ils decident donc de ne plus faire que de bonnes choses et vous offrent un cadeau !
+		" .. Thegroup .. "  s'en sort indemne, avec un moral au beau fixe." $)
 		+crtext morale3+all rescue-trainitem cooled-it goodfx
 	else cool-it++
-		($ "Les bandits ne samusent pas du tout par ca. Ils tirent sur " .. thegroup .. " qui tente de fuir." $) +crtext
+		($ "Ca n'amuse pas du tout les bandits. Ils ouvrent le feu alors que " .. thegroup .. " tente de s'enfuir." $) +crtext
 		notsolo if
-			($ "Dun cote, la plupart des balles atteignent " .. cname .. "." $) +crtext
+			($ "Le cote positif c'est que la plupart des balles ont touchées " .. cname .. "." $) +crtext
 		then
 		ouch2- sting--all bitefx
 	then witsattREV
 ;
-
 cyoa-choice: bandit-allofit-paranoid
-	($ "Etait toujours vigilant avant lembuscade " .. cname .. " fonce vers une cachette proche et facile a ignorer " .. cHe .. " tirets vers un abri proche mais facile a negliger. " $) cyoa-text!
-	notsolo if ($ Everyone .. " suivra " .. chim .. "." $) +text then
-	"Les bandits perdent leur avantage determinant, et senfuient apres un bref combat.," +crtext bitefx sting--all witsattREV
+	($ "Toujours mefiant, " .. cname .. " etait sur ses gardes avant l'embuscade. " .. cHe .. " se precipite vers une cachette proche mais difficilement trouvable. " $) cyoa-text!
+	notsolo if ($ Everyone .. " suit " .. chim .. "." $) +text then
+	"Les bandits perdent leur avantage et s'enfuient apres un bref combat." +crtext bitefx sting--all witsattREV
 ;
 
 cyoa: bandit-allofit
-	"Votre argent contre votre vie" cyoa-title! someicon
-	($ "Les bandits prennent " .. thegroup .. " par surprise, dans une vraie mauvaise place pour " .. ghim .. " a se battre. Ils exigent que toute la nourriture et " .. bandit-allofit-ez .. " les fournitures soient remises !" .. "TON ARGENT OU TA VIE !" rbold $) cyoa-text!
+	"Votre Argent Contre Votre Vie" cyoa-title! someicon
+	($ "Les bandits prennent " .. thegroup .. " par surprise, dans un endroit vraiment complique pour se battre.
+	Ils exigent toute la nourriture et que " .. bandit-allofit-ez .. " des fournitures leur soit remises !
+	" .. "VOTRE ARGENT OU VOTRE VIE" rbold $) cyoa-text!
 		most-charming if
-			charchoice( "  propose un compromis" )choice: bandit-start-charm
+			charchoice( " offre un compromis" )choice: bandit-start-charm
 		else
-			choice( "Abandonnez les fournitures" )choice: bandit-allofit-pay
+			choice( "Renoncer aux fournitures" )choice: bandit-allofit-pay
 		then
 		most-grating if
-			charchoice( " 'Calmez vous'" fcoolit )choice: bandit-allofit-coolit
+			charchoice( " dit aux bandits de se 'CALMER'" fcoolit )choice: bandit-allofit-coolit
 		then
 		most-paranoid if
-			charchoice( ": On peut les combattre !" )choice: bandit-allofit-paranoid
+			charchoice( ": Nous pouvons les battre !" )choice: bandit-allofit-paranoid
 		then
-		choice( "Cours !" )choice: bandit-allofit-run
+		choice( "Courez pour votre vie !" )choice: bandit-allofit-run
 ;
 
 } }
